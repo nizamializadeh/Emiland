@@ -12,9 +12,11 @@ class JacketLeftSideBar extends StatelessWidget {
   Widget build(BuildContext context) {
     SuitDataProvider suitInstance =
         Provider.of<SuitDataProvider>(context, listen: false);
+    SuitDataProvider suitInstanceTrue =
+        Provider.of<SuitDataProvider>(context, listen: true);
     return GestureDetector(
       onTap: () {
-        suitInstance.deactivateAllSuit();
+        suitInstance.activateAllSuit();
       },
       child: Container(
         margin: EdgeInsets.only(top: 114.h),
@@ -32,42 +34,64 @@ class JacketLeftSideBar extends StatelessWidget {
         ),
         width: 1705.w,
         height: 1930.h,
-        child: Row(
-          children: [
-            SingleSuit(
-              active: suitInstance.item1,
-              onclick: () {
-                suitInstance.deactivateAllSuit();
-                suitInstance.activateSuit(suitInstance.item1 = true);
-              },
-              img: 'assets/prototip/prototip1.png',
-            ),
-            SingleSuit(
-              active: suitInstance.item2,
-              onclick: () {
-                suitInstance.deactivateAllSuit();
-                suitInstance.activateSuit(suitInstance.item2 = true);
-              },
-              img: 'assets/prototip/prototip2.png',
-            ),
-            SingleSuit(
-              active: suitInstance.item3,
-              onclick: () {
-                suitInstance.deactivateAllSuit();
-                suitInstance.activateSuit(suitInstance.item3 = true);
-              },
-              img: 'assets/prototip/prototip3.png',
-            ),
-            SingleSuit(
-              active: suitInstance.item4,
-              onclick: () {
-                suitInstance.deactivateAllSuit();
-                suitInstance.activateSuit(suitInstance.item4 = true);
-              },
-              img: 'assets/prototip/prototip4.png',
-            ),
-          ],
-        ),
+        child: Provider.of<SuitDataProvider>(context, listen: true)
+                .modelSelected
+            ? Center(
+                child: Image.asset(
+                  'assets/png/suit.png',
+                ),
+              )
+            : Row(
+                children: [
+                  Stack(
+                    children: [
+                      SingleSuit(
+                        active: suitInstance.item1,
+                        onclick: () {
+                          suitInstance.deactivateAllSuit();
+                          suitInstance.activateSuit(suitInstance.item1 = true);
+                        },
+                        img: 'assets/prototip/proto1.png',
+                      ),
+                      suitInstanceTrue.map2['boyun']!
+                          ? SingleSuit(
+                              active: suitInstance.item1,
+                              onclick: () {
+                                suitInstance.deactivateAllSuit();
+                                suitInstance
+                                    .activateSuit(suitInstance.item1 = true);
+                              },
+                              img: 'assets/prototip/test.png',
+                            )
+                          : const SizedBox.shrink(),
+                    ],
+                  ),
+                  SingleSuit(
+                    active: suitInstance.item2,
+                    onclick: () {
+                      suitInstance.deactivateAllSuit();
+                      suitInstance.activateSuit(suitInstance.item2 = true);
+                    },
+                    img: 'assets/prototip/proto2.png',
+                  ),
+                  SingleSuit(
+                    active: suitInstance.item3,
+                    onclick: () {
+                      suitInstance.deactivateAllSuit();
+                      suitInstance.activateSuit(suitInstance.item3 = true);
+                    },
+                    img: 'assets/prototip/proto3.png',
+                  ),
+                  SingleSuit(
+                    active: suitInstance.item4,
+                    onclick: () {
+                      suitInstance.deactivateAllSuit();
+                      suitInstance.activateSuit(suitInstance.item4 = true);
+                    },
+                    img: 'assets/prototip/proto4.png',
+                  ),
+                ],
+              ),
       ),
     );
   }

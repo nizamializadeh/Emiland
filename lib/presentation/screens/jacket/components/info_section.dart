@@ -2,14 +2,12 @@ import 'package:emiland/provider/dropdown_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import '../../../../provider/suit_data_provider.dart';
 import '../../../components/custom_textfield.dart';
 import 'header.dart';
 
-const List<String> list = <String>['Flial unvanı', 'Two', 'Three', 'Four'];
-
 class InfoSection extends StatelessWidget {
-  InfoSection({super.key});
-  String dropdownValue = list.first;
+  const InfoSection({super.key});
   @override
   Widget build(BuildContext context) {
     var dropDownProvider = Provider.of<DropDownProvider>(context);
@@ -18,7 +16,7 @@ class InfoSection extends StatelessWidget {
         SizedBox(
           height: 42.h,
         ),
-        // info divider
+// info divider
         Header(
           title: '1.İnfo',
         ),
@@ -28,9 +26,11 @@ class InfoSection extends StatelessWidget {
         Row(
           children: [
             DropdownMenu<String>(
-              textStyle: TextStyle(color: Colors.black, fontSize: 28.sp),
+              textStyle:
+                  TextStyle(color: const Color(0xff707070), fontSize: 28.sp),
               width: 456.w,
-              initialSelection: dropDownProvider.selectedLocation,
+// initialSelection: dropDownProvider.selectedLocation,
+              hintText: dropDownProvider.selectedLocation,
               onSelected: (String? value) {
                 if (value != null) {
                   dropDownProvider.setSelectedLocation(value);
@@ -46,9 +46,11 @@ class InfoSection extends StatelessWidget {
               width: 22.w,
             ),
             DropdownMenu<String>(
-              textStyle: TextStyle(color: Colors.black, fontSize: 28.sp),
+              textStyle:
+                  TextStyle(color: const Color(0xff707070), fontSize: 28.sp),
               width: 456.w,
               initialSelection: dropDownProvider.selectedCity,
+              hintText: dropDownProvider.selectedLocation,
               onSelected: (String? value) {
                 if (value != null) {
                   dropDownProvider.setSelectedCity(value);
@@ -68,11 +70,17 @@ class InfoSection extends StatelessWidget {
         ),
         Row(
           children: [
-            Expanded(child: CustomTextField()),
+            Expanded(
+                child: CustomTextField(
+              hintText: 'Sifaris',
+            )),
             SizedBox(
               width: 22.w,
             ),
-            Expanded(child: CustomTextField()),
+            Expanded(
+                child: CustomTextField(
+              hintText: 'Tehvil',
+            )),
           ],
         ),
         SizedBox(
@@ -80,6 +88,7 @@ class InfoSection extends StatelessWidget {
         ),
         CustomTextField(
           center: true,
+          hintText: 'Ad / Soyad',
         ),
         SizedBox(
           height: 22.w,
@@ -88,14 +97,14 @@ class InfoSection extends StatelessWidget {
           children: [
             Expanded(
               flex: 3,
-              child: CustomTextField(),
+              child: CustomTextField(hintText: 'Qeyd'),
             ),
             SizedBox(
               width: 22.w,
             ),
             Expanded(
               flex: 7,
-              child: CustomTextField(),
+              child: CustomTextField(hintText: 'Elaqe Nomresi'),
             ),
           ],
         ),
@@ -105,20 +114,39 @@ class InfoSection extends StatelessWidget {
         Row(
           children: [
             DropdownMenu<String>(
-              initialSelection: list.first,
-              textStyle: TextStyle(color: Colors.black, fontSize: 28.sp),
-              onSelected: (String? value) {},
-              dropdownMenuEntries:
-                  list.map<DropdownMenuEntry<String>>((String value) {
+              hintText: dropDownProvider.selectedTime,
+              textStyle:
+                  TextStyle(color: const Color(0xff707070), fontSize: 28.sp),
+              onSelected: (value) {
+                if (value != null) {
+                  dropDownProvider.setSelectedTime(value);
+                }
+              },
+              dropdownMenuEntries: dropDownProvider.selectedTimeList
+                  .map<DropdownMenuEntry<String>>((String value) {
                 return DropdownMenuEntry<String>(value: value, label: value);
               }).toList(),
             ),
             SizedBox(
               width: 22.w,
             ),
-            Expanded(
-              flex: 7,
-              child: CustomTextField(),
+            DropdownMenu<String>(
+              textStyle:
+                  TextStyle(color: const Color(0xff707070), fontSize: 28.sp),
+              width: 628.w,
+// initialSelection: dropDownProvider.measureSelector,
+
+              hintText: dropDownProvider.measureSelector,
+              onSelected: (String? value) {
+                if (value != null) {
+                  dropDownProvider.setSelectedMeasureSelector(value);
+                  print(dropDownProvider.selectedCity);
+                }
+              },
+              dropdownMenuEntries: dropDownProvider.measureSelectorList
+                  .map<DropdownMenuEntry<String>>((String value) {
+                return DropdownMenuEntry<String>(value: value, label: value);
+              }).toList(),
             ),
           ],
         ),

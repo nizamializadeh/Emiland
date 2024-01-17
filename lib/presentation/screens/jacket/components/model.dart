@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+import '../../../../provider/suit_data_provider.dart';
 import 'header.dart';
 
 class Model extends StatelessWidget {
@@ -24,27 +26,15 @@ class Model extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ModelContainer(
+                ontap: () {
+                  Provider.of<SuitDataProvider>(context, listen: false)
+                      .selectedModelContainerActive();
+                },
                 firstText: 'Tuxedo',
                 secondText: 'Single Breasted',
               ),
               ModelContainer(
-                firstText: 'Tuxedo',
-                secondText: 'Single Breasted',
-              ),
-            ],
-          ),
-        ),
-        Container(
-          margin: EdgeInsets.only(top: 24.h),
-          child: Row(
-            verticalDirection: VerticalDirection.up,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              ModelContainer(
-                firstText: 'Tuxedo',
-                secondText: 'Single Breasted',
-              ),
-              ModelContainer(
+                ontap: () {},
                 firstText: 'Tuxedo',
                 secondText: 'Single Breasted',
               ),
@@ -58,10 +48,31 @@ class Model extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ModelContainer(
+                ontap: () {},
                 firstText: 'Tuxedo',
                 secondText: 'Single Breasted',
               ),
               ModelContainer(
+                ontap: () {},
+                firstText: 'Tuxedo',
+                secondText: 'Single Breasted',
+              ),
+            ],
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.only(top: 24.h),
+          child: Row(
+            verticalDirection: VerticalDirection.up,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              ModelContainer(
+                ontap: () {},
+                firstText: 'Tuxedo',
+                secondText: 'Single Breasted',
+              ),
+              ModelContainer(
+                ontap: () {},
                 firstText: 'Tuxedo',
                 secondText: 'Single Breasted',
               ),
@@ -74,10 +85,12 @@ class Model extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ModelContainer(
+                ontap: () {},
                 firstText: '',
                 secondText: ' Gilet',
               ),
               ModelContainer(
+                ontap: () {},
                 firstText: '',
                 secondText: 'Pants',
               ),
@@ -90,33 +103,39 @@ class Model extends StatelessWidget {
 }
 
 class ModelContainer extends StatelessWidget {
-  ModelContainer({super.key, 
+  ModelContainer({
+    super.key,
     required this.firstText,
     required this.secondText,
+    required this.ontap,
   });
   String firstText;
+  Function() ontap;
   String secondText;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      width: 456.w,
-      height: 274.h,
-      decoration: BoxDecoration(
-          border: Border.all(width: 1),
-          borderRadius: BorderRadius.circular(40)),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            firstText,
-            style: TextStyle(color: Colors.black, fontSize: 28.sp),
-          ),
-          Text(
-            secondText,
-            style: TextStyle(color: Colors.black, fontSize: 28.sp),
-          ),
-        ],
+    return GestureDetector(
+      onTap: ontap,
+      child: Container(
+        alignment: Alignment.center,
+        width: 456.w,
+        height: 274.h,
+        decoration: BoxDecoration(
+            border: Border.all(width: 1),
+            borderRadius: BorderRadius.circular(40)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              firstText,
+              style: TextStyle(color: Colors.black, fontSize: 28.sp),
+            ),
+            Text(
+              secondText,
+              style: TextStyle(color: Colors.black, fontSize: 28.sp),
+            ),
+          ],
+        ),
       ),
     );
   }

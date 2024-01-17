@@ -19,9 +19,10 @@ class TabBarItem extends StatelessWidget {
     return GestureDetector(
       onTap: active ? onTap : () {},
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 20.h),
+        margin: EdgeInsets.symmetric(vertical: 0.h),
         decoration: BoxDecoration(
-            border: Border.all(color: Colors.black, width: 2.w),
+            border: Border.all(color: const Color(0xffDDDDDD), width: 0.5),
+            borderRadius: BorderRadius.all(Radius.circular(10.r)),
             color: active ? Colors.white : const Color(0xFFE7E7E7)),
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         alignment: Alignment.centerLeft,

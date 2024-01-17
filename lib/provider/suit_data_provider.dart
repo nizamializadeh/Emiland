@@ -15,6 +15,20 @@ class SuitDataProvider extends ChangeNotifier {
   bool item3 = true;
   bool item4 = true;
 
+  // tabbar on/of
+  bool modelSelected = false;
+  bool SelectedModelContainer = false;
+
+  void selectedModelContainerActive() {
+    SelectedModelContainer = !SelectedModelContainer;
+    notifyListeners();
+  }
+
+  void modelSelectedActive() {
+    modelSelected = !modelSelected;
+    notifyListeners();
+  }
+
   void DataCouter(data, name) {
     map1.forEach((key, value) {
       if (key == name) {

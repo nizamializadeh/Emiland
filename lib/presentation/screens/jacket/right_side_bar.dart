@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import '../../../provider/suit_data_provider.dart';
 import '../trousers.dart';
 import 'components/info_section.dart';
+import 'components/jacket_color_container.dart';
 import 'components/model.dart';
 
 class JacketRightSideBar extends StatelessWidget {
@@ -13,7 +14,7 @@ class JacketRightSideBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.only(top: 114.h),
+        margin: EdgeInsets.only(top: 100.h),
         width: 1005.w,
         child: Column(
           children: [
@@ -64,7 +65,6 @@ class JacketRightSideBar extends StatelessWidget {
                         ),
                       ],
                     ),
-                    title: const Text('Tabs Demo'),
                   ),
                   body: Container(
                     margin: EdgeInsets.symmetric(horizontal: 30.w),
@@ -72,8 +72,19 @@ class JacketRightSideBar extends StatelessWidget {
                       children: [
                         Column(
                           children: [
-                            InfoSection(),
-                            const StyleSection(),
+                            Provider.of<SuitDataProvider>(context, listen: true)
+                                    .modelSelected
+                                ? Provider.of<SuitDataProvider>(context,
+                                            listen: true)
+                                        .SelectedModelContainer
+                                    ? JacketColorContainer()
+                                    : Model()
+                                : Column(
+                                    children: [
+                                      InfoSection(),
+                                      const StyleSection(),
+                                    ],
+                                  )
                           ],
                         ),
                         const Column(
@@ -90,23 +101,37 @@ class JacketRightSideBar extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              height: 80.h,
-              margin: const EdgeInsets.all(10),
-              width: double.infinity,
-              child: ElevatedButton(
-                child: Text(
-                  'Save',
-                  style: TextStyle(fontSize: 40.sp),
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Trousers(),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 30.w),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '\$129',
+                    style:
+                        TextStyle(fontSize: 30.sp, fontWeight: FontWeight.w500),
+                  ),
+                  Container(
+                    height: 80.h,
+                    margin: const EdgeInsets.all(10),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black),
+                      child: Text(
+                        'Save',
+                        style: TextStyle(fontSize: 40.sp),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Trousers(),
+                          ),
+                        );
+                      },
                     ),
-                  );
-                },
+                  ),
+                ],
               ),
             ),
           ],
@@ -143,7 +168,7 @@ class JacketRightSideBar extends StatelessWidget {
                       ElevatedButton(
                         child: const Icon(Icons.add),
                         onPressed: () {
-                          // suitInstance.incrementCount();
+// suitInstance.incrementCount();
                         },
                       ),
                       ElevatedButton(
