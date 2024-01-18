@@ -18,7 +18,6 @@ class JacketRightSideBar extends StatefulWidget {
 }
 
 class _JacketRightSideBarState extends State<JacketRightSideBar> {
-
   @override
   Widget build(BuildContext context) {
     SuitDataProvider suitInstance =
@@ -86,10 +85,6 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                         // Tabbar section 1
                         Column(
                           children: [
-                          
-                        
-
-
                             Provider.of<SuitDataProvider>(context, listen: true)
                                     .modelSelected
                                 ? Provider.of<SuitDataProvider>(context,
@@ -102,9 +97,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                                       InfoSection(),
                                       StyleSection(),
                                     ],
-                                  ) 
-                            
-                            
+                                  )
                           ],
                         ),
                         // Tabbar section 2
@@ -117,16 +110,16 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                         //     itemCount: 8,
                         //     itemBuilder: (context, index) {
                         //        Container(width:  50, height:  50, color: Colors.green,);
-                             
+
                         //    },),
                         //  ),
-                         Column(
+                        Column(
                           children: [
                             SizedBox(
                               height: 60.h,
                             ),
                             TabBarItem(
-                             width: double.infinity,
+                              width: double.infinity,
                               value: suitInstanceTrue.map1['boyun']!,
                               onTap: () {
                                 bottomSheet(context, suitInstance, 'boyun');
@@ -138,19 +131,19 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                               height: 18.h,
                             ),
                             TabBarItem(
-                            width: double.infinity,
+                              width: double.infinity,
                               onTap: () {
                                 bottomSheet(context, suitInstance, 'en');
                               },
                               value: suitInstanceTrue.map1['en'],
                               active: suitInstanceTrue.item4,
                               text: 'Arxa  hisse',
-                            ), 
+                            ),
                             SizedBox(
                               height: 18.h,
                             ),
-                             TabBarItem(
-                             width: double.infinity,
+                            TabBarItem(
+                              width: double.infinity,
                               value: suitInstanceTrue.map1['boyun']!,
                               onTap: () {
                                 bottomSheet(context, suitInstance, 'boyun');
@@ -162,7 +155,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                               height: 18.h,
                             ),
                             TabBarItem(
-                            width: double.infinity,
+                              width: double.infinity,
                               onTap: () {
                                 bottomSheet(context, suitInstance, 'en');
                               },
@@ -170,62 +163,71 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                               active: suitInstanceTrue.item4,
                               text: 'Qabaq hisse',
                             ),
-                            // Container(width: 50,height: 50, color: Colors.red,)
                           ],
                         ),
 
                         // Tabbar section 3
-                       Column(
+                        Column(
                           children: [
-                            SizedBox(
-                              height: 60.h,
-                            ),
-                            TabBarItem(
-                             width: double.infinity,
-                              value: suitInstanceTrue.map1['boyun']!,
-                              onTap: () {
-                                bottomSheet(context, suitInstance, 'boyun');
-                              },
-                              active: suitInstanceTrue.item1,
-                              text: 'Ciyin',
-                            ),
-                            SizedBox(
-                              height: 18.h,
-                            ),
-                            TabBarItem(
-                            width: double.infinity,
-                              onTap: () {
-                                bottomSheet(context, suitInstance, 'en');
-                              },
-                              value: suitInstanceTrue.map1['en'],
-                              active: suitInstanceTrue.item4,
-                              text: 'Qabaq hisse',
-                            ), 
-                            SizedBox(
-                              height: 18.h,
-                            ),
-                             TabBarItem(
-                             width: double.infinity,
-                              value: suitInstanceTrue.map1['boyun']!,
-                              onTap: () {
-                                bottomSheet(context, suitInstance, 'boyun');
-                              },
-                              active: suitInstanceTrue.item1,
-                              text: 'Qabaq uzunluq',
-                            ),
-                            SizedBox(
-                              height: 18.h,
-                            ),
-                            TabBarItem(
-                            width: double.infinity,
-                              onTap: () {
-                                bottomSheet(context, suitInstance, 'en');
-                              },
-                              value: suitInstanceTrue.map1['en'],
-                              active: suitInstanceTrue.item4,
-                              text: 'Qabaq hisse',
-                            ),
-                      
+                            // SizedBox(
+                            //   height: 60.h,
+                            // ),
+                            // TabBarItem(
+                            //   width: double.infinity,
+                            //   value: suitInstanceTrue.map1['boyun']!,
+                            //   onTap: () {
+                            //     bottomSheet(context, suitInstance, 'boyun');
+                            //   },
+                            //   active: suitInstanceTrue.item1,
+                            //   text: 'Ciyin',
+                            // ),
+                            // SizedBox(
+                            //   height: 18.h,
+                            // ),
+                            // TabBarItem(
+                            //   width: double.infinity,
+                            //   onTap: () {
+                            //     bottomSheet(context, suitInstance, 'en');
+                            //   },
+                            //   value: suitInstanceTrue.map1['en'],
+                            //   active: suitInstanceTrue.item4,
+                            //   text: 'Qabaq hisse',
+                            // ),
+                            // SizedBox(
+                            //   height: 18.h,
+                            // ),
+                            // TabBarItem(
+                            //   width: double.infinity,
+                            //   value: suitInstanceTrue.map1['boyun']!,
+                            //   onTap: () {
+                            //     bottomSheet(context, suitInstance, 'boyun');
+                            //   },
+                            //   active: suitInstanceTrue.item1,
+                            //   text: 'Qabaq uzunluq',
+                            // ),
+                            // SizedBox(
+                            //   height: 18.h,
+                            // ),
+                            // TabBarItem(
+                            //   width: double.infinity,
+                            //   onTap: () {
+                            //     bottomSheet(context, suitInstance, 'en');
+                            //   },
+                            //   value: suitInstanceTrue.map1['en'],
+                            //   active: suitInstanceTrue.item4,
+                            //   text: 'Qabaq hisse',
+                            // ),
+
+                            Container(
+                                margin: EdgeInsets.symmetric(vertical: 10),
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                width: double.infinity,
+                                child: Column(
+                                  children: Provider.of<SuitDataProvider>(
+                                          context,
+                                          listen: true)
+                                      .result,
+                                ))
                           ],
                         ),
                       ],
@@ -244,8 +246,11 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                     style:
                         TextStyle(fontSize: 30.sp, fontWeight: FontWeight.w500),
                   ),
-                  CustomBtn(onPressed: (){
-                   Navigator.push(context, MaterialPageRoute(builder: (context)=>const Trousers()));
+                  CustomBtn(onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Trousers()));
                     print('Function');
                   }),
                 ],
@@ -317,10 +322,12 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
 }
 
 class CustomBtn extends StatelessWidget {
-  const CustomBtn({ this.text='Save' , required this.onPressed,
+  const CustomBtn({
+    this.text = 'Save',
+    required this.onPressed,
     super.key,
   });
-  final String text; 
+  final String text;
   final Function() onPressed;
 
   @override
@@ -329,15 +336,12 @@ class CustomBtn extends StatelessWidget {
       height: 80.h,
       margin: const EdgeInsets.all(10),
       child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.black),
-        child: Text(
-          text,
-          style: TextStyle(fontSize: 40.sp),
-        ),
-        onPressed: onPressed
-        
-      ),
+          style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
+          child: Text(
+            text,
+            style: TextStyle(fontSize: 40.sp),
+          ),
+          onPressed: onPressed),
     );
   }
 }

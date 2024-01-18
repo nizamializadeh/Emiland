@@ -1,6 +1,38 @@
+import 'package:emiland/presentation/screens/lekals/tab_bar_item.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SuitDataProvider extends ChangeNotifier {
+  List<Container> result = [
+    // Container(
+    //   margin: EdgeInsets.symmetric(vertical: 3),
+    //   padding: EdgeInsets.symmetric(horizontal: 10),
+    //   child: TabBarItem(
+    //     width: double.infinity,
+    //     text: 'text',
+    //     value: 1.5,
+    //   ),
+    // ),
+    // Container(
+    //   margin: EdgeInsets.symmetric(vertical: 3),
+    //   padding: EdgeInsets.symmetric(horizontal: 10),
+    //   child: TabBarItem(
+    //     width: double.infinity,
+    //     text: 'text',
+    //     value: 1.5,
+    //   ),
+    // ),
+    // Container(
+    //   margin: EdgeInsets.symmetric(vertical: 3),
+    //   padding: EdgeInsets.symmetric(horizontal: 10),
+    //   child: TabBarItem(
+    //     width: double.infinity,
+    //     text: 'text',
+    //     value: 1.5,
+    //   ),
+    // ),
+  ];
+
   Map<String, dynamic> map1 = {
     'en': 0,
     'boyun': 0,

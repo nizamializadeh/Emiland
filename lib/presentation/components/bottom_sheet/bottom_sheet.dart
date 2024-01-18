@@ -1,5 +1,7 @@
+import 'package:emiland/presentation/screens/lekals/tab_bar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 import '../../../provider/suit_data_provider.dart';
 import 'add_value.dart';
@@ -8,8 +10,12 @@ import 'bottomsheet_button.dart';
 Future<void> bottomSheet(
     BuildContext context, SuitDataProvider suitInstance, String name) {
   return showModalBottomSheet<void>(
+    constraints: BoxConstraints(
+      maxWidth: double.infinity,
+    ),
     backgroundColor: Colors.transparent,
     barrierColor: Colors.transparent,
+    elevation: 0,
     context: context,
     builder: (BuildContext context) {
       return StatefulBuilder(
@@ -212,6 +218,20 @@ Future<void> bottomSheet(
                                 value: '1.5',
                                 color: Colors.red,
                                 func: () {
+                                  // xlist.add(name,-1.5)
+                                  Provider.of<SuitDataProvider>(context,
+                                          listen: false)
+                                      .result
+                                      .add(
+                                        Container(
+                                          width: double.infinity,
+                                          child: TabBarItem(
+                                            text: name,
+                                            value: -1.5,
+                                          ),
+                                        ),
+                                      );
+
                                   suitInstance.DataCouter(-1.5, name);
                                 },
                               ),
