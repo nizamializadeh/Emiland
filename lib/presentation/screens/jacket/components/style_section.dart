@@ -38,13 +38,13 @@ class StyleSection extends StatelessWidget {
                   Provider.of<SuitDataProvider>(context, listen: false)
                       .modelSelectedActive();
                 },
-                child: CustContainer(text: 'Model'),
+                child:  CustContainer(text: 'Model'),
               ),
             ),
             SizedBox(
               width: 22.w,
             ),
-            const Expanded(
+             Expanded(
               child: CustContainer(text: 'Parca'),
             ),
           ],
@@ -55,6 +55,10 @@ class StyleSection extends StatelessWidget {
         Row(
           children: [
             DropdownMenu<String>(
+              inputDecorationTheme: const InputDecorationTheme( enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(width: 0.3, color: Color(0xffDDDDDD))),
+             focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(width: 0.3, color: Colors.black)),),
               width: 458.w,
               textStyle: TextStyle(color: AppColors.grey, fontSize: 28.sp),
               hintText: dropdownProvider.selectedLecale,
@@ -284,13 +288,13 @@ class StyleSection extends StatelessWidget {
         ),
         Row(
           children: [
-            const Expanded(
+             Expanded(
               child: CustContainer(text: 'Düymə'),
             ),
             SizedBox(
               width: 22.w,
             ),
-            const Expanded(
+             Expanded(
               child: CustContainer(text: 'Astar'),
             ),
           ],
@@ -323,15 +327,19 @@ class CustChecbox extends StatelessWidget {
 }
 
 class CustContainer extends StatelessWidget {
-  const CustContainer({
+   CustContainer({
+
     required this.text,
     super.key,
   });
 
+
   final String text;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return 
+ 
+    Container(
       alignment: Alignment.centerLeft,
       height: 48,
       decoration: BoxDecoration(
