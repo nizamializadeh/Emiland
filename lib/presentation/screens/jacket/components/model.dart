@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import '../../../../provider/suit_data_provider.dart';
+import '../../trousers.dart';
+import '../right_side_bar.dart';
 import 'header.dart';
 
 class Model extends StatelessWidget {
@@ -94,6 +96,38 @@ class Model extends StatelessWidget {
                 firstText: '',
                 secondText: 'Pants',
               ),
+            ],
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 30.w),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                '\$129',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 30.sp,
+                    fontWeight: FontWeight.w500),
+              ),
+              CustomBtn(
+                  text: 'Prev',
+                  onPressed: () {
+                    print('object');
+                    Provider.of<SuitDataProvider>(context, listen: false)
+                        .modelSelectedActive();
+
+                    // Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //         builder: (context) => const Trousers()));
+                  }),
+              CustomBtn(onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Trousers()));
+                print('Function');
+              }),
             ],
           ),
         ),

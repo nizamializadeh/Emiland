@@ -70,7 +70,8 @@ Future<void> bottomSheet(
                               child: TextField(
                                 onChanged: (value) {
                                   value = '-$value';
-                                  suitInstance.DataCouter(value, name);
+                                  suitInstance.DataCouter(
+                                      int.parse(value), name);
                                 },
                                 keyboardType: TextInputType.number,
                                 decoration: InputDecoration(
@@ -97,7 +98,8 @@ Future<void> bottomSheet(
                               ),
                               child: TextField(
                                 onChanged: (value) {
-                                  suitInstance.DataCouter(value, name);
+                                  suitInstance.DataCouter(
+                                      int.parse(value), name);
                                 },
                                 keyboardType: TextInputType.number,
                                 decoration: InputDecoration(
@@ -253,6 +255,22 @@ Future<void> bottomSheet(
                                 value: '1.5',
                                 color: Color(0xFF62EF8A),
                                 func: () {
+                                  name = name.toLowerCase();
+                                  Provider.of<SuitDataProvider>(context,
+                                          listen: false)
+                                      .map2[name] = true;
+                                  Provider.of<SuitDataProvider>(context,
+                                          listen: false)
+                                      .result
+                                      .add(
+                                        Container(
+                                          width: double.infinity,
+                                          child: TabBarItem(
+                                            text: name,
+                                            value: 1.5,
+                                          ),
+                                        ),
+                                      );
                                   suitInstance.DataCouter(1.5, name);
                                 },
                               ),

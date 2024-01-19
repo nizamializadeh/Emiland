@@ -1,5 +1,6 @@
 import 'package:emiland/presentation/screens/jacket/components/style_section.dart';
 import 'package:emiland/presentation/screens/lekals/tab_bar_item.dart';
+import 'package:emiland/provider/Tabbar_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -17,13 +18,18 @@ class JacketRightSideBar extends StatefulWidget {
   State<JacketRightSideBar> createState() => _JacketRightSideBarState();
 }
 
-class _JacketRightSideBarState extends State<JacketRightSideBar> {
+class _JacketRightSideBarState extends State<JacketRightSideBar>
+    with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     SuitDataProvider suitInstance =
         Provider.of<SuitDataProvider>(context, listen: false);
     SuitDataProvider suitInstanceTrue =
         Provider.of<SuitDataProvider>(context, listen: true);
+    TabbarProvider tabbarProvider =
+        Provider.of<TabbarProvider>(context, listen: true);
+    final _tabController =
+        TabController(length: tabbarProvider.TabLength.length + 3, vsync: this);
 
     return Container(
         margin: EdgeInsets.only(top: 100.h),
@@ -46,8 +52,10 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                     backgroundColor: Colors.transparent,
                     elevation: 0,
                     bottom: TabBar(
+                      controller: _tabController,
                       indicatorColor: Colors.black,
                       tabs: [
+                        // if (suitInstance.item1)
                         Tab(
                           child: Text(
                             '1.Info/Uslub',
@@ -66,6 +74,47 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                                 fontSize: 28.sp),
                           ),
                         ),
+
+                        if (tabbarProvider.TabLength.contains('z'))
+                          Tab(
+                            child: Text(
+                              'z',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 28.sp),
+                            ),
+                          ),
+                        if (tabbarProvider.TabLength.contains('y'))
+                          Tab(
+                            child: Text(
+                              'y',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 28.sp),
+                            ),
+                          ),
+                        if (tabbarProvider.TabLength.contains('b'))
+                          Tab(
+                            child: Text(
+                              'b',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 28.sp),
+                            ),
+                          ),
+                        if (tabbarProvider.TabLength.contains('x'))
+                          Tab(
+                            child: Text(
+                              'x',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 28.sp),
+                            ),
+                          ),
                         Tab(
                           child: Text(
                             '3.Xülasə',
@@ -81,6 +130,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                   body: Container(
                     margin: EdgeInsets.symmetric(horizontal: 30.w),
                     child: TabBarView(
+                      controller: _tabController,
                       children: [
                         // Tabbar section 1
                         Column(
@@ -92,27 +142,38 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                                         .SelectedModelContainer
                                     ? const JacketColorContainer()
                                     : const Model()
-                                : const Column(
+                                : Column(
                                     children: [
                                       InfoSection(),
                                       StyleSection(),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 30.w),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              '\$129',
+                                              style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 30.sp,
+                                                  fontWeight: FontWeight.w500),
+                                            ),
+                                            CustomBtn(onPressed: () {
+                                              _tabController.animateTo(
+                                                  tabbarProvider
+                                                          .TabLength.length -
+                                                      1);
+                                            }),
+                                          ],
+                                        ),
+                                      ),
                                     ],
                                   )
                           ],
                         ),
                         // Tabbar section 2
-                        //  Container(
-                        //     width: 400,
-                        //     height: 600,
-                        //   color: Colors.red,
-                        //    child: ListView.builder(
-                        //     scrollDirection: Axis.vertical,
-                        //     itemCount: 8,
-                        //     itemBuilder: (context, index) {
-                        //        Container(width:  50, height:  50, color: Colors.green,);
-
-                        //    },),
-                        //  ),
                         Column(
                           children: [
                             SizedBox(
@@ -122,7 +183,8 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                               width: double.infinity,
                               value: suitInstanceTrue.map1['Qabaq uzunluq']!,
                               onTap: () {
-                                bottomSheet(context, suitInstance, 'Qabaq uzunluq');
+                                bottomSheet(
+                                    context, suitInstance, 'Qabaq uzunluq');
                               },
                               active: suitInstanceTrue.item1,
                               text: 'Qabaq uzunluq',
@@ -133,7 +195,8 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                             TabBarItem(
                               width: double.infinity,
                               onTap: () {
-                                bottomSheet(context, suitInstance, 'Arxa uzunluq');
+                                bottomSheet(
+                                    context, suitInstance, 'Arxa uzunluq');
                               },
                               value: suitInstanceTrue.map1['Arxa uzunluq'],
                               active: suitInstanceTrue.item4,
@@ -146,7 +209,8 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                               width: double.infinity,
                               value: suitInstanceTrue.map1['Qabaq hissə']!,
                               onTap: () {
-                                bottomSheet(context, suitInstance, 'Qabaq hissə');
+                                bottomSheet(
+                                    context, suitInstance, 'Qabaq hissə');
                               },
                               active: suitInstanceTrue.item1,
                               text: 'Qabaq hissə',
@@ -163,9 +227,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                               active: suitInstanceTrue.item4,
                               text: 'Çiyin',
                             ),
-
-
-                             TabBarItem(
+                            TabBarItem(
                               width: double.infinity,
                               value: suitInstanceTrue.map1['Qol']!,
                               onTap: () {
@@ -183,7 +245,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                                 bottomSheet(context, suitInstance, 'Boyun');
                               },
                               value: suitInstanceTrue.map1['Boyun'],
-                              active: suitInstanceTrue.item4,
+                              active: suitInstanceTrue.item1,
                               text: 'Boyun',
                             ),
                             SizedBox(
@@ -193,7 +255,8 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                               width: double.infinity,
                               value: suitInstanceTrue.map1['Qabaq hissə']!,
                               onTap: () {
-                                bottomSheet(context, suitInstance, 'Qabaq hissə');
+                                bottomSheet(
+                                    context, suitInstance, 'Qabaq hissə');
                               },
                               active: suitInstanceTrue.item1,
                               text: 'Qabaq hissə',
@@ -209,14 +272,15 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                               value: suitInstanceTrue.map1['en'],
                               active: suitInstanceTrue.item4,
                               text: 'En',
-                            ), 
+                            ),
                             SizedBox(
                               height: 18.h,
                             ),
                             TabBarItem(
                               width: double.infinity,
                               onTap: () {
-                                bottomSheet(context, suitInstance, 'Çiyin qaldir/ düş');
+                                bottomSheet(
+                                    context, suitInstance, 'Çiyin qaldir/ düş');
                               },
                               value: suitInstanceTrue.map1['Çiyin qaldir/ düş'],
                               active: suitInstanceTrue.item4,
@@ -228,15 +292,186 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                             TabBarItem(
                               width: double.infinity,
                               onTap: () {
-                                bottomSheet(context, suitInstance, 'Boyun aç/doldur');
+                                bottomSheet(
+                                    context, suitInstance, 'Boyun aç/doldur');
                               },
                               value: suitInstanceTrue.map1['Boyun aç/doldur'],
                               active: suitInstanceTrue.item4,
                               text: 'Boyun aç/doldur',
                             ),
+                            SizedBox(
+                              height: 108.h,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 30.w),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    '\$129',
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 30.sp,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                  CustomBtn(
+                                      text: 'Prev',
+                                      onPressed: () {
+                                        _tabController.index = 0;
+                                      }),
+                                  CustomBtn(onPressed: () {
+                                    _tabController.index = 2;
+                                  }),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
-
+                        // Tabbar section 4
+                        if (tabbarProvider.TabLength.contains('z'))
+                          Column(
+                            children: [
+                              Container(
+                                width: 20,
+                                height: 20,
+                                color: Colors.yellow,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 30.w),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      '\$129',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 30.sp,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    CustomBtn(
+                                        text: 'Prev',
+                                        onPressed: () {
+                                          _tabController.index = 0;
+                                        }),
+                                    CustomBtn(onPressed: () {
+                                      _tabController.animateTo(
+                                          tabbarProvider.TabLength.length + 1);
+                                    }),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        // Tabbar section 5
+                        if (tabbarProvider.TabLength.contains('y'))
+                          Column(
+                            children: [
+                              Container(
+                                width: 20,
+                                height: 20,
+                                color: Colors.red,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 30.w),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      '\$129',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 30.sp,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    CustomBtn(
+                                        text: 'Prev',
+                                        onPressed: () {
+                                          _tabController.index = 0;
+                                        }),
+                                    CustomBtn(onPressed: () {
+                                      _tabController.animateTo(
+                                          tabbarProvider.TabLength.length + 1);
+                                    }),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        // Tabbar section 6
+                        if (tabbarProvider.TabLength.contains('b'))
+                          Column(
+                            children: [
+                              Container(
+                                width: 20,
+                                height: 20,
+                                color: Colors.black,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 30.w),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      '\$129',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 30.sp,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    CustomBtn(
+                                        text: 'Prev',
+                                        onPressed: () {
+                                          _tabController.index = 0;
+                                        }),
+                                    CustomBtn(onPressed: () {
+                                      _tabController.animateTo(
+                                          tabbarProvider.TabLength.length + 1);
+                                    }),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        // Tabbar section 7
+                        if (tabbarProvider.TabLength.contains('x'))
+                          Column(
+                            children: [
+                              Container(
+                                width: 20,
+                                height: 20,
+                                color: Colors.blue,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 30.w),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      '\$129',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 30.sp,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    CustomBtn(
+                                        text: 'Prev',
+                                        onPressed: () {
+                                          _tabController.index = 0;
+                                        }),
+                                    CustomBtn(onPressed: () {
+                                      _tabController.animateTo(
+                                          tabbarProvider.TabLength.length + 2);
+                                    }),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         // Tabbar section 3
                         Column(
                           children: [
@@ -298,7 +533,38 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                                           context,
                                           listen: true)
                                       .result,
-                                ))
+                                )),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 30.w),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    '\$129',
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 30.sp,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                  CustomBtn(
+                                      text: 'Prev',
+                                      onPressed: () {
+                                        _tabController.index = 1;
+                                      }),
+                                  CustomBtn(
+                                      text: 'Save',
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const Trousers()));
+                                        print('Function');
+                                      }),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
                       ],
@@ -307,94 +573,34 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30.w),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    '\$129',
-                    style:
-                        TextStyle(fontSize: 30.sp, fontWeight: FontWeight.w500),
-                  ),
-                  CustomBtn(onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const Trousers()));
-                    print('Function');
-                  }),
-                ],
-              ),
-            ),
+            // Padding(
+            //   padding: EdgeInsets.symmetric(horizontal: 30.w),
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //     children: [
+            //       Text(
+            //         '\$129',
+            //         style:
+            //             TextStyle(fontSize: 30.sp, fontWeight: FontWeight.w500),
+            //       ),
+            //       CustomBtn(onPressed: () {
+            //         Navigator.push(
+            //             context,
+            //             MaterialPageRoute(
+            //                 builder: (context) => const Trousers()));
+            //         print('Function');
+            //       }),
+            //     ],
+            //   ),
+            // ),
           ],
         ));
   }
-
-//   Future<void> bottomSheet(
-//       BuildContext context, SuitDataProvider suitInstance) {
-//     return showModalBottomSheet<void>(
-//       context: context,
-//       builder: (BuildContext context) {
-//         return StatefulBuilder(
-//             builder: (BuildContext context, StateSetter setState) {
-//           return Container(
-//             height: 200,
-//             color: Colors.amber,
-//             child: Center(
-//               child: Row(
-//                 mainAxisAlignment: MainAxisAlignment.center,
-//                 children: [
-//                   Text(
-//                     Provider.of<SuitDataProvider>(context, listen: true)
-//                         .map1['boyun']
-//                         .toString(),
-//                     style: TextStyle(color: Colors.black, fontSize: 55.sp),
-//                   ),
-//                   SizedBox(
-//                     width: 50.w,
-//                   ),
-//                   Column(
-//                     mainAxisAlignment: MainAxisAlignment.center,
-//                     mainAxisSize: MainAxisSize.min,
-//                     children: <Widget>[
-//                       ElevatedButton(
-//                         child: const Icon(Icons.add),
-//                         onPressed: () {
-// // suitInstance.incrementCount();
-//                         },
-//                       ),
-//                       ElevatedButton(
-//                         child: const Icon(Icons.remove),
-//                         onPressed: () {},
-//                       ),
-//                     ],
-//                   ),
-//                   SizedBox(
-//                     width: 50.w,
-//                   ),
-//                   ElevatedButton(
-//                     style:
-//                         ElevatedButton.styleFrom(backgroundColor: Colors.red),
-//                     child: Text(
-//                       'Save',
-//                       style: TextStyle(fontSize: 50.sp),
-//                     ),
-//                     onPressed: () => Navigator.pop(context),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//           );
-//         });
-//       },
-//     );
-//   }
 }
 
 class CustomBtn extends StatelessWidget {
   const CustomBtn({
-    this.text = 'Save',
+    this.text = 'Next',
     required this.onPressed,
     super.key,
   });
@@ -407,7 +613,10 @@ class CustomBtn extends StatelessWidget {
       height: 80.h,
       margin: const EdgeInsets.all(10),
       child: ElevatedButton(
-          style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.black,
+            foregroundColor: Colors.white,
+          ),
           child: Text(
             text,
             style: TextStyle(fontSize: 40.sp),

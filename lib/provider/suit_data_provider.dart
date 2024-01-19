@@ -3,40 +3,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SuitDataProvider extends ChangeNotifier {
-  List<Container> result = [
-    // Container(
-    //   margin: EdgeInsets.symmetric(vertical: 3),
-    //   padding: EdgeInsets.symmetric(horizontal: 10),
-    //   child: TabBarItem(
-    //     width: double.infinity,
-    //     text: 'text',
-    //     value: 1.5,
-    //   ),
-    // ),
-    // Container(
-    //   margin: EdgeInsets.symmetric(vertical: 3),
-    //   padding: EdgeInsets.symmetric(horizontal: 10),
-    //   child: TabBarItem(
-    //     width: double.infinity,
-    //     text: 'text',
-    //     value: 1.5,
-    //   ),
-    // ),
-    // Container(
-    //   margin: EdgeInsets.symmetric(vertical: 3),
-    //   padding: EdgeInsets.symmetric(horizontal: 10),
-    //   child: TabBarItem(
-    //     width: double.infinity,
-    //     text: 'text',
-    //     value: 1.5,
-    //   ),
-    // ),
-  ];
+  List<Container> result = [];
 
   Map<String, dynamic> map1 = {
+    'Qabaq uzunluq': 0,
+    'Arxa uzunluq': 0,
+    'Qabaq hissə': 0,
+    'Çiyin': 0,
+    'Forması art.': 0,
+    'Qol': 0,
+    'Boyun': 0,
+    'Çiyin qaldir/ düş': 0,
+    'Boyun aç/doldur': 0,
     'en': 0,
     'boyun': 0,
   };
+
   Map<String, bool> map2 = {
     'en': false,
     'boyun': false,

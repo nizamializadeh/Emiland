@@ -1,5 +1,6 @@
 import 'package:emiland/presentation/screens/jacket/jacket_page.dart';
 import 'package:emiland/presentation/screens/shirt/shirt_page.dart';
+import 'package:emiland/provider/Tabbar_provider.dart';
 
 import 'package:emiland/provider/checkbox_provider.dart';
 import 'package:emiland/provider/dropdown_provider.dart';
@@ -27,6 +28,9 @@ class MyApp extends StatelessWidget {
           providers: [
             ChangeNotifierProvider(
               create: (context) => SuitDataProvider(),
+            ),
+            ChangeNotifierProvider(
+              create: (context) => TabbarProvider(),
             ),
             ChangeNotifierProvider(
               create: (context) => CheckboxProvider(),
