@@ -120,12 +120,83 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                             ),
                             TabBarItem(
                               width: double.infinity,
-                              value: suitInstanceTrue.map1['boyun']!,
+                              value: suitInstanceTrue.map1['Qabaq uzunluq']!,
                               onTap: () {
-                                bottomSheet(context, suitInstance, 'boyun');
+                                bottomSheet(context, suitInstance, 'Qabaq uzunluq');
                               },
                               active: suitInstanceTrue.item1,
                               text: 'Qabaq uzunluq',
+                            ),
+                            SizedBox(
+                              height: 18.h,
+                            ),
+                            TabBarItem(
+                              width: double.infinity,
+                              onTap: () {
+                                bottomSheet(context, suitInstance, 'Arxa uzunluq');
+                              },
+                              value: suitInstanceTrue.map1['Arxa uzunluq'],
+                              active: suitInstanceTrue.item4,
+                              text: 'Arxa uzunluq',
+                            ),
+                            SizedBox(
+                              height: 18.h,
+                            ),
+                            TabBarItem(
+                              width: double.infinity,
+                              value: suitInstanceTrue.map1['Qabaq hissə']!,
+                              onTap: () {
+                                bottomSheet(context, suitInstance, 'Qabaq hissə');
+                              },
+                              active: suitInstanceTrue.item1,
+                              text: 'Qabaq hissə',
+                            ),
+                            SizedBox(
+                              height: 18.h,
+                            ),
+                            TabBarItem(
+                              width: double.infinity,
+                              onTap: () {
+                                bottomSheet(context, suitInstance, 'Çiyin');
+                              },
+                              value: suitInstanceTrue.map1['Çiyin'],
+                              active: suitInstanceTrue.item4,
+                              text: 'Çiyin',
+                            ),
+
+
+                             TabBarItem(
+                              width: double.infinity,
+                              value: suitInstanceTrue.map1['Qol']!,
+                              onTap: () {
+                                bottomSheet(context, suitInstance, 'Qol');
+                              },
+                              active: suitInstanceTrue.item1,
+                              text: 'Qol',
+                            ),
+                            SizedBox(
+                              height: 18.h,
+                            ),
+                            TabBarItem(
+                              width: double.infinity,
+                              onTap: () {
+                                bottomSheet(context, suitInstance, 'Boyun');
+                              },
+                              value: suitInstanceTrue.map1['Boyun'],
+                              active: suitInstanceTrue.item4,
+                              text: 'Boyun',
+                            ),
+                            SizedBox(
+                              height: 18.h,
+                            ),
+                            TabBarItem(
+                              width: double.infinity,
+                              value: suitInstanceTrue.map1['Qabaq hissə']!,
+                              onTap: () {
+                                bottomSheet(context, suitInstance, 'Qabaq hissə');
+                              },
+                              active: suitInstanceTrue.item1,
+                              text: 'Qabaq hissə',
                             ),
                             SizedBox(
                               height: 18.h,
@@ -137,31 +208,31 @@ class _JacketRightSideBarState extends State<JacketRightSideBar> {
                               },
                               value: suitInstanceTrue.map1['en'],
                               active: suitInstanceTrue.item4,
-                              text: 'Arxa  hisse',
-                            ),
-                            SizedBox(
-                              height: 18.h,
-                            ),
-                            TabBarItem(
-                              width: double.infinity,
-                              value: suitInstanceTrue.map1['boyun']!,
-                              onTap: () {
-                                bottomSheet(context, suitInstance, 'boyun');
-                              },
-                              active: suitInstanceTrue.item1,
-                              text: 'Qabaq uzunluq',
-                            ),
+                              text: 'En',
+                            ), 
                             SizedBox(
                               height: 18.h,
                             ),
                             TabBarItem(
                               width: double.infinity,
                               onTap: () {
-                                bottomSheet(context, suitInstance, 'en');
+                                bottomSheet(context, suitInstance, 'Çiyin qaldir/ düş');
                               },
-                              value: suitInstanceTrue.map1['en'],
+                              value: suitInstanceTrue.map1['Çiyin qaldir/ düş'],
                               active: suitInstanceTrue.item4,
-                              text: 'Qabaq hisse',
+                              text: 'Çiyin qaldir/ düş',
+                            ),
+                            SizedBox(
+                              height: 18.h,
+                            ),
+                            TabBarItem(
+                              width: double.infinity,
+                              onTap: () {
+                                bottomSheet(context, suitInstance, 'Boyun aç/doldur');
+                              },
+                              value: suitInstanceTrue.map1['Boyun aç/doldur'],
+                              active: suitInstanceTrue.item4,
+                              text: 'Boyun aç/doldur',
                             ),
                           ],
                         ),
