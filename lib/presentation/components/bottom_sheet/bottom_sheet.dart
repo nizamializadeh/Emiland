@@ -254,11 +254,24 @@ Future<void> bottomSheet(
                               AddValue(
                                 value: '1.5',
                                 color: Color(0xFF62EF8A),
+                                // func: () {
+                                //   Provider.of<SuitDataProvider>(context,
+                                //           listen: false)
+                                //       .result
+                                //       .add(
+                                //         Container(
+                                //           width: double.infinity,
+                                //           child: TabBarItem(
+                                //             text: name,
+                                //             value: 1.5,
+                                //           ),
+                                //         ),
+                                //       );
+                                //
+                                //   suitInstance.DataCouter(1.5, name);
+                                // },
+
                                 func: () {
-                                  name = name.toLowerCase();
-                                  Provider.of<SuitDataProvider>(context,
-                                          listen: false)
-                                      .map2[name] = true;
                                   Provider.of<SuitDataProvider>(context,
                                           listen: false)
                                       .result
@@ -272,6 +285,11 @@ Future<void> bottomSheet(
                                         ),
                                       );
                                   suitInstance.DataCouter(1.5, name);
+
+                                  name = name.toLowerCase();
+                                  Provider.of<SuitDataProvider>(context,
+                                          listen: false)
+                                      .map2[name] = true;
                                 },
                               ),
                             ],

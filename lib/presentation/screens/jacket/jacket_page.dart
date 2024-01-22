@@ -19,8 +19,8 @@ class _JacketState extends State<Jacket> {
     return const Scaffold(
         body: Row(
       children: [
-        // ShirtLeftSideBar(),
-        JacketLeftSideBar(),
+        ShirtLeftSideBar(),
+        // JacketLeftSideBar(),
         JacketRightSideBar(),
       ],
     ));

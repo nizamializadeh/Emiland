@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:emiland/presentation/screens/jacket/components/style_section.dart';
 import 'package:emiland/presentation/screens/lekals/tab_bar_item.dart';
 import 'package:emiland/provider/Tabbar_provider.dart';
@@ -20,6 +22,17 @@ class JacketRightSideBar extends StatefulWidget {
 
 class _JacketRightSideBarState extends State<JacketRightSideBar>
     with TickerProviderStateMixin {
+  TabController? _tabController;
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(
+      // length: tabbarProvider.tabLength.length + 3,
+      length: 3,
+      vsync: this,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     SuitDataProvider suitInstance =
@@ -28,8 +41,17 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
         Provider.of<SuitDataProvider>(context, listen: true);
     TabbarProvider tabbarProvider =
         Provider.of<TabbarProvider>(context, listen: true);
-    final _tabController =
-        TabController(length: tabbarProvider.TabLength.length + 3, vsync: this);
+
+    // final _tabController = TabController(
+    //     length: tabbarProvider.tabLength.length + 3,
+    //     vsync: this,
+    //     initialIndex: tabbarProvider.tabbarIndex);
+
+    // @override
+    // void dispose() {
+    //   _tabController!.dispose();
+    //   super.dispose();
+    // }
 
     return Container(
         margin: EdgeInsets.only(top: 100.h),
@@ -75,7 +97,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                           ),
                         ),
 
-                        if (tabbarProvider.TabLength.contains('z'))
+                        if (tabbarProvider.tabLength.contains('z'))
                           Tab(
                             child: Text(
                               'z',
@@ -85,7 +107,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                                   fontSize: 28.sp),
                             ),
                           ),
-                        if (tabbarProvider.TabLength.contains('y'))
+                        if (tabbarProvider.tabLength.contains('y'))
                           Tab(
                             child: Text(
                               'y',
@@ -95,7 +117,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                                   fontSize: 28.sp),
                             ),
                           ),
-                        if (tabbarProvider.TabLength.contains('b'))
+                        if (tabbarProvider.tabLength.contains('b'))
                           Tab(
                             child: Text(
                               'b',
@@ -105,7 +127,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                                   fontSize: 28.sp),
                             ),
                           ),
-                        if (tabbarProvider.TabLength.contains('x'))
+                        if (tabbarProvider.tabLength.contains('x'))
                           Tab(
                             child: Text(
                               'x',
@@ -161,10 +183,19 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                                                   fontWeight: FontWeight.w500),
                                             ),
                                             CustomBtn(onPressed: () {
-                                              _tabController.animateTo(
-                                                  tabbarProvider
-                                                          .TabLength.length -
-                                                      1);
+                                              _tabController!.index = 1;
+                                              print(_tabController);
+                                              // if (_tabController != null) {
+                                              //   print(_tabController);
+                                              //   _tabController!.animateTo(
+                                              //       tabbarProvider
+                                              //               .tabLength.length +
+                                              //           2);
+                                              //   print(_tabController);
+                                              // }
+
+                                              // tabbarProvider.tabbarIndex =
+                                              //     _tabController!.index;
                                             }),
                                           ],
                                         ),
@@ -178,6 +209,18 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                           children: [
                             SizedBox(
                               height: 60.h,
+                            ),
+                            TabBarItem(
+                              width: double.infinity,
+                              onTap: () {
+                                bottomSheet(context, suitInstance, 'Boyun');
+                              },
+                              value: suitInstanceTrue.map1['Boyun'],
+                              active: suitInstanceTrue.item1,
+                              text: 'Boyun',
+                            ),
+                            SizedBox(
+                              height: 18.h,
                             ),
                             TabBarItem(
                               width: double.infinity,
@@ -227,6 +270,9 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                               active: suitInstanceTrue.item4,
                               text: 'Çiyin',
                             ),
+                            SizedBox(
+                              height: 18.h,
+                            ),
                             TabBarItem(
                               width: double.infinity,
                               value: suitInstanceTrue.map1['Qol']!,
@@ -235,18 +281,6 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                               },
                               active: suitInstanceTrue.item1,
                               text: 'Qol',
-                            ),
-                            SizedBox(
-                              height: 18.h,
-                            ),
-                            TabBarItem(
-                              width: double.infinity,
-                              onTap: () {
-                                bottomSheet(context, suitInstance, 'Boyun');
-                              },
-                              value: suitInstanceTrue.map1['Boyun'],
-                              active: suitInstanceTrue.item1,
-                              text: 'Boyun',
                             ),
                             SizedBox(
                               height: 18.h,
@@ -318,10 +352,10 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                                   CustomBtn(
                                       text: 'Prev',
                                       onPressed: () {
-                                        _tabController.index = 0;
+                                        _tabController!.index = 0;
                                       }),
                                   CustomBtn(onPressed: () {
-                                    _tabController.index = 2;
+                                    _tabController!.index = 2;
                                   }),
                                 ],
                               ),
@@ -329,7 +363,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                           ],
                         ),
                         // Tabbar section 4
-                        if (tabbarProvider.TabLength.contains('z'))
+                        if (tabbarProvider.tabLength.contains('z'))
                           Column(
                             children: [
                               Container(
@@ -353,11 +387,11 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                                     CustomBtn(
                                         text: 'Prev',
                                         onPressed: () {
-                                          _tabController.index = 0;
+                                          _tabController!.index = 0;
                                         }),
                                     CustomBtn(onPressed: () {
-                                      _tabController.animateTo(
-                                          tabbarProvider.TabLength.length + 1);
+                                      _tabController!.animateTo(
+                                          tabbarProvider.tabLength.length + 1);
                                     }),
                                   ],
                                 ),
@@ -365,7 +399,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                             ],
                           ),
                         // Tabbar section 5
-                        if (tabbarProvider.TabLength.contains('y'))
+                        if (tabbarProvider.tabLength.contains('y'))
                           Column(
                             children: [
                               Container(
@@ -389,11 +423,11 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                                     CustomBtn(
                                         text: 'Prev',
                                         onPressed: () {
-                                          _tabController.index = 0;
+                                          _tabController!.index = 0;
                                         }),
                                     CustomBtn(onPressed: () {
-                                      _tabController.animateTo(
-                                          tabbarProvider.TabLength.length + 1);
+                                      _tabController!.animateTo(
+                                          tabbarProvider.tabLength.length + 1);
                                     }),
                                   ],
                                 ),
@@ -401,7 +435,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                             ],
                           ),
                         // Tabbar section 6
-                        if (tabbarProvider.TabLength.contains('b'))
+                        if (tabbarProvider.tabLength.contains('b'))
                           Column(
                             children: [
                               Container(
@@ -425,11 +459,11 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                                     CustomBtn(
                                         text: 'Prev',
                                         onPressed: () {
-                                          _tabController.index = 0;
+                                          _tabController!.index = 0;
                                         }),
                                     CustomBtn(onPressed: () {
-                                      _tabController.animateTo(
-                                          tabbarProvider.TabLength.length + 1);
+                                      _tabController!.animateTo(
+                                          tabbarProvider.tabLength.length + 1);
                                     }),
                                   ],
                                 ),
@@ -437,7 +471,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                             ],
                           ),
                         // Tabbar section 7
-                        if (tabbarProvider.TabLength.contains('x'))
+                        if (tabbarProvider.tabLength.contains('x'))
                           Column(
                             children: [
                               Container(
@@ -461,11 +495,11 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                                     CustomBtn(
                                         text: 'Prev',
                                         onPressed: () {
-                                          _tabController.index = 0;
+                                          _tabController!.index = 0;
                                         }),
                                     CustomBtn(onPressed: () {
-                                      _tabController.animateTo(
-                                          tabbarProvider.TabLength.length + 2);
+                                      _tabController!.animateTo(
+                                          tabbarProvider.tabLength.length + 2);
                                     }),
                                   ],
                                 ),
@@ -550,7 +584,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                                   CustomBtn(
                                       text: 'Prev',
                                       onPressed: () {
-                                        _tabController.index = 1;
+                                        _tabController!.index = 1;
                                       }),
                                   CustomBtn(
                                       text: 'Save',
