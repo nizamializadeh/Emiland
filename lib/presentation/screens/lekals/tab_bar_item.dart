@@ -33,7 +33,7 @@ class TabBarItem extends StatelessWidget {
           children: [
             Text(
               text,
-              style: TextStyle(color: Colors.black, fontSize: 22.sp),
+              style: TextStyle(color: Colors.black, fontSize: 29.sp),
             ),
             Container(
               alignment: Alignment.center,
