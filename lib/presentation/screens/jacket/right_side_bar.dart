@@ -109,15 +109,6 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
       ),
       TabBarItem(
         width: double.infinity,
-        value: suitInstanceTrue.map1['Qabaq hissə']!,
-        onTap: () {
-          bottomSheet(context, suitInstance, 'Qabaq hissə');
-        },
-        active: suitInstanceTrue.item1,
-        text: 'Qabaq hissə',
-      ),
-      TabBarItem(
-        width: double.infinity,
         onTap: () {
           bottomSheet(context, suitInstance, 'en');
         },
@@ -125,25 +116,8 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
         active: suitInstanceTrue.item4,
         text: 'En',
       ),
-      TabBarItem(
-        width: double.infinity,
-        onTap: () {
-          bottomSheet(context, suitInstance, 'Çiyin qaldir/ düş');
-        },
-        value: suitInstanceTrue.map1['Çiyin qaldir/ düş'],
-        active: suitInstanceTrue.item4,
-        text: 'Çiyin qaldir/ düş',
-      ),
-      TabBarItem(
-        width: double.infinity,
-        onTap: () {
-          bottomSheet(context, suitInstance, 'Boyun aç/doldur');
-        },
-        value: suitInstanceTrue.map1['Boyun aç/doldur'],
-        active: suitInstanceTrue.item4,
-        text: 'Boyun aç/doldur',
-      ),
     ];
+
     return Container(
         margin: EdgeInsets.only(top: 100.h),
         width: 1005.w,
@@ -296,505 +270,513 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                           ],
                         ),
                         // Tabbar section 2
-                        // Column(
-                        //   children: [
-                        //     for (int index = 0;
-                        //         index < _items.length;
-                        //         index += 1)
-                        //       _items[index],
-                        //   ],
-                        // ),
-                        SingleChildScrollView(
-                          child: Column(
-                            children: [
-                              SizedBox(
-                                height: 60.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                value: suitInstanceTrue.map1['Qabaq uzunluq']!,
-                                onTap: () {
-                                  bottomSheet(
-                                      context, suitInstance, 'Qabaq uzunluq');
-                                },
-                                active: suitInstanceTrue.item1,
-                                text: 'Qabaq uzunluq',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(
-                                      context, suitInstance, 'Arxa uzunluq');
-                                },
-                                value: suitInstanceTrue.map1['Arxa uzunluq'],
-                                active: suitInstanceTrue.item4,
-                                text: 'Arxa uzunluq',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                value: suitInstanceTrue.map1['Qol']!,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance, 'Qol');
-                                },
-                                active: suitInstanceTrue.item1,
-                                text: 'Qol',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance, 'Çiyin');
-                                },
-                                value: suitInstanceTrue.map1['Çiyin'],
-                                active: suitInstanceTrue.item4,
-                                text: 'Çiyin',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance, 'Boyun');
-                                },
-                                value: suitInstanceTrue.map1['Boyun'],
-                                active: suitInstanceTrue.item1,
-                                text: 'Boyun',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance, 'en');
-                                },
-                                value: suitInstanceTrue.map1['en'],
-                                active: suitInstanceTrue.item4,
-                                text: 'En',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                value: suitInstanceTrue.map1['vatka']!,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance, 'vatka');
-                                },
-                                active: suitInstanceTrue.item1,
-                                text: 'vatka',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                value: suitInstanceTrue.map1['Qol qat']!,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance, 'Qol qat');
-                                },
-                                active: suitInstanceTrue.item1,
-                                text: 'Qol qat',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                value: suitInstanceTrue.map1['Qabaq hissə']!,
-                                onTap: () {
-                                  bottomSheet(
-                                      context, suitInstance, 'Qabaq hissə');
-                                },
-                                active: suitInstanceTrue.item1,
-                                text: 'Qabaq hissə',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                value: suitInstanceTrue
-                                    .map1['boyun doldurmaq/açmaq']!,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'boyun doldurmaq/açmaq');
-                                },
-                                active: suitInstanceTrue.item1,
-                                text: 'boyun doldurmaq/açmaq',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                value:
-                                    suitInstanceTrue.map1['çiyin qaldır/düş']!,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'çiyin qaldır/düş');
-                                },
-                                active: suitInstanceTrue.item1,
-                                text: 'çiyin qaldır/düş',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                value: suitInstanceTrue
-                                    .map1['cib artırmaq/azaltmaq']!,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'cib artırmaq/azaltmaq');
-                                },
-                                active: suitInstanceTrue.item1,
-                                text: 'cib artırmaq/azaltmaq',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'cib sinə artır/azalt');
-                                },
-                                value: suitInstanceTrue
-                                    .map1['cib sinə artır/azalt'],
-                                active: suitInstanceTrue.item4,
-                                text: 'cib sinə artır/azalt',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'sinə artır/azalt');
-                                },
-                                value:
-                                    suitInstanceTrue.map1['sinə artır/azalt'],
-                                active: suitInstanceTrue.item4,
-                                text: 'sinə artır/azalt',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'uzunluq artır/azalt');
-                                },
-                                value: suitInstanceTrue
-                                    .map1['uzunluq artır/azalt'],
-                                active: suitInstanceTrue.item4,
-                                text: 'uzunluq artır/azalt',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'boyun artırmaq/çıxmaq');
-                                },
-                                value: suitInstanceTrue
-                                    .map1['boyun artırmaq/çıxmaq'],
-                                active: suitInstanceTrue.item4,
-                                text: 'boyun artırmaq/çıxmaq',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'qabaq aç / bağla');
-                                },
-                                value:
-                                    suitInstanceTrue.map1['qabaq aç / bağla'],
-                                active: suitInstanceTrue.item4,
-                                text: 'qabaq aç / bağla',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'qabaq artırmaq/azaltmaq');
-                                },
-                                value: suitInstanceTrue
-                                    .map1['qabaq artırmaq/azaltmaq'],
-                                active: suitInstanceTrue.item4,
-                                text: 'qabaq artırmaq/azaltmaq',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'boyun dərinləşdirmək / qaldırmaq');
-                                },
-                                value: suitInstanceTrue
-                                    .map1['boyun dərinləşdirmək / qaldırmaq'],
-                                active: suitInstanceTrue.item4,
-                                text: 'boyun dərinləşdirmək / qaldırmaq',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'boyundan aşağıya qədər çıx');
-                                },
-                                value: suitInstanceTrue
-                                    .map1['boyundan aşağıya qədər çıx'],
-                                active: suitInstanceTrue.item4,
-                                text: 'boyundan aşağıya qədər çıx',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'çiyin artırmaq/çıxartmaq');
-                                },
-                                value: suitInstanceTrue
-                                    .map1['çiyin artırmaq/çıxartmaq'],
-                                active: suitInstanceTrue.item4,
-                                text: 'çiyin artırmaq/çıxartmaq',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(
-                                      context, suitInstance, 'en çıx/artır');
-                                },
-                                value: suitInstanceTrue.map1['en çıx/artır'],
-                                active: suitInstanceTrue.item4,
-                                text: 'en çıx/artır',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'qol dibi sal/qaldır');
-                                },
-                                value: suitInstanceTrue
-                                    .map1['qol dibi sal/qaldır'],
-                                active: suitInstanceTrue.item4,
-                                text: 'qol dibi sal/qaldır',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(
-                                      context, suitInstance, 'kürək açmaq');
-                                },
-                                value: suitInstanceTrue.map1['kürək açmaq'],
-                                active: suitInstanceTrue.item4,
-                                text: 'kürək açmaq',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'kürək aşağısından çıx');
-                                },
-                                value: suitInstanceTrue
-                                    .map1['kürək aşağısından çıx'],
-                                active: suitInstanceTrue.item4,
-                                text: 'kürək aşağısından çıx',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'razrez artır/azalt');
-                                },
-                                value:
-                                    suitInstanceTrue.map1['razrez artır/azalt'],
-                                active: suitInstanceTrue.item4,
-                                text: 'razrez artır/azalt',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(
-                                      context, suitInstance, 'talya çıx');
-                                },
-                                value: suitInstanceTrue.map1['talya çıx'],
-                                active: suitInstanceTrue.item4,
-                                text: 'talya çıx',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'böyür hissə ağzını aç');
-                                },
-                                value: suitInstanceTrue
-                                    .map1['böyür hissə ağzını aç'],
-                                active: suitInstanceTrue.item4,
-                                text: 'böyür hissə ağzını aç',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'böyür hissə yan tərəf artırmaq/azaltmaq');
-                                },
-                                value: suitInstanceTrue.map1[
-                                    'böyür hissə yan tərəf artırmaq/azaltmaq'],
-                                active: suitInstanceTrue.item4,
-                                text: 'böyür hissə yan tərəf artırmaq/azaltmaq',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'qol dibi qaldır/aşağı sal');
-                                },
-                                value: suitInstanceTrue
-                                    .map1['qol dibi qaldır/aşağı sal'],
-                                active: suitInstanceTrue.item4,
-                                text: 'qol dibi qaldır/aşağı sal',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'dirsək artır/azalt');
-                                },
-                                value:
-                                    suitInstanceTrue.map1['dirsək artır/azalt'],
-                                active: suitInstanceTrue.item4,
-                                text: 'dirsək artır/azalt',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'qolovka artır/azalt');
-                                },
-                                value: suitInstanceTrue
-                                    .map1['qolovka artır/azalt'],
-                                active: suitInstanceTrue.item4,
-                                text: 'qolovka artır/azalt',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'qolun aşağı hissəsi artır/azalt');
-                                },
-                                value: suitInstanceTrue
-                                    .map1['qolun aşağı hissəsi artır/azalt'],
-                                active: suitInstanceTrue.item4,
-                                text: 'qolun aşağı hissəsi artır/azalt',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              TabBarItem(
-                                width: double.infinity,
-                                onTap: () {
-                                  bottomSheet(context, suitInstance,
-                                      'qol eni artır/azalt');
-                                },
-                                value: suitInstanceTrue
-                                    .map1['qol eni artır/azalt'],
-                                active: suitInstanceTrue.item4,
-                                text: 'qol eni artır/azalt',
-                              ),
-                              SizedBox(
-                                height: 18.h,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 30.w),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      '\$129',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 30.sp,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                    CustomBtn(
-                                        text: 'Prev',
-                                        onPressed: () {
-                                          _tabController!.index = 0;
-                                        }),
-                                    CustomBtn(onPressed: () {
-                                      _tabController!.index = 2;
-                                    }),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
+                        Column(
+                          children: [
+                            for (int index = 0;
+                                index < tabbarProvider.items.length;
+                                index += 1)
+                              tabbarProvider.items[index]
+
+                            // for (int index = 0;
+                            //     index < _items.length;
+                            //     index += 1)
+                            //   _items[index],
+                            // _items.removeAt(1),
+
+                            // _items.insert(_items[2]);
+                          ],
                         ),
+                        // SingleChildScrollView(
+                        //   child: Column(
+                        //     children: [
+                        //       SizedBox(
+                        //         height: 60.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         value: suitInstanceTrue.map1['Qabaq uzunluq']!,
+                        //         onTap: () {
+                        //           bottomSheet(
+                        //               context, suitInstance, 'Qabaq uzunluq');
+                        //         },
+                        //         active: suitInstanceTrue.item1,
+                        //         text: 'Qabaq uzunluq',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(
+                        //               context, suitInstance, 'Arxa uzunluq');
+                        //         },
+                        //         value: suitInstanceTrue.map1['Arxa uzunluq'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'Arxa uzunluq',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         value: suitInstanceTrue.map1['Qol']!,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance, 'Qol');
+                        //         },
+                        //         active: suitInstanceTrue.item1,
+                        //         text: 'Qol',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance, 'Çiyin');
+                        //         },
+                        //         value: suitInstanceTrue.map1['Çiyin'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'Çiyin',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance, 'Boyun');
+                        //         },
+                        //         value: suitInstanceTrue.map1['Boyun'],
+                        //         active: suitInstanceTrue.item1,
+                        //         text: 'Boyun',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance, 'en');
+                        //         },
+                        //         value: suitInstanceTrue.map1['en'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'En',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         value: suitInstanceTrue.map1['vatka']!,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance, 'vatka');
+                        //         },
+                        //         active: suitInstanceTrue.item1,
+                        //         text: 'vatka',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         value: suitInstanceTrue.map1['Qol qat']!,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance, 'Qol qat');
+                        //         },
+                        //         active: suitInstanceTrue.item1,
+                        //         text: 'Qol qat',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         value: suitInstanceTrue.map1['Qabaq hissə']!,
+                        //         onTap: () {
+                        //           bottomSheet(
+                        //               context, suitInstance, 'Qabaq hissə');
+                        //         },
+                        //         active: suitInstanceTrue.item1,
+                        //         text: 'Qabaq hissə',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         value: suitInstanceTrue
+                        //             .map1['boyun doldurmaq/açmaq']!,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'boyun doldurmaq/açmaq');
+                        //         },
+                        //         active: suitInstanceTrue.item1,
+                        //         text: 'boyun doldurmaq/açmaq',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         value:
+                        //             suitInstanceTrue.map1['çiyin qaldır/düş']!,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'çiyin qaldır/düş');
+                        //         },
+                        //         active: suitInstanceTrue.item1,
+                        //         text: 'çiyin qaldır/düş',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         value: suitInstanceTrue
+                        //             .map1['cib artırmaq/azaltmaq']!,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'cib artırmaq/azaltmaq');
+                        //         },
+                        //         active: suitInstanceTrue.item1,
+                        //         text: 'cib artırmaq/azaltmaq',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'cib sinə artır/azalt');
+                        //         },
+                        //         value: suitInstanceTrue
+                        //             .map1['cib sinə artır/azalt'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'cib sinə artır/azalt',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'sinə artır/azalt');
+                        //         },
+                        //         value:
+                        //             suitInstanceTrue.map1['sinə artır/azalt'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'sinə artır/azalt',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'uzunluq artır/azalt');
+                        //         },
+                        //         value: suitInstanceTrue
+                        //             .map1['uzunluq artır/azalt'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'uzunluq artır/azalt',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'boyun artırmaq/çıxmaq');
+                        //         },
+                        //         value: suitInstanceTrue
+                        //             .map1['boyun artırmaq/çıxmaq'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'boyun artırmaq/çıxmaq',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'qabaq aç / bağla');
+                        //         },
+                        //         value:
+                        //             suitInstanceTrue.map1['qabaq aç / bağla'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'qabaq aç / bağla',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'qabaq artırmaq/azaltmaq');
+                        //         },
+                        //         value: suitInstanceTrue
+                        //             .map1['qabaq artırmaq/azaltmaq'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'qabaq artırmaq/azaltmaq',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'boyun dərinləşdirmək / qaldırmaq');
+                        //         },
+                        //         value: suitInstanceTrue
+                        //             .map1['boyun dərinləşdirmək / qaldırmaq'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'boyun dərinləşdirmək / qaldırmaq',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'boyundan aşağıya qədər çıx');
+                        //         },
+                        //         value: suitInstanceTrue
+                        //             .map1['boyundan aşağıya qədər çıx'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'boyundan aşağıya qədər çıx',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'çiyin artırmaq/çıxartmaq');
+                        //         },
+                        //         value: suitInstanceTrue
+                        //             .map1['çiyin artırmaq/çıxartmaq'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'çiyin artırmaq/çıxartmaq',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(
+                        //               context, suitInstance, 'en çıx/artır');
+                        //         },
+                        //         value: suitInstanceTrue.map1['en çıx/artır'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'en çıx/artır',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'qol dibi sal/qaldır');
+                        //         },
+                        //         value: suitInstanceTrue
+                        //             .map1['qol dibi sal/qaldır'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'qol dibi sal/qaldır',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(
+                        //               context, suitInstance, 'kürək açmaq');
+                        //         },
+                        //         value: suitInstanceTrue.map1['kürək açmaq'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'kürək açmaq',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'kürək aşağısından çıx');
+                        //         },
+                        //         value: suitInstanceTrue
+                        //             .map1['kürək aşağısından çıx'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'kürək aşağısından çıx',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'razrez artır/azalt');
+                        //         },
+                        //         value:
+                        //             suitInstanceTrue.map1['razrez artır/azalt'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'razrez artır/azalt',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(
+                        //               context, suitInstance, 'talya çıx');
+                        //         },
+                        //         value: suitInstanceTrue.map1['talya çıx'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'talya çıx',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'böyür hissə ağzını aç');
+                        //         },
+                        //         value: suitInstanceTrue
+                        //             .map1['böyür hissə ağzını aç'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'böyür hissə ağzını aç',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'böyür hissə yan tərəf artırmaq/azaltmaq');
+                        //         },
+                        //         value: suitInstanceTrue.map1[
+                        //             'böyür hissə yan tərəf artırmaq/azaltmaq'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'böyür hissə yan tərəf artırmaq/azaltmaq',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'qol dibi qaldır/aşağı sal');
+                        //         },
+                        //         value: suitInstanceTrue
+                        //             .map1['qol dibi qaldır/aşağı sal'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'qol dibi qaldır/aşağı sal',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'dirsək artır/azalt');
+                        //         },
+                        //         value:
+                        //             suitInstanceTrue.map1['dirsək artır/azalt'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'dirsək artır/azalt',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'qolovka artır/azalt');
+                        //         },
+                        //         value: suitInstanceTrue
+                        //             .map1['qolovka artır/azalt'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'qolovka artır/azalt',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'qolun aşağı hissəsi artır/azalt');
+                        //         },
+                        //         value: suitInstanceTrue
+                        //             .map1['qolun aşağı hissəsi artır/azalt'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'qolun aşağı hissəsi artır/azalt',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       TabBarItem(
+                        //         width: double.infinity,
+                        //         onTap: () {
+                        //           bottomSheet(context, suitInstance,
+                        //               'qol eni artır/azalt');
+                        //         },
+                        //         value: suitInstanceTrue
+                        //             .map1['qol eni artır/azalt'],
+                        //         active: suitInstanceTrue.item4,
+                        //         text: 'qol eni artır/azalt',
+                        //       ),
+                        //       SizedBox(
+                        //         height: 18.h,
+                        //       ),
+                        //       Padding(
+                        //         padding: EdgeInsets.symmetric(horizontal: 30.w),
+                        //         child: Row(
+                        //           mainAxisAlignment:
+                        //               MainAxisAlignment.spaceBetween,
+                        //           children: [
+                        //             Text(
+                        //               '\$129',
+                        //               style: TextStyle(
+                        //                   color: Colors.black,
+                        //                   fontSize: 30.sp,
+                        //                   fontWeight: FontWeight.w500),
+                        //             ),
+                        //             CustomBtn(
+                        //                 text: 'Prev',
+                        //                 onPressed: () {
+                        //                   _tabController!.index = 0;
+                        //                 }),
+                        //             CustomBtn(onPressed: () {
+                        //               _tabController!.index = 2;
+                        //             }),
+                        //           ],
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // ),
                         // Tabbar section 4
                         if (tabbarProvider.tabLength.contains('z'))
                           Column(

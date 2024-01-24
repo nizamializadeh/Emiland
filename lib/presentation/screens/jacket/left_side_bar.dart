@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
+import '../../../provider/Tabbar_provider.dart';
 import '../../../provider/suit_data_provider.dart';
 
 class JacketLeftSideBar extends StatelessWidget {
@@ -14,6 +15,8 @@ class JacketLeftSideBar extends StatelessWidget {
         Provider.of<SuitDataProvider>(context, listen: false);
     SuitDataProvider suitInstanceTrue =
         Provider.of<SuitDataProvider>(context, listen: true);
+    TabbarProvider tabbarProvider =
+        Provider.of<TabbarProvider>(context, listen: true);
     return GestureDetector(
       onTap: () {
         suitInstance.activateAllSuit();
@@ -69,6 +72,7 @@ class JacketLeftSideBar extends StatelessWidget {
                   SingleSuit(
                     active: suitInstance.item2,
                     onclick: () {
+                      tabbarProvider.deleteItem();
                       suitInstance.deactivateAllSuit();
                       suitInstance.activateSuit(suitInstance.item2 = true);
                     },
