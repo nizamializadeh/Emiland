@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:emiland/presentation/screens/jacket/components/style_section.dart';
 import 'package:emiland/presentation/screens/lekals/tab_bar_item.dart';
 import 'package:emiland/provider/Tabbar_provider.dart';
@@ -23,9 +21,11 @@ class JacketRightSideBar extends StatefulWidget {
 class _JacketRightSideBarState extends State<JacketRightSideBar>
     with TickerProviderStateMixin {
   TabController? _tabController;
+  var x;
   @override
   void initState() {
     super.initState();
+    x = 1;
     _tabController = TabController(
       // length: tabbarProvider.tabLength.length + 3,
       length: 3,
@@ -86,7 +86,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
         onTap: () {
           bottomSheet(context, suitInstance, 'Qabaq hissə');
         },
-        active: suitInstanceTrue.item1,
+        active: suitInstanceTrue.item4,
         text: 'Qabaq hissə',
       ),
       TabBarItem(
@@ -117,6 +117,11 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
         text: 'En',
       ),
     ];
+    if (x == 1) {
+      x = 2;
+      tabbarProvider.itemList = _items;
+      print(tabbarProvider.itemList);
+    }
 
     return Container(
         margin: EdgeInsets.only(top: 100.h),
@@ -273,9 +278,9 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                         Column(
                           children: [
                             for (int index = 0;
-                                index < tabbarProvider.items.length;
+                                index < _items.length;
                                 index += 1)
-                              tabbarProvider.items[index]
+                              _items[index]
 
                             // for (int index = 0;
                             //     index < _items.length;

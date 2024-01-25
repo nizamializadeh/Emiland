@@ -72,7 +72,6 @@ class JacketLeftSideBar extends StatelessWidget {
                   SingleSuit(
                     active: suitInstance.item2,
                     onclick: () {
-                      tabbarProvider.deleteItem();
                       suitInstance.deactivateAllSuit();
                       suitInstance.activateSuit(suitInstance.item2 = true);
                     },
@@ -91,6 +90,7 @@ class JacketLeftSideBar extends StatelessWidget {
                     onclick: () {
                       suitInstance.deactivateAllSuit();
                       suitInstance.activateSuit(suitInstance.item4 = true);
+                      tabbarProvider.deleteItem();
                     },
                     img: 'assets/prototip/proto4.png',
                   ),
