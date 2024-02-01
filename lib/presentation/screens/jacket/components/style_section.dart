@@ -234,7 +234,7 @@ class StyleSection extends StatelessWidget {
                 const TabBarItem(
                   value: 0,
                   active: true,
-                  text: 'Düymə',
+                  text: 'Düymə1',
                 ),
                 Row(
                   children: [
