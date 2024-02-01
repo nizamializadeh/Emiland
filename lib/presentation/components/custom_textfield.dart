@@ -10,7 +10,7 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       textAlign: center ? TextAlign.center : TextAlign.left,
-      style: TextStyle(color: const Color(0xFF2D2D2C), fontSize: 30.sp),
+      style: TextStyle(color: const Color(0xFF2D2D2C), fontSize: 33.sp),
       decoration: InputDecoration(
         enabledBorder: const OutlineInputBorder(
             borderSide: BorderSide(width: 0.2, color: Color(0xffDDDDDD))),

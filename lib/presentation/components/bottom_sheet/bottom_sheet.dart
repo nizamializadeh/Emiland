@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
+import '../../../provider/Tabbar_provider.dart';
 import '../../../provider/suit_data_provider.dart';
 import 'add_value.dart';
 import 'bottomsheet_button.dart';
@@ -254,23 +255,6 @@ Future<void> bottomSheet(
                               AddValue(
                                 value: '1.5',
                                 color: Color(0xFF62EF8A),
-                                // func: () {
-                                //   Provider.of<SuitDataProvider>(context,
-                                //           listen: false)
-                                //       .result
-                                //       .add(
-                                //         Container(
-                                //           width: double.infinity,
-                                //           child: TabBarItem(
-                                //             text: name,
-                                //             value: 1.5,
-                                //           ),
-                                //         ),
-                                //       );
-                                //
-                                //   suitInstance.DataCouter(1.5, name);
-                                // },
-
                                 func: () {
                                   Provider.of<SuitDataProvider>(context,
                                           listen: false)
@@ -286,10 +270,10 @@ Future<void> bottomSheet(
                                       );
                                   suitInstance.DataCouter(1.5, name);
 
-                                  name = name.toLowerCase();
-                                  Provider.of<SuitDataProvider>(context,
-                                          listen: false)
-                                      .map2[name] = true;
+                                  // name = name.toLowerCase();
+                                  // Provider.of<SuitDataProvider>(context,
+                                  //         listen: false)
+                                  //     .map2[name] = true;
                                 },
                               ),
                             ],

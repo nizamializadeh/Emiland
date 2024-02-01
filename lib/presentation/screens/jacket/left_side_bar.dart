@@ -19,24 +19,15 @@ class JacketLeftSideBar extends StatelessWidget {
         Provider.of<TabbarProvider>(context, listen: true);
     return GestureDetector(
       onTap: () {
-        suitInstance.activateAllSuit();
+        suitInstance.activateTabbarItem();
       },
       child: Container(
         margin: EdgeInsets.only(top: 114.h),
         decoration: const BoxDecoration(
-          border: Border(
-            right: BorderSide(
-              color: Colors.black,
-              width: 2,
-            ),
-            top: BorderSide(
-              color: Colors.black,
-              width: 2,
-            ),
-          ),
+          color: Color(0xffF4F4F4),
         ),
         width: 1705.w,
-        height: 1930.h,
+        height: 2040.h,
         child: Provider.of<SuitDataProvider>(context, listen: true)
                 .modelSelected
             ? Center(
@@ -49,13 +40,17 @@ class JacketLeftSideBar extends StatelessWidget {
                   Stack(
                     children: [
                       SingleSuit(
-                        active: suitInstance.item1,
-                        onclick: () {
-                          suitInstance.deactivateAllSuit();
-                          suitInstance.activateSuit(suitInstance.item1 = true);
-                        },
-                        img: 'assets/prototip/proto1.png',
-                      ),
+                          active: suitInstance.item1,
+                          onclick: () {
+                            suitInstance.deactivateAllSuit();
+                            suitInstance
+                                .activateSuit(suitInstance.item1 = true);
+                            tabbarProvider.deleteItem(context);
+                          },
+                          // img: 'assets/prototip/proto1.png',
+                          img: suitInstance.item1
+                              ? 'assets/lekal/selected_lekal1.png'
+                              : 'assets/lekal/lekal1.png'),
                       suitInstanceTrue.map2['boyun']!
                           ? SingleSuit(
                               active: suitInstance.item1,
@@ -70,30 +65,35 @@ class JacketLeftSideBar extends StatelessWidget {
                     ],
                   ),
                   SingleSuit(
-                    active: suitInstance.item2,
-                    onclick: () {
-                      suitInstance.deactivateAllSuit();
-                      suitInstance.activateSuit(suitInstance.item2 = true);
-                    },
-                    img: 'assets/prototip/proto2.png',
-                  ),
+                      active: suitInstance.item2,
+                      onclick: () {
+                        suitInstance.deactivateAllSuit();
+                        suitInstance.activateSuit(suitInstance.item2 = true);
+                        tabbarProvider.deleteItem(context);
+                      },
+                      img: suitInstance.item2
+                          ? 'assets/lekal/selected_lekal2.png'
+                          : 'assets/lekal/lekal2.png'),
                   SingleSuit(
-                    active: suitInstance.item3,
-                    onclick: () {
-                      suitInstance.deactivateAllSuit();
-                      suitInstance.activateSuit(suitInstance.item3 = true);
-                    },
-                    img: 'assets/prototip/proto3.png',
-                  ),
+                      active: suitInstance.item3,
+                      onclick: () {
+                        suitInstance.deactivateAllSuit();
+                        suitInstance.activateSuit(suitInstance.item3 = true);
+                        tabbarProvider.deleteItem(context);
+                      },
+                      img: suitInstance.item3
+                          ? 'assets/lekal/selected_lekal3.png'
+                          : 'assets/lekal/lekal3.png'),
                   SingleSuit(
-                    active: suitInstance.item4,
-                    onclick: () {
-                      suitInstance.deactivateAllSuit();
-                      suitInstance.activateSuit(suitInstance.item4 = true);
-                      tabbarProvider.deleteItem();
-                    },
-                    img: 'assets/prototip/proto4.png',
-                  ),
+                      active: suitInstance.item4,
+                      onclick: () {
+                        suitInstance.deactivateAllSuit();
+                        suitInstance.activateSuit(suitInstance.item4 = true);
+                        tabbarProvider.deleteItem(context);
+                      },
+                      img: suitInstance.item4
+                          ? 'assets/lekal/selected_lekal4.png'
+                          : 'assets/lekal/lekal4.png'),
                 ],
               ),
       ),

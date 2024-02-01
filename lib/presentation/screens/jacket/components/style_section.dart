@@ -38,13 +38,13 @@ class StyleSection extends StatelessWidget {
                   Provider.of<SuitDataProvider>(context, listen: false)
                       .modelSelectedActive();
                 },
-                child:  CustContainer(text: 'Model'),
+                child: CustContainer(text: 'Model'),
               ),
             ),
             SizedBox(
               width: 22.w,
             ),
-             Expanded(
+            Expanded(
               child: CustContainer(text: 'Parca'),
             ),
           ],
@@ -55,12 +55,15 @@ class StyleSection extends StatelessWidget {
         Row(
           children: [
             DropdownMenu<String>(
-              inputDecorationTheme: const InputDecorationTheme( enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(width: 0.3, color: Color(0xffDDDDDD))),
-             focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(width: 0.3, color: Colors.black)),),
+              inputDecorationTheme: const InputDecorationTheme(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(width: 0.3, color: Color(0xffDDDDDD))),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(width: 0.3, color: Colors.black)),
+              ),
               width: 458.w,
-              textStyle: TextStyle(color: AppColors.grey, fontSize: 28.sp),
+              textStyle: TextStyle(color: AppColors.grey, fontSize: 33.sp),
               hintText: dropdownProvider.selectedLecale,
               onSelected: (String? value) {
                 if (value != null) {
@@ -288,13 +291,13 @@ class StyleSection extends StatelessWidget {
         ),
         Row(
           children: [
-             Expanded(
+            Expanded(
               child: CustContainer(text: 'Düymə'),
             ),
             SizedBox(
               width: 22.w,
             ),
-             Expanded(
+            Expanded(
               child: CustContainer(text: 'Astar'),
             ),
           ],
@@ -316,7 +319,14 @@ class CustChecbox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Checkbox(
-      activeColor: const Color(0XFF6CE990),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(2.0),
+      ),
+      side: MaterialStateBorderSide.resolveWith(
+        (states) => BorderSide(
+            width: 2.0, color: value ? Color(0XFF6CE990) : Color(0XFF707070)),
+      ),
+      activeColor: Color(0XFF6CE990),
       checkColor: Colors.black,
       isError: true,
       tristate: true,
@@ -327,19 +337,15 @@ class CustChecbox extends StatelessWidget {
 }
 
 class CustContainer extends StatelessWidget {
-   CustContainer({
-
+  CustContainer({
     required this.text,
     super.key,
   });
 
-
   final String text;
   @override
   Widget build(BuildContext context) {
-    return 
- 
-    Container(
+    return Container(
       alignment: Alignment.centerLeft,
       height: 48,
       decoration: BoxDecoration(
@@ -349,7 +355,7 @@ class CustContainer extends StatelessWidget {
         padding: EdgeInsets.only(left: 15.w),
         child: Text(
           text,
-          style: TextStyle(fontSize: 26.sp, color: AppColors.grey),
+          style: TextStyle(fontSize: 33.sp, color: AppColors.grey),
         ),
       ),
     );

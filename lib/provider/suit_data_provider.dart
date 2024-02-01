@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SuitDataProvider extends ChangeNotifier {
   List<Container> result = [];
+  bool activedAllTabbar = true;
 
   Map<String, dynamic> map1 = {
     'Qabaq uzunluq': 0,
@@ -49,10 +50,15 @@ class SuitDataProvider extends ChangeNotifier {
     'boyun': false,
   };
 
-  bool item1 = true;
-  bool item2 = true;
-  bool item3 = true;
-  bool item4 = true;
+  // bool item1 = true;
+  // bool item2 = true;
+  // bool item3 = true;
+  // bool item4 = true;
+
+  bool item1 = false;
+  bool item2 = false;
+  bool item3 = false;
+  bool item4 = false;
 
   // tabbar on/of
   bool modelSelected = false;
@@ -75,6 +81,7 @@ class SuitDataProvider extends ChangeNotifier {
         map1[key] != 0 ? map2[key] = true : map2[key] = false;
       }
     });
+
     notifyListeners();
   }
 
@@ -83,6 +90,13 @@ class SuitDataProvider extends ChangeNotifier {
     item2 = false;
     item3 = false;
     item4 = false;
+    activedAllTabbar = false;
+    notifyListeners();
+  }
+
+  void activateTabbarItem() {
+    deactivateAllSuit();
+    activedAllTabbar = true;
     notifyListeners();
   }
 
@@ -91,6 +105,8 @@ class SuitDataProvider extends ChangeNotifier {
     item2 = true;
     item3 = true;
     item4 = true;
+    activedAllTabbar = false;
+
     notifyListeners();
   }
 

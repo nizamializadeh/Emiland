@@ -27,12 +27,15 @@ class InfoSection extends StatelessWidget {
         Row(
           children: [
             DropdownMenu<String>(
-             inputDecorationTheme: const InputDecorationTheme( enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(width: 0.3, color: Color(0xffDDDDDD))),
-             focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(width: 0.3, color: Colors.black)),),
+              inputDecorationTheme: const InputDecorationTheme(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(width: 0.3, color: Color(0xffDDDDDD))),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(width: 0.3, color: Colors.black)),
+              ),
               textStyle:
-                  TextStyle(color: const Color(0xff707070), fontSize: 28.sp),
+                  TextStyle(color: const Color(0xff707070), fontSize: 33.sp),
               width: 456.w,
 // initialSelection: dropDownProvider.selectedLocation,
               hintText: dropDownProvider.selectedLocation,
@@ -44,23 +47,35 @@ class InfoSection extends StatelessWidget {
               },
               dropdownMenuEntries: dropDownProvider.locationList
                   .map<DropdownMenuEntry<String>>((String value) {
-                return DropdownMenuEntry<String>(value: value, label: value);
+                return DropdownMenuEntry<String>(
+                  value: value,
+                  label: value,
+                  labelWidget: Text(
+                    value,
+                    style: TextStyle(color: Colors.black),
+                  ),
+                  style: MenuItemButton.styleFrom(
+                    backgroundColor: Colors.white,
+                  ),
+                );
               }).toList(),
             ),
-
             SizedBox(
               width: 22.w,
             ),
-            DropdownMenu<String>(inputDecorationTheme: const InputDecorationTheme( enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(width: 0.3, color: Color(0xffDDDDDD))),
-             focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(width: 0.3, color: Colors.black)),),
+            DropdownMenu<String>(
+              inputDecorationTheme: const InputDecorationTheme(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(width: 0.3, color: Color(0xffDDDDDD))),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(width: 0.3, color: Colors.black)),
+              ),
               textStyle:
-                  TextStyle(color: const Color(0xff707070), fontSize: 28.sp),
+                  TextStyle(color: const Color(0xff707070), fontSize: 33.sp),
               width: 456.w,
               initialSelection: dropDownProvider.selectedCity,
               hintText: dropDownProvider.selectedLocation,
-              
               onSelected: (String? value) {
                 if (value != null) {
                   dropDownProvider.setSelectedCity(value);
@@ -124,13 +139,16 @@ class InfoSection extends StatelessWidget {
         Row(
           children: [
             DropdownMenu<String>(
-              inputDecorationTheme: const InputDecorationTheme( enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(width: 0.3, color: Color(0xffDDDDDD))),
-             focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(width: 0.3, color: Colors.black)),),
+              inputDecorationTheme: const InputDecorationTheme(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(width: 0.3, color: Color(0xffDDDDDD))),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(width: 0.3, color: Colors.black)),
+              ),
               hintText: dropDownProvider.selectedTime,
               textStyle:
-                  TextStyle(color: const Color(0xff707070), fontSize: 28.sp),
+                  TextStyle(color: const Color(0xff707070), fontSize: 33.sp),
               onSelected: (value) {
                 if (value != null) {
                   dropDownProvider.setSelectedTime(value);
@@ -145,13 +163,15 @@ class InfoSection extends StatelessWidget {
               width: 22.w,
             ),
             DropdownMenu<String>(
-              inputDecorationTheme: const InputDecorationTheme( enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(width: 0.3, color: Color(0xffDDDDDD))),
-             focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(width: 0.3, color: Colors.black)),),
+              inputDecorationTheme: const InputDecorationTheme(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(width: 0.3, color: Color(0xffDDDDDD))),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(width: 0.3, color: Colors.black)),
+              ),
               textStyle:
-
-                  TextStyle(color: const Color(0xff707070), fontSize: 28.sp),
+                  TextStyle(color: const Color(0xff707070), fontSize: 33.sp),
               width: 628.w,
 // initialSelection: dropDownProvider.measureSelector,
 
@@ -173,4 +193,3 @@ class InfoSection extends StatelessWidget {
     );
   }
 }
-
