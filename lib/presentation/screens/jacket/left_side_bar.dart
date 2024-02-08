@@ -35,65 +35,87 @@ class JacketLeftSideBar extends StatelessWidget {
                   'assets/png/suit.png',
                 ),
               )
-            : Row(
+            : Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Stack(
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      SingleSuit(
-                          active: suitInstance.item1,
-                          onclick: () {
-                            suitInstance.deactivateAllSuit();
-                            suitInstance
-                                .activateSuit(suitInstance.item1 = true);
-                            tabbarProvider.deleteItem(context);
-                          },
-                          // img: 'assets/prototip/proto1.png',
-                          img: suitInstance.item1
-                              ? 'assets/lekal/selected_lekal1.png'
-                              : 'assets/lekal/lekal1.png'),
-                      suitInstanceTrue.map2['boyun']!
-                          ? SingleSuit(
+                      Container(
+                        width: 120.w,
+                      ),
+                      Stack(
+                        children: [
+                          SingleSuit(
+                              width: 120,
+                              height: 450,
                               active: suitInstance.item1,
                               onclick: () {
                                 suitInstance.deactivateAllSuit();
                                 suitInstance
                                     .activateSuit(suitInstance.item1 = true);
+                                tabbarProvider.deleteItem(context);
                               },
-                              img: 'assets/prototip/test.png',
-                            )
-                          : const SizedBox.shrink(),
+                              // img: 'assets/prototip/proto1.png',
+                              img: suitInstance.item1
+                                  ? 'assets/lekal/selected_lekal1.png'
+                                  : 'assets/lekal/lekal1.png'),
+                          suitInstanceTrue.map2['boyun']!
+                              ? SingleSuit(
+                                  width: 200,
+                                  height: 200,
+                                  active: suitInstance.item1,
+                                  onclick: () {
+                                    suitInstance.deactivateAllSuit();
+                                    suitInstance.activateSuit(
+                                        suitInstance.item1 = true);
+                                  },
+                                  img: 'assets/prototip/test.png',
+                                )
+                              : const SizedBox.shrink(),
+                        ],
+                      ),
+                      SingleSuit(
+                          width: 100,
+                          height: 350,
+                          active: suitInstance.item2,
+                          onclick: () {
+                            suitInstance.deactivateAllSuit();
+                            suitInstance
+                                .activateSuit(suitInstance.item2 = true);
+                            tabbarProvider.deleteItem(context);
+                          },
+                          img: suitInstance.item2
+                              ? 'assets/lekal/selected_lekal2.png'
+                              : 'assets/lekal/lekal2.png'),
+                      SingleSuit(
+                          width: 120,
+                          height: 450,
+                          active: suitInstance.item3,
+                          onclick: () {
+                            suitInstance.deactivateAllSuit();
+                            suitInstance
+                                .activateSuit(suitInstance.item3 = true);
+                            tabbarProvider.deleteItem(context);
+                          },
+                          img: suitInstance.item3
+                              ? 'assets/lekal/selected_lekal3.png'
+                              : 'assets/lekal/lekal3.png'),
+                      SingleSuit(
+                          width: 120,
+                          height: 350,
+                          active: suitInstance.item4,
+                          onclick: () {
+                            suitInstance.deactivateAllSuit();
+                            suitInstance
+                                .activateSuit(suitInstance.item4 = true);
+                            tabbarProvider.deleteItem(context);
+                          },
+                          img: suitInstance.item4
+                              ? 'assets/lekal/selected_lekal4.png'
+                              : 'assets/lekal/lekal4.png'),
                     ],
                   ),
-                  SingleSuit(
-                      active: suitInstance.item2,
-                      onclick: () {
-                        suitInstance.deactivateAllSuit();
-                        suitInstance.activateSuit(suitInstance.item2 = true);
-                        tabbarProvider.deleteItem(context);
-                      },
-                      img: suitInstance.item2
-                          ? 'assets/lekal/selected_lekal2.png'
-                          : 'assets/lekal/lekal2.png'),
-                  SingleSuit(
-                      active: suitInstance.item3,
-                      onclick: () {
-                        suitInstance.deactivateAllSuit();
-                        suitInstance.activateSuit(suitInstance.item3 = true);
-                        tabbarProvider.deleteItem(context);
-                      },
-                      img: suitInstance.item3
-                          ? 'assets/lekal/selected_lekal3.png'
-                          : 'assets/lekal/lekal3.png'),
-                  SingleSuit(
-                      active: suitInstance.item4,
-                      onclick: () {
-                        suitInstance.deactivateAllSuit();
-                        suitInstance.activateSuit(suitInstance.item4 = true);
-                        tabbarProvider.deleteItem(context);
-                      },
-                      img: suitInstance.item4
-                          ? 'assets/lekal/selected_lekal4.png'
-                          : 'assets/lekal/lekal4.png'),
                 ],
               ),
       ),

@@ -44,49 +44,15 @@ class JacketColorContainer extends StatelessWidget {
                 children: [
                   Text(
                     'Burgundy Wool Mohair',
-                    style: TextStyle(fontSize: 22.sp, color: Colors.black),
+                    style: TextStyle(fontSize: 30.sp, color: Colors.black),
                   ),
                   const Spacer(),
                   Text(
                     '\$1280',
-                    style: TextStyle(fontSize: 22.sp, color: Colors.black),
+                    style: TextStyle(fontSize: 30.sp, color: Colors.black),
                   ),
                 ],
               ),
-            ],
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.w),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                '\$129',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 30.sp,
-                    fontWeight: FontWeight.w500),
-              ),
-              CustomBtn(
-                  text: 'Prev',
-                  onPressed: () {
-                    Provider.of<SuitDataProvider>(context, listen: false)
-                        .selectedModelContainerActive();
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: (context) => const Trousers()));
-                  }),
-              CustomBtn(
-                  text: 'Save',
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const Trousers()));
-                    print('Function');
-                  }),
             ],
           ),
         ),

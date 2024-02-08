@@ -8,10 +8,14 @@ class SingleSuit extends StatelessWidget {
     this.onclick,
     required this.img,
     required this.active,
+    required this.width,
+    required this.height,
   });
 
   final Function()? onclick;
   final String img;
+  final double width;
+  final double height;
   bool active;
 
   @override
@@ -21,14 +25,16 @@ class SingleSuit extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Container(
+          width: active ? width + 22 : width,
+          height: height,
           alignment: Alignment.center,
           margin: const EdgeInsets.all(20),
           child: Center(
             child: Image.asset(
               img,
               fit: BoxFit.fill,
-              width: active ? 287.w : 260.w,
-              height: active ? 730.h : 650.h,
+              width: active ? width + 22 : width,
+              height: active ? height - 30 : height - 100,
             ),
           ),
         ),

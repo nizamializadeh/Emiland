@@ -18,6 +18,7 @@ class Model extends StatelessWidget {
         ),
         // info divider
         Header(
+          aligment: CrossAxisAlignment.center,
           title: 'Model',
         ),
 
@@ -99,38 +100,38 @@ class Model extends StatelessWidget {
             ],
           ),
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.w),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                '\$129',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 30.sp,
-                    fontWeight: FontWeight.w500),
-              ),
-              CustomBtn(
-                  text: 'Prev',
-                  onPressed: () {
-                    print('object');
-                    Provider.of<SuitDataProvider>(context, listen: false)
-                        .modelSelectedActive();
-
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: (context) => const Trousers()));
-                  }),
-              CustomBtn(onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Trousers()));
-                print('Function');
-              }),
-            ],
-          ),
-        ),
+        // Padding(
+        //   padding: EdgeInsets.symmetric(horizontal: 30.w),
+        //   child: Row(
+        //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //     children: [
+        //       Text(
+        //         '\$129',
+        //         style: TextStyle(
+        //             color: Colors.black,
+        //             fontSize: 30.sp,
+        //             fontWeight: FontWeight.w500),
+        //       ),
+        //       CustomBtn(
+        //           text: 'Prev',
+        //           onPressed: () {
+        //             print('object');
+        //             Provider.of<SuitDataProvider>(context, listen: false)
+        //                 .modelSelectedActive();
+        //
+        //             // Navigator.push(
+        //             //     context,
+        //             //     MaterialPageRoute(
+        //             //         builder: (context) => const Trousers()));
+        //           }),
+        //       CustomBtn(onPressed: () {
+        //         Navigator.push(context,
+        //             MaterialPageRoute(builder: (context) => const Trousers()));
+        //         print('Function');
+        //       }),
+        //     ],
+        //   ),
+        // ),
       ],
     );
   }
@@ -152,11 +153,11 @@ class ModelContainer extends StatelessWidget {
       onTap: ontap,
       child: Container(
         alignment: Alignment.center,
-        width: 456.w,
-        height: 274.h,
+        width: 466.w,
+        height: 300.h,
         decoration: BoxDecoration(
-            border: Border.all(width: 1),
-            borderRadius: BorderRadius.circular(40)),
+            border: Border.all(width: 1, color: Color(0xFFDDDDDD)),
+            borderRadius: BorderRadius.circular(20)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

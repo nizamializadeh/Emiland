@@ -36,79 +36,79 @@ class ShirtLeftSideBar extends StatelessWidget {
         height: 1930.h,
         child: Row(
           children: [
-            Stack(
-              children: [
-                SingleSuit(
-                    active: suitInstance.item1,
-                    onclick: () {
-                      print(suitInstanceTrue.map2['boyun']);
-                      suitInstance.deactivateAllSuit();
-                      suitInstance.activateSuit(suitInstance.item1 = true);
-                    },
-                    img: suitInstance.item1
-                        ? 'assets/prototip/prototip1.png'
-                        : 'assets/prototip/gray_prototip1.png'),
-                suitInstanceTrue.map2['boyun']!
-                    ? SingleSuit(
-                        active: suitInstance.item1,
-                        onclick: () {
-                          suitInstance.deactivateAllSuit();
-                          suitInstance.activateSuit(suitInstance.item1 = true);
-                        },
-                        img: 'assets/prototip/testboyun.png',
-                      )
-                    : const SizedBox.shrink(),
-              ],
-            ),
-            Stack(
-              children: [
-                SingleSuit(
-                    active: suitInstance.item2,
-                    onclick: () {
-                      suitInstance.deactivateAllSuit();
-                      suitInstance.activateSuit(suitInstance.item2 = true);
-                    },
-                    img: suitInstance.item2
-                        ? 'assets/prototip/prototip2.png'
-                        : 'assets/prototip/gray_prototip2.png'),
-              ],
-            ),
-            Stack(
-              children: [
-                suitInstanceTrue.map2['boyun']!
-                    ? SingleSuit(
-                        active: suitInstance.item3,
-                        onclick: () {
-                          suitInstance.deactivateAllSuit();
-                          suitInstance.activateSuit(suitInstance.item3 = true);
-                        },
-                        img: 'assets/prototip/x3.png',
-                      )
-                    : const SizedBox.shrink(),
-                SingleSuit(
-                    active: suitInstance.item3,
-                    onclick: () {
-                      suitInstance.deactivateAllSuit();
-                      suitInstance.activateSuit(suitInstance.item3 = true);
-                    },
-                    img: suitInstance.item3
-                        ? 'assets/prototip/last1.png'
-                        : 'assets/prototip/gray_prototip3.png'),
-              ],
-            ),
-            Stack(
-              children: [
-                SingleSuit(
-                    active: suitInstance.item4,
-                    onclick: () {
-                      suitInstance.deactivateAllSuit();
-                      suitInstance.activateSuit(suitInstance.item4 = true);
-                    },
-                    img: suitInstance.item4
-                        ? 'assets/prototip/prototip4.png'
-                        : 'assets/prototip/gray_prototip4.png'),
-              ],
-            ),
+            // Stack(
+            //   children: [
+            //     SingleSuit(
+            //         active: suitInstance.item1,
+            //         onclick: () {
+            //           print(suitInstanceTrue.map2['boyun']);
+            //           suitInstance.deactivateAllSuit();
+            //           suitInstance.activateSuit(suitInstance.item1 = true);
+            //         },
+            //         img: suitInstance.item1
+            //             ? 'assets/prototip/prototip1.png'
+            //             : 'assets/prototip/gray_prototip1.png'),
+            //     suitInstanceTrue.map2['boyun']!
+            //         ? SingleSuit(
+            //             active: suitInstance.item1,
+            //             onclick: () {
+            //               suitInstance.deactivateAllSuit();
+            //               suitInstance.activateSuit(suitInstance.item1 = true);
+            //             },
+            //             img: 'assets/prototip/testboyun.png',
+            //           )
+            //         : const SizedBox.shrink(),
+            //   ],
+            // ),
+            // Stack(
+            //   children: [
+            //     SingleSuit(
+            //         active: suitInstance.item2,
+            //         onclick: () {
+            //           suitInstance.deactivateAllSuit();
+            //           suitInstance.activateSuit(suitInstance.item2 = true);
+            //         },
+            //         img: suitInstance.item2
+            //             ? 'assets/prototip/prototip2.png'
+            //             : 'assets/prototip/gray_prototip2.png'),
+            //   ],
+            // ),
+            // Stack(
+            //   children: [
+            //     suitInstanceTrue.map2['boyun']!
+            //         ? SingleSuit(
+            //             active: suitInstance.item3,
+            //             onclick: () {
+            //               suitInstance.deactivateAllSuit();
+            //               suitInstance.activateSuit(suitInstance.item3 = true);
+            //             },
+            //             img: 'assets/prototip/x3.png',
+            //           )
+            //         : const SizedBox.shrink(),
+            //     SingleSuit(
+            //         active: suitInstance.item3,
+            //         onclick: () {
+            //           suitInstance.deactivateAllSuit();
+            //           suitInstance.activateSuit(suitInstance.item3 = true);
+            //         },
+            //         img: suitInstance.item3
+            //             ? 'assets/prototip/last1.png'
+            //             : 'assets/prototip/gray_prototip3.png'),
+            //   ],
+            // ),
+            // Stack(
+            //   children: [
+            //     SingleSuit(
+            //         active: suitInstance.item4,
+            //         onclick: () {
+            //           suitInstance.deactivateAllSuit();
+            //           suitInstance.activateSuit(suitInstance.item4 = true);
+            //         },
+            //         img: suitInstance.item4
+            //             ? 'assets/prototip/prototip4.png'
+            //             : 'assets/prototip/gray_prototip4.png'),
+            //   ],
+            // ),
           ],
         ),
       ),

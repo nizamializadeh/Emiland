@@ -21,8 +21,8 @@ class AddValue extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
           color: color,
         ),
-        width: 218.w,
-        height: 110.h,
+        width: 220.w,
+        height: 120.h,
         child: Center(
           child: Text(
             value,

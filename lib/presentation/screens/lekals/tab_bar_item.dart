@@ -44,20 +44,20 @@ class TabBarItem extends StatelessWidget {
             children: [
               Text(
                 text,
-                style: TextStyle(color: Colors.black, fontSize: 29.sp),
+                style: TextStyle(color: Color(0xff737373), fontSize: 29.sp),
               ),
               Container(
                 alignment: Alignment.center,
-                width: 50,
-                height: 50,
+                width: 110.w,
+                height: 110.h,
                 color: value > 0
-                    ? Colors.green
+                    ? Color(0xff6CE990)
                     : value != 0
-                        ? Colors.red
+                        ? Color(0xffEF5C59)
                         : Colors.white,
                 child: Text(
                   value != 0 ? value.toString() : ' ',
-                  style: TextStyle(color: Colors.black, fontSize: 22.sp),
+                  style: TextStyle(color: Colors.black, fontSize: 30.sp),
                 ),
               ),
             ],

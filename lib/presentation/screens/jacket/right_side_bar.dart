@@ -401,7 +401,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
     // );
 
     return Container(
-        width: 1005.w,
+        width: 1027.w,
         child: Column(
           children: [
             Expanded(
@@ -413,30 +413,25 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                     backgroundColor: Colors.transparent,
                     elevation: 0,
                     bottom: TabBar(
+                      labelStyle: TextStyle(
+                          fontSize: 30.sp, fontWeight: FontWeight.w700),
+                      labelColor: Color.fromRGBO(45, 45, 44, 0.90),
+                      unselectedLabelColor: Color.fromRGBO(16, 16, 16, 0.50),
                       indicator: UnderlineTabIndicator(
                         borderSide: BorderSide(width: 1.0),
-                        insets: EdgeInsets.only(left: 245.w, right: 245.w),
+                        insets: EdgeInsets.only(left: 335.w, right: 333.w),
                       ),
                       controller: _tabController,
-                      indicatorColor: Colors.black,
                       tabs: [
                         // if (suitInstance.item1)
-                        Tab(
+                        const Tab(
                           child: Text(
                             '1.Info/Uslub',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 28.sp),
                           ),
                         ),
-                        Tab(
+                        const Tab(
                           child: Text(
                             '2.Ölçü',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 28.sp),
                           ),
                         ),
 
@@ -483,106 +478,125 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                         Tab(
                           child: Text(
                             '3.Xülasə',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 28.sp),
                           ),
                         ),
                       ],
                     ),
                   ),
                   body: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 30.w),
+                    // margin: EdgeInsets.symmetric(horizontal: 30.w),
                     child: TabBarView(
                       physics: const NeverScrollableScrollPhysics(),
                       controller: _tabController,
                       children: [
                         // Tabbar section 1
-                        SingleChildScrollView(
-                          child: Column(
-                            children: [
-                              Provider.of<SuitDataProvider>(context,
-                                          listen: true)
-                                      .modelSelected
-                                  ? Provider.of<SuitDataProvider>(context,
-                                              listen: true)
-                                          .SelectedModelContainer
-                                      ? const JacketColorContainer()
-                                      : SlideTransition(
-                                          position: _offsetAnimation,
-                                          child: Model())
-                                  : Column(
+                        Column(
+                          children: [
+                            Container(
+                              child: Expanded(
+                                child: SingleChildScrollView(
+                                  child: Container(
+                                    margin:
+                                        EdgeInsets.symmetric(horizontal: 30.w),
+                                    child: Column(
                                       children: [
-                                        InfoSection(),
-                                        StyleSection(),
-                                        Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 30.w),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Text(
-                                                '\$129',
-                                                style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 30.sp,
-                                                    fontWeight:
-                                                        FontWeight.w500),
-                                              ),
-                                              CustomBtn(onPressed: () {
-                                                _tabController!.index = 1;
-                                                print(_tabController);
-                                              }),
-                                            ],
-                                          ),
-                                        ),
+                                        Provider.of<SuitDataProvider>(context,
+                                                    listen: true)
+                                                .modelSelected
+                                            ? Provider.of<SuitDataProvider>(
+                                                        context,
+                                                        listen: true)
+                                                    .SelectedModelContainer
+                                                ? const JacketColorContainer()
+                                                : SlideTransition(
+                                                    position: _offsetAnimation,
+                                                    child: Model())
+                                            : Column(
+                                                children: [
+                                                  InfoSection(),
+                                                  StyleSection(),
+                                                ],
+                                              )
                                       ],
-                                    )
-                            ],
-                          ),
-                        ),
-                        // Tabbar section 2
-                        SingleChildScrollView(
-                          child: Column(
-                            children: [
-                              if (tabbarProvider.itemList.length != 0)
-                                for (int index = 0;
-                                    index < tabbarProvider.itemList.length;
-                                    index += 1)
-                                  tabbarProvider.itemList[index]
-                              else
-                                for (int index = 0;
-                                    index < _items.length;
-                                    index += 1)
-                                  _items[index],
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 30.w),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      '\$129',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 30.sp,
-                                          fontWeight: FontWeight.w500),
                                     ),
-                                    CustomBtn(
-                                        text: 'Prev',
-                                        onPressed: () {
-                                          _tabController!.index = 0;
-                                        }),
-                                    CustomBtn(onPressed: () {
-                                      _tabController!.index = 2;
-                                    }),
-                                  ],
+                                  ),
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                            CustomNextBtn(
+                                cost: '\$129',
+                                nextOrSave: () {
+                                  _tabController!.index == 2
+                                      ? Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const Trousers()))
+                                      : _tabController!.index++;
+                                },
+                                prev: () {
+                                  Provider.of<SuitDataProvider>(context,
+                                              listen: false)
+                                          .SelectedModelContainer
+                                      ? Provider.of<SuitDataProvider>(context,
+                                              listen: false)
+                                          .selectedModelContainerActive()
+                                      : Provider.of<SuitDataProvider>(context,
+                                              listen: false)
+                                          .modelSelectedActive();
+                                },
+                                prevText: Provider.of<SuitDataProvider>(context,
+                                            listen: true)
+                                        .modelSelected
+                                    ? "Prev"
+                                    : "")
+                          ],
+                        ),
+                        // Tabbar section 2
+                        Column(
+                          children: [
+                            Expanded(
+                              child: SingleChildScrollView(
+                                child: Container(
+                                  margin:
+                                      EdgeInsets.symmetric(horizontal: 30.w),
+                                  child: Column(
+                                    children: [
+                                      if (tabbarProvider.itemList.length != 0)
+                                        for (int index = 0;
+                                            index <
+                                                tabbarProvider.itemList.length;
+                                            index += 1)
+                                          tabbarProvider.itemList[index]
+                                      else
+                                        for (int index = 0;
+                                            index < _items.length;
+                                            index += 1)
+                                          _items[index],
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            CustomNextBtn(
+                              cost: '\$129',
+                              nextOrSave: () {
+                                _tabController!.index == 2
+                                    ? Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const Trousers()))
+                                    : _tabController!.index++;
+                              },
+                              prev: () {
+                                _tabController!.index != 0
+                                    ? _tabController!.index--
+                                    : _tabController!.index;
+                              },
+                              prevText: "Prev",
+                            )
+                          ],
                         ),
 
                         // Tabbar section 4
@@ -732,96 +746,46 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                         // Tabbar section 3
                         Column(
                           children: [
-                            // SizedBox(
-                            //   height: 60.h,
-                            // ),
-                            // TabBarItem(
-                            //   width: double.infinity,
-                            //   value: suitInstanceTrue.map1['boyun']!,
-                            //   onTap: () {
-                            //     bottomSheet(context, suitInstance, 'boyun');
-                            //   },
-                            //   active: suitInstanceTrue.item1,
-                            //   text: 'Ciyin',
-                            // ),
-                            // SizedBox(
-                            //   height: 18.h,
-                            // ),
-                            // TabBarItem(
-                            //   width: double.infinity,
-                            //   onTap: () {
-                            //     bottomSheet(context, suitInstance, 'en');
-                            //   },
-                            //   value: suitInstanceTrue.map1['en'],
-                            //   active: suitInstanceTrue.item4,
-                            //   text: 'Qabaq hisse',
-                            // ),
-                            // SizedBox(
-                            //   height: 18.h,
-                            // ),
-                            // TabBarItem(
-                            //   width: double.infinity,
-                            //   value: suitInstanceTrue.map1['boyun']!,
-                            //   onTap: () {
-                            //     bottomSheet(context, suitInstance, 'boyun');
-                            //   },
-                            //   active: suitInstanceTrue.item1,
-                            //   text: 'Qabaq uzunluq',
-                            // ),
-                            // SizedBox(
-                            //   height: 18.h,
-                            // ),
-                            // TabBarItem(
-                            //   width: double.infinity,
-                            //   onTap: () {
-                            //     bottomSheet(context, suitInstance, 'en');
-                            //   },
-                            //   value: suitInstanceTrue.map1['en'],
-                            //   active: suitInstanceTrue.item4,
-                            //   text: 'Qabaq hisse',
-                            // ),
-
-                            Container(
-                                margin: EdgeInsets.symmetric(vertical: 10),
-                                padding: EdgeInsets.symmetric(horizontal: 10),
-                                width: double.infinity,
+                            Expanded(
+                              child: SingleChildScrollView(
                                 child: Column(
-                                  children: Provider.of<SuitDataProvider>(
-                                          context,
-                                          listen: true)
-                                      .result,
-                                )),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 30.w),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    '\$129',
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 30.sp,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                  CustomBtn(
-                                      text: 'Prev',
-                                      onPressed: () {
-                                        _tabController!.index = 1;
-                                      }),
-                                  CustomBtn(
-                                      text: 'Save',
-                                      onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    const Trousers()));
-                                        print('Function');
-                                      }),
-                                ],
+                                  children: [
+                                    Container(
+                                        margin:
+                                            EdgeInsets.symmetric(vertical: 10),
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 10),
+                                        width: double.infinity,
+                                        child: Column(
+                                          children:
+                                              Provider.of<SuitDataProvider>(
+                                                      context,
+                                                      listen: true)
+                                                  .result,
+                                        )),
+                                  ],
+                                ),
                               ),
                             ),
+                            CustomNextBtn(
+                              cost: '\$129',
+                              nextOrSave: () {
+                                _tabController!.index == 2
+                                    ? Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const Trousers()))
+                                    : _tabController!.index++;
+                              },
+                              prev: () {
+                                _tabController!.index != 0
+                                    ? _tabController!.index--
+                                    : _tabController!.index;
+                              },
+                              prevText: "Prev",
+                              nextOrSaveText: "Save",
+                            )
                           ],
                         ),
                       ],
@@ -830,26 +794,6 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                 ),
               ),
             ),
-            // Padding(
-            //   padding: EdgeInsets.symmetric(horizontal: 30.w),
-            //   child: Row(
-            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //     children: [
-            //       Text(
-            //         '\$129',
-            //         style:
-            //             TextStyle(fontSize: 30.sp, fontWeight: FontWeight.w500),
-            //       ),
-            //       CustomBtn(onPressed: () {
-            //         Navigator.push(
-            //             context,
-            //             MaterialPageRoute(
-            //                 builder: (context) => const Trousers()));
-            //         print('Function');
-            //       }),
-            //     ],
-            //   ),
-            // ),
           ],
         ));
   }
@@ -859,30 +803,88 @@ class CustomBtn extends StatelessWidget {
   const CustomBtn({
     this.text = 'Next',
     required this.onPressed,
+    this.white = false,
     super.key,
   });
   final String text;
   final Function() onPressed;
+  final bool? white;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80.h,
+      height: 100.h,
       width: 300.w,
       margin: const EdgeInsets.all(10),
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.black,
-            foregroundColor: Colors.white,
+            elevation: 0,
+            backgroundColor: white! ? Colors.white : Color(0xff2d2d2c),
+            foregroundColor: white! ? Color(0xff2d2d2c) : Colors.white,
             shape: RoundedRectangleBorder(
+              side: BorderSide(color: Colors.black, width: 0.1),
               borderRadius: BorderRadius.circular(5.0),
             ),
           ),
           child: Text(
             text,
-            style: TextStyle(fontSize: 40.sp),
+            style: TextStyle(
+                fontSize: 43.sp,
+                fontFamily: 'DMSans',
+                fontWeight: FontWeight.w400),
           ),
           onPressed: onPressed),
+    );
+  }
+}
+
+class CustomNextBtn extends StatelessWidget {
+  const CustomNextBtn(
+      {required this.cost,
+      required this.nextOrSave,
+      required this.prev,
+      this.prevText,
+      this.nextOrSaveText});
+  final String? prevText;
+  final String? nextOrSaveText;
+  final String cost;
+  final Function() prev;
+  final Function() nextOrSave;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(top: 10, left: 1),
+      decoration: BoxDecoration(border: Border.all(color: Color(0xFFF4F4F4))),
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 40.h),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              cost,
+              style: TextStyle(
+                  color: Color(0xff2d2d2c),
+                  fontSize: 45.sp,
+                  fontWeight: FontWeight.w500),
+            ),
+            Row(
+              children: [
+                prevText != null && prevText != ""
+                    ? CustomBtn(
+                        white: true,
+                        onPressed: prev,
+                        text: prevText!,
+                      )
+                    : SizedBox(),
+                CustomBtn(
+                  onPressed: nextOrSave,
+                  text: nextOrSaveText != null ? nextOrSaveText! : 'Next',
+                ),
+              ],
+            )
+          ],
+        ),
+      ),
     );
   }
 }

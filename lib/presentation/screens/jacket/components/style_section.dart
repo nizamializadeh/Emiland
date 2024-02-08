@@ -19,7 +19,7 @@ class StyleSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<CheckboxProvider>(context);
-    var dropdownProvider = Provider.of<DropDownProvider>(context);
+    var dropDownProvider = Provider.of<DropDownProvider>(context);
     return Column(
       children: [
         SizedBox(
@@ -28,7 +28,7 @@ class StyleSection extends StatelessWidget {
 // info divider
         Header(title: '2.Uslub'),
         SizedBox(
-          height: 15.h,
+          height: 24.h,
         ),
         Row(
           children: [
@@ -50,36 +50,79 @@ class StyleSection extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 15.h,
+          height: 24.h,
         ),
         Row(
           children: [
-            DropdownMenu<String>(
-              inputDecorationTheme: const InputDecorationTheme(
-                enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(width: 0.3, color: Color(0xffDDDDDD))),
-                focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(width: 0.3, color: Colors.black)),
+            Expanded(
+              child: DropdownMenu<String>(
+                menuStyle: MenuStyle(
+                  elevation: MaterialStateProperty.resolveWith((states) {
+                    return 0; //your desired selected background color
+                  }),
+                ),
+                inputDecorationTheme: const InputDecorationTheme(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(width: 0.3, color: Color(0xffDDDDDD))),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(width: 0.3, color: Colors.black)),
+                ),
+                textStyle:
+                    TextStyle(color: const Color(0xff707070), fontSize: 33.sp),
+                width: 470.w,
+                hintText: dropDownProvider.selectedLecale,
+                onSelected: (String? value) {
+                  if (value != null) {
+                    dropDownProvider.setSelectedLecale(value);
+                  }
+                },
+                dropdownMenuEntries: dropDownProvider.lecaleList
+                    .map<DropdownMenuEntry<String>>((String value) {
+                  return DropdownMenuEntry<String>(
+                    value: value,
+                    label: value,
+                    labelWidget: Container(
+                      width: double.infinity,
+                      height: 110.h,
+                      decoration: BoxDecoration(
+                        border:
+                            Border.all(width: 0.1, color: Color(0xFF595959)),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            vertical: 38.h, horizontal: 24.w),
+                        child: Text(
+                          value,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                    style: ButtonStyle(
+                      foregroundColor:
+                          MaterialStateProperty.resolveWith((states) {
+                        return Colors
+                            .white; //your desired selected background color
+                      }),
+                      textStyle: MaterialStateTextStyle.resolveWith(
+                        (states) => TextStyle(
+                          fontSize: 28.sp,
+                          color: Color(0xFF2D2D2C),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  );
+                }).toList(),
               ),
-              width: 458.w,
-              textStyle: TextStyle(color: AppColors.grey, fontSize: 33.sp),
-              hintText: dropdownProvider.selectedLecale,
-              onSelected: (String? value) {
-                if (value != null) {
-                  dropdownProvider.setSelectedLecale(value);
-                }
-              },
-              dropdownMenuEntries: dropdownProvider.lecaleList
-                  .map<DropdownMenuEntry<String>>((String value) {
-                return DropdownMenuEntry<String>(value: value, label: value);
-              }).toList(),
             ),
             SizedBox(
               width: 22.w,
             ),
             SizedBox(
-              width: 465.w,
+              width: 470.w,
               child: CustomTextField(
                 hintText: 'ÖIçü',
               ),
@@ -94,6 +137,7 @@ class StyleSection extends StatelessWidget {
               alignment: Alignment.centerRight,
               children: [
                 const TabBarItem(
+                  width: 471,
                   value: 0,
                   active: true,
                   text: 'Bort',
@@ -107,12 +151,30 @@ class StyleSection extends StatelessWidget {
                         color: Colors.black,
                       ),
                     ),
-                    CustChecbox(
-                      value: provider.isBortSelected1,
-                      onChanged: (value) {
-                        provider.setIsBortSelected1(value ?? false);
-                        log('bort 1 ${provider.isBortSelected1}');
-                      },
+                    SizedBox(
+                      height: 24.0,
+                      width: 24.0,
+                      child: CustChecbox(
+                        value: provider.isBortSelected1,
+                        onChanged: (value) {
+                          provider.setIsBortSelected1(value ?? false);
+
+                          Provider.of<SuitDataProvider>(context, listen: false)
+                              .result
+                              .add(
+                                Container(
+                                  width: double.infinity,
+                                  child: TabBarItem(
+                                    text: "Bort",
+                                    value: 1,
+                                  ),
+                                ),
+                              );
+                        },
+                      ),
+                    ),
+                    SizedBox(
+                      width: 20.w,
                     ),
                     Text(
                       '2',
@@ -121,12 +183,29 @@ class StyleSection extends StatelessWidget {
                         color: Colors.black,
                       ),
                     ),
-                    CustChecbox(
-                      value: provider.isBortSelected2,
-                      onChanged: (value) {
-                        provider.setIsBortSelected2(value ?? false);
-                        log('bort 2 ${provider.isBortSelected2}');
-                      },
+                    SizedBox(
+                      height: 24.0,
+                      width: 24.0,
+                      child: CustChecbox(
+                        value: provider.isBortSelected2,
+                        onChanged: (value) {
+                          provider.setIsBortSelected2(value ?? false);
+                          Provider.of<SuitDataProvider>(context, listen: false)
+                              .result
+                              .add(
+                                Container(
+                                  width: double.infinity,
+                                  child: TabBarItem(
+                                    text: "Bort",
+                                    value: 2,
+                                  ),
+                                ),
+                              );
+                        },
+                      ),
+                    ),
+                    SizedBox(
+                      width: 20.w,
                     ),
                   ],
                 ),
@@ -136,6 +215,7 @@ class StyleSection extends StatelessWidget {
               alignment: Alignment.centerRight,
               children: [
                 const TabBarItem(
+                  width: 471,
                   value: 0,
                   active: true,
                   text: 'Kəsik',
@@ -149,12 +229,29 @@ class StyleSection extends StatelessWidget {
                         color: Colors.black,
                       ),
                     ),
-                    CustChecbox(
-                      value: provider.isSelected1,
-                      onChanged: (value) {
-                        provider.setIsSelected1(value ?? false);
-                        log('kesik 1  ${provider.isPocketSelected1}');
-                      },
+                    SizedBox(
+                      height: 24.0,
+                      width: 24.0,
+                      child: CustChecbox(
+                        value: provider.isSelected1,
+                        onChanged: (value) {
+                          provider.setIsSelected1(value ?? false);
+                          Provider.of<SuitDataProvider>(context, listen: false)
+                              .result
+                              .add(
+                                Container(
+                                  width: double.infinity,
+                                  child: TabBarItem(
+                                    text: "Kəsik",
+                                    value: 1,
+                                  ),
+                                ),
+                              );
+                        },
+                      ),
+                    ),
+                    SizedBox(
+                      width: 20.w,
                     ),
                     Text(
                       '2',
@@ -163,12 +260,29 @@ class StyleSection extends StatelessWidget {
                         color: Colors.black,
                       ),
                     ),
-                    CustChecbox(
-                      value: provider.isSelected2,
-                      onChanged: (value) {
-                        provider.setIsSelected2(value ?? false);
-                        log('kesik 2 ${provider.isPocketSelected2}');
-                      },
+                    SizedBox(
+                      height: 24.0,
+                      width: 24.0,
+                      child: CustChecbox(
+                        value: provider.isSelected2,
+                        onChanged: (value) {
+                          provider.setIsSelected2(value ?? false);
+                          Provider.of<SuitDataProvider>(context, listen: false)
+                              .result
+                              .add(
+                                Container(
+                                  width: double.infinity,
+                                  child: TabBarItem(
+                                    text: "Kəsik",
+                                    value: 2,
+                                  ),
+                                ),
+                              );
+                        },
+                      ),
+                    ),
+                    SizedBox(
+                      width: 20.w,
                     ),
                   ],
                 ),
@@ -177,115 +291,208 @@ class StyleSection extends StatelessWidget {
           ],
         ),
 
-// SizedBox(
-//   height: 20.h,
-// ),
-
 //! cib and Duyme
-        SizedBox(height: 15.h),
+        SizedBox(height: 5.h),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Stack(
-              alignment: Alignment.centerRight,
-              children: [
-                const TabBarItem(
-                  value: 0,
-                  active: true,
-                  text: 'Cib',
-                ),
-                Row(
-                  children: [
-                    Text(
-                      '1',
-                      style: TextStyle(
-                        fontSize: 30.sp,
-                        color: Colors.black,
+            Align(
+              child: Stack(
+                alignment: Alignment.centerRight,
+                children: [
+                  const TabBarItem(
+                    width: 471,
+                    value: 0,
+                    active: true,
+                    text: 'Cib',
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        '1',
+                        style: TextStyle(
+                          fontSize: 30.sp,
+                          color: Colors.black,
+                        ),
                       ),
-                    ),
-                    CustChecbox(
-                      value: provider.isPocketSelected1,
-                      onChanged: (value) {
-                        provider.setIsPocketSelected1(value ?? false);
-                        log('secilen cib 1 ${provider.isPocketSelected2}');
-                      },
-                    ),
-                    Text(
-                      '2',
-                      style: TextStyle(
-                        fontSize: 30.sp,
-                        color: Colors.black,
+                      SizedBox(
+                        height: 24.0,
+                        width: 24.0,
+                        child: CustChecbox(
+                          value: provider.isPocketSelected1,
+                          onChanged: (value) {
+                            provider.setIsPocketSelected1(value ?? false);
+                            Provider.of<SuitDataProvider>(context,
+                                    listen: false)
+                                .result
+                                .add(
+                                  Container(
+                                    width: double.infinity,
+                                    child: TabBarItem(
+                                      text: "Cib",
+                                      value: 1,
+                                    ),
+                                  ),
+                                );
+                          },
+                        ),
                       ),
-                    ),
-                    CustChecbox(
-                      value: provider.isPocketSelected2,
-                      onChanged: (value) {
-                        provider.setIsPocketSelected2(value ?? false);
-                        log('secilen cib 2 ${provider.isPocketSelected2}');
-                      },
-                    ),
-                  ],
-                ),
-              ],
+                      SizedBox(
+                        width: 20.w,
+                      ),
+                      Text(
+                        '2',
+                        style: TextStyle(
+                          fontSize: 30.sp,
+                          color: Colors.black,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 24.0,
+                        width: 24.0,
+                        child: CustChecbox(
+                          value: provider.isPocketSelected2,
+                          onChanged: (value) {
+                            provider.setIsPocketSelected2(value ?? false);
+                            Provider.of<SuitDataProvider>(context,
+                                    listen: false)
+                                .result
+                                .add(
+                                  Container(
+                                    width: double.infinity,
+                                    child: TabBarItem(
+                                      text: "Cib",
+                                      value: 2,
+                                    ),
+                                  ),
+                                );
+                          },
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20.w,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-            Stack(
-              alignment: Alignment.centerRight,
-              children: [
-                const TabBarItem(
-                  value: 0,
-                  active: true,
-                  text: 'Düymə1',
-                ),
-                Row(
-                  children: [
-                    Text(
-                      '1',
-                      style: TextStyle(
-                        fontSize: 30.sp,
-                        color: Colors.black,
+            Align(
+              child: Stack(
+                alignment: Alignment.centerRight,
+                children: [
+                  TabBarItem(
+                    width: 471,
+                    value: 0,
+                    active: true,
+                    text: 'Düymə',
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        '1',
+                        style: TextStyle(
+                          fontSize: 30.sp,
+                          color: Colors.black,
+                        ),
                       ),
-                    ),
-                    CustChecbox(
-                      value: provider.isButtonSelected1,
-                      onChanged: (value) {
-                        provider.setIsButtonSelected1(value ?? false);
-                        log('secilen duyme 1 ${provider.isButtonSelected2}');
-                      },
-                    ),
-                    Text(
-                      '2',
-                      style: TextStyle(
-                        fontSize: 30.sp,
-                        color: Colors.black,
+                      SizedBox(
+                        height: 24.0,
+                        width: 24.0,
+                        child: CustChecbox(
+                          value: provider.isButtonSelected1,
+                          onChanged: (value) {
+                            provider.setIsButtonSelected1(value ?? false);
+                            Provider.of<SuitDataProvider>(context,
+                                    listen: false)
+                                .result
+                                .add(
+                                  Container(
+                                    width: double.infinity,
+                                    child: TabBarItem(
+                                      text: "Düymə",
+                                      value: 1,
+                                    ),
+                                  ),
+                                );
+                          },
+                        ),
                       ),
-                    ),
-                    CustChecbox(
-                      value: provider.isButtonSelected2,
-                      onChanged: (value) {
-                        provider.setIsButtonSelected2(value ?? false);
-                        log('secilen duyme 2 ${provider.isButtonSelected2}');
-                      },
-                    ),
-                    Text(
-                      '3',
-                      style: TextStyle(
-                        fontSize: 30.sp,
-                        color: Colors.black,
+                      SizedBox(
+                        width: 20.w,
                       ),
-                    ),
-                    CustChecbox(
-                      value: provider.isButtonSelected3,
-                      onChanged: (value) {
-                        provider.setIsButtonSelected3(value ?? false);
-                        log('secilen duyme 3 ${provider.isButtonSelected3}');
-                      },
-                    ),
-                  ],
-                ),
-              ],
-            ),
+                      Text(
+                        '2',
+                        style: TextStyle(
+                          fontSize: 30.sp,
+                          color: Colors.black,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 24.0,
+                        width: 24.0,
+                        child: CustChecbox(
+                          value: provider.isButtonSelected2,
+                          onChanged: (value) {
+                            provider.setIsButtonSelected2(value ?? false);
+                            Provider.of<SuitDataProvider>(context,
+                                    listen: false)
+                                .result
+                                .add(
+                                  Container(
+                                    width: double.infinity,
+                                    child: TabBarItem(
+                                      text: "Düymə",
+                                      value: 2,
+                                    ),
+                                  ),
+                                );
+                          },
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20.w,
+                      ),
+                      Text(
+                        '3',
+                        style: TextStyle(
+                          fontSize: 30.sp,
+                          color: Colors.black,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 24.0,
+                        width: 24.0,
+                        child: CustChecbox(
+                          value: provider.isButtonSelected3,
+                          onChanged: (value) {
+                            provider.setIsButtonSelected3(value ?? false);
+                            Provider.of<SuitDataProvider>(context,
+                                    listen: false)
+                                .result
+                                .add(
+                                  Container(
+                                    width: double.infinity,
+                                    child: TabBarItem(
+                                      text: "Düymə",
+                                      value: 3,
+                                    ),
+                                  ),
+                                );
+                          },
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20.w,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            )
           ],
         ),
+
         SizedBox(
           height: 15.h,
         ),
@@ -294,12 +501,12 @@ class StyleSection extends StatelessWidget {
             Expanded(
               child: CustContainer(text: 'Düymə'),
             ),
-            SizedBox(
-              width: 22.w,
-            ),
-            Expanded(
-              child: CustContainer(text: 'Astar'),
-            ),
+            // SizedBox(
+            //   width: 22.w,
+            // ),
+            // Expanded(
+            //   child: CustContainer(text: 'Astar'),
+            // ),
           ],
         ),
       ],
@@ -346,10 +553,11 @@ class CustContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 456.w,
       alignment: Alignment.centerLeft,
-      height: 48,
+      height: 125.h,
       decoration: BoxDecoration(
-          border: Border.all(color: const Color(0xffDDDDDD), width: 2.w),
+          border: Border.all(color: const Color(0xffDDDDDD), width: 0.5),
           borderRadius: BorderRadius.all(Radius.circular(8.r))),
       child: Padding(
         padding: EdgeInsets.only(left: 15.w),

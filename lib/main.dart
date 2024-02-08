@@ -44,6 +44,7 @@ class MyApp extends StatelessWidget {
             title: 'First Method',
             // You can use the library anywhere in the app even in theme
             theme: ThemeData(
+              useMaterial3: false,
               scaffoldBackgroundColor: Colors.white,
               primarySwatch: Colors.blue,
               textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),

@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Header extends StatelessWidget {
-  Header({
-    super.key,
-    required this.title,
-  });
+  Header({super.key, required this.title, this.aligment});
   String title;
+  final CrossAxisAlignment? aligment;
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: aligment == null
+          ? CrossAxisAlignment.start
+          : CrossAxisAlignment.center,
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -24,7 +24,9 @@ class Header extends StatelessWidget {
           height: 30.h,
         ),
         Divider(
-          color: const Color(0xFFD4D4D4),
+          color: aligment == null
+              ? const Color(0xFFD4D4D4)
+              : const Color(0xFFB4B4B4),
           height: 2.h,
         ),
       ],

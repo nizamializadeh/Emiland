@@ -17,14 +17,14 @@ class BottomSheetButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+          padding: EdgeInsets.symmetric(horizontal: 80.w, vertical: 25.h),
           side: const BorderSide(
-            width: 1.0,
+            width: 0.5,
             color: Colors.black,
           ),
           elevation: 0,
           backgroundColor: backgorundcolor,
-          textStyle: TextStyle(fontSize: 20.sp, color: Colors.black)),
+          textStyle: TextStyle(fontSize: 40.sp, color: Colors.black)),
       onPressed: func,
       child: Text(
         name,
