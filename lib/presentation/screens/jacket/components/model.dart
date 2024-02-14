@@ -23,7 +23,7 @@ class Model extends StatelessWidget {
         ),
 
         Container(
-          margin: EdgeInsets.only(top: 24.h),
+          margin: EdgeInsets.only(top: 30.h),
           child: Row(
             verticalDirection: VerticalDirection.up,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,7 +45,7 @@ class Model extends StatelessWidget {
           ),
         ),
         Container(
-          margin: EdgeInsets.only(top: 24.h),
+          margin: EdgeInsets.only(top: 30.h),
           child: Row(
             verticalDirection: VerticalDirection.up,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -64,7 +64,7 @@ class Model extends StatelessWidget {
           ),
         ),
         Container(
-          margin: EdgeInsets.only(top: 24.h),
+          margin: EdgeInsets.only(top: 30.h),
           child: Row(
             verticalDirection: VerticalDirection.up,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -83,7 +83,7 @@ class Model extends StatelessWidget {
           ),
         ),
         Container(
-          margin: EdgeInsets.only(top: 24.h),
+          margin: EdgeInsets.only(top: 30.h),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -100,38 +100,6 @@ class Model extends StatelessWidget {
             ],
           ),
         ),
-        // Padding(
-        //   padding: EdgeInsets.symmetric(horizontal: 30.w),
-        //   child: Row(
-        //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //     children: [
-        //       Text(
-        //         '\$129',
-        //         style: TextStyle(
-        //             color: Colors.black,
-        //             fontSize: 30.sp,
-        //             fontWeight: FontWeight.w500),
-        //       ),
-        //       CustomBtn(
-        //           text: 'Prev',
-        //           onPressed: () {
-        //             print('object');
-        //             Provider.of<SuitDataProvider>(context, listen: false)
-        //                 .modelSelectedActive();
-        //
-        //             // Navigator.push(
-        //             //     context,
-        //             //     MaterialPageRoute(
-        //             //         builder: (context) => const Trousers()));
-        //           }),
-        //       CustomBtn(onPressed: () {
-        //         Navigator.push(context,
-        //             MaterialPageRoute(builder: (context) => const Trousers()));
-        //         print('Function');
-        //       }),
-        //     ],
-        //   ),
-        // ),
       ],
     );
   }
@@ -163,11 +131,19 @@ class ModelContainer extends StatelessWidget {
           children: [
             Text(
               firstText,
-              style: TextStyle(color: Colors.black, fontSize: 28.sp),
+              style: TextStyle(
+                color: Color(0xff5B5B5B),
+                fontSize: 33.sp,
+                fontWeight: FontWeight.w500,
+              ),
             ),
             Text(
               secondText,
-              style: TextStyle(color: Colors.black, fontSize: 28.sp),
+              style: TextStyle(
+                color: Color(0xff5B5B5B),
+                fontSize: 33.sp,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ],
         ),

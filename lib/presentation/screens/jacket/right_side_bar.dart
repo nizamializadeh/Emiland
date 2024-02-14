@@ -409,6 +409,9 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
               child: DefaultTabController(
                 length: 3,
                 child: Scaffold(
+                  backgroundColor: suitInstanceTrue.bottomsheetIsOpened
+                      ? Color.fromRGBO(219, 219, 219, 0.51)
+                      : Colors.transparent,
                   appBar: AppBar(
                     backgroundColor: Colors.transparent,
                     elevation: 0,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CheckboxProvider extends ChangeNotifier {
   bool isSelected1 = false;
-  bool isSelected2 = true;
+  bool isSelected2 = false;
   bool isBortSelected1 = false;
   bool isBortSelected2 = false;
   bool isPocketSelected1 = false;

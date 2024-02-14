@@ -22,6 +22,7 @@ class TabbarProvider extends ChangeNotifier {
         width: double.infinity,
         value: suitInstanceTrue.map1['Qabaq uzunluq']!,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'Qabaq uzunluq');
         },
         active: suitInstanceTrue.item1,
@@ -30,6 +31,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'Arxa uzunluq');
         },
         value: suitInstanceTrue.map1['Arxa uzunluq'],
@@ -40,6 +42,7 @@ class TabbarProvider extends ChangeNotifier {
         width: double.infinity,
         value: suitInstanceTrue.map1['Qol']!,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'Qol');
         },
         active: suitInstanceTrue.item1,
@@ -48,6 +51,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'Çiyin');
         },
         value: suitInstanceTrue.map1['Çiyin'],
@@ -57,6 +61,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'Boyun');
         },
         value: suitInstanceTrue.map1['Boyun'],
@@ -66,6 +71,8 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
+
           bottomSheet(context, suitInstance, 'en');
         },
         value: suitInstanceTrue.map1['en'],
@@ -76,6 +83,7 @@ class TabbarProvider extends ChangeNotifier {
         width: double.infinity,
         value: suitInstanceTrue.map1['vatka']!,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'vatka');
         },
         active: suitInstanceTrue.item1,
@@ -85,6 +93,7 @@ class TabbarProvider extends ChangeNotifier {
         width: double.infinity,
         value: suitInstanceTrue.map1['Qol qat']!,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'Qol qat');
         },
         active: suitInstanceTrue.item1,
@@ -94,6 +103,7 @@ class TabbarProvider extends ChangeNotifier {
         width: double.infinity,
         value: suitInstanceTrue.map1['Qabaq hissə']!,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'Qabaq hissə');
         },
         active: suitInstanceTrue.item1,
@@ -103,6 +113,7 @@ class TabbarProvider extends ChangeNotifier {
         width: double.infinity,
         value: suitInstanceTrue.map1['boyun doldurmaq/açmaq']!,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'boyun doldurmaq/açmaq');
         },
         active: suitInstanceTrue.item1,
@@ -112,6 +123,7 @@ class TabbarProvider extends ChangeNotifier {
         width: double.infinity,
         value: suitInstanceTrue.map1['çiyin qaldır/düş']!,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'çiyin qaldır/düş');
         },
         active: suitInstanceTrue.item1,
@@ -121,6 +133,7 @@ class TabbarProvider extends ChangeNotifier {
         width: double.infinity,
         value: suitInstanceTrue.map1['cib artırmaq/azaltmaq']!,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'cib artırmaq/azaltmaq');
         },
         active: suitInstanceTrue.item1,
@@ -129,6 +142,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'cib sinə artır/azalt');
         },
         value: suitInstanceTrue.map1['cib sinə artır/azalt'],
@@ -138,6 +152,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'sinə artır/azalt');
         },
         value: suitInstanceTrue.map1['sinə artır/azalt'],
@@ -147,6 +162,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'uzunluq artır/azalt');
         },
         value: suitInstanceTrue.map1['uzunluq artır/azalt'],
@@ -156,6 +172,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'boyun artırmaq/çıxmaq');
         },
         value: suitInstanceTrue.map1['boyun artırmaq/çıxmaq'],
@@ -165,6 +182,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'qabaq aç / bağla');
         },
         value: suitInstanceTrue.map1['qabaq aç / bağla'],
@@ -174,6 +192,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'qabaq artırmaq/azaltmaq');
         },
         value: suitInstanceTrue.map1['qabaq artırmaq/azaltmaq'],
@@ -183,6 +202,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(
               context, suitInstance, 'boyun dərinləşdirmək / qaldırmaq');
         },
@@ -193,6 +213,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'boyundan aşağıya qədər çıx');
         },
         value: suitInstanceTrue.map1['boyundan aşağıya qədər çıx'],
@@ -202,6 +223,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'çiyin artırmaq/çıxartmaq');
         },
         value: suitInstanceTrue.map1['çiyin artırmaq/çıxartmaq'],
@@ -211,6 +233,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'en çıx/artır');
         },
         value: suitInstanceTrue.map1['en çıx/artır'],
@@ -220,6 +243,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'qol dibi sal/qaldır');
         },
         value: suitInstanceTrue.map1['qol dibi sal/qaldır'],
@@ -229,6 +253,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'kürək açmaq');
         },
         value: suitInstanceTrue.map1['kürək açmaq'],
@@ -238,6 +263,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'kürək aşağısından çıx');
         },
         value: suitInstanceTrue.map1['kürək aşağısından çıx'],
@@ -247,6 +273,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'razrez artır/azalt');
         },
         value: suitInstanceTrue.map1['razrez artır/azalt'],
@@ -256,6 +283,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'talya çıx');
         },
         value: suitInstanceTrue.map1['talya çıx'],
@@ -265,6 +293,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'böyür hissə ağzını aç');
         },
         value: suitInstanceTrue.map1['böyür hissə ağzını aç'],
@@ -274,6 +303,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(
               context, suitInstance, 'böyür hissə yan tərəf artırmaq/azaltmaq');
         },
@@ -284,6 +314,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'qol dibi qaldır/aşağı sal');
         },
         value: suitInstanceTrue.map1['qol dibi qaldır/aşağı sal'],
@@ -293,6 +324,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'dirsək artır/azalt');
         },
         value: suitInstanceTrue.map1['dirsək artır/azalt'],
@@ -302,6 +334,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'qolovka artır/azalt');
         },
         value: suitInstanceTrue.map1['qolovka artır/azalt'],
@@ -311,6 +344,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'qolun aşağı hissəsi artır/azalt');
         },
         value: suitInstanceTrue.map1['qolun aşağı hissəsi artır/azalt'],
@@ -320,6 +354,7 @@ class TabbarProvider extends ChangeNotifier {
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'qol eni artır/azalt');
         },
         value: suitInstanceTrue.map1['qol eni artır/azalt'],

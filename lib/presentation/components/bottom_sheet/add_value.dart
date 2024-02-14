@@ -27,8 +27,8 @@ class AddValue extends StatelessWidget {
           child: Text(
             value,
             style: TextStyle(
-                color: Colors.black,
-                fontSize: 28.sp,
+                color: Color(0xff2D2D2C),
+                fontSize: 33.sp,
                 fontWeight: FontWeight.w500),
           ),
         ),

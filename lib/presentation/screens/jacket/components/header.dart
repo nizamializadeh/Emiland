@@ -17,7 +17,10 @@ class Header extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: Text(
             title,
-            style: TextStyle(color: const Color(0xFF101010), fontSize: 33.sp),
+            style: TextStyle(
+                color: const Color(0xFF101010),
+                fontSize: 33.sp,
+                fontWeight: FontWeight.w500),
           ),
         ),
         SizedBox(

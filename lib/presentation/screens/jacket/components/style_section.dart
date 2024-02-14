@@ -23,7 +23,7 @@ class StyleSection extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: 42.h,
+          height: 85.h,
         ),
 // info divider
         Header(title: '2.Uslub'),
@@ -137,6 +137,7 @@ class StyleSection extends StatelessWidget {
               alignment: Alignment.centerRight,
               children: [
                 const TabBarItem(
+                  checkbox: true,
                   width: 471,
                   value: 0,
                   active: true,
@@ -144,12 +145,8 @@ class StyleSection extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Text(
-                      '1',
-                      style: TextStyle(
-                        fontSize: 30.sp,
-                        color: Colors.black,
-                      ),
+                    CustText(
+                      text: '1',
                     ),
                     SizedBox(
                       height: 24.0,
@@ -165,6 +162,7 @@ class StyleSection extends StatelessWidget {
                                 Container(
                                   width: double.infinity,
                                   child: TabBarItem(
+                                    active: true,
                                     text: "Bort",
                                     value: 1,
                                   ),
@@ -176,12 +174,8 @@ class StyleSection extends StatelessWidget {
                     SizedBox(
                       width: 20.w,
                     ),
-                    Text(
-                      '2',
-                      style: TextStyle(
-                        fontSize: 30.sp,
-                        color: Colors.black,
-                      ),
+                    CustText(
+                      text: '2',
                     ),
                     SizedBox(
                       height: 24.0,
@@ -196,6 +190,7 @@ class StyleSection extends StatelessWidget {
                                 Container(
                                   width: double.infinity,
                                   child: TabBarItem(
+                                    active: true,
                                     text: "Bort",
                                     value: 2,
                                   ),
@@ -215,6 +210,7 @@ class StyleSection extends StatelessWidget {
               alignment: Alignment.centerRight,
               children: [
                 const TabBarItem(
+                  checkbox: true,
                   width: 471,
                   value: 0,
                   active: true,
@@ -222,12 +218,8 @@ class StyleSection extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Text(
-                      '1',
-                      style: TextStyle(
-                        fontSize: 30.sp,
-                        color: Colors.black,
-                      ),
+                    CustText(
+                      text: '1',
                     ),
                     SizedBox(
                       height: 24.0,
@@ -242,6 +234,7 @@ class StyleSection extends StatelessWidget {
                                 Container(
                                   width: double.infinity,
                                   child: TabBarItem(
+                                    active: true,
                                     text: "Kəsik",
                                     value: 1,
                                   ),
@@ -253,12 +246,8 @@ class StyleSection extends StatelessWidget {
                     SizedBox(
                       width: 20.w,
                     ),
-                    Text(
-                      '2',
-                      style: TextStyle(
-                        fontSize: 30.sp,
-                        color: Colors.black,
-                      ),
+                    CustText(
+                      text: '2',
                     ),
                     SizedBox(
                       height: 24.0,
@@ -273,6 +262,7 @@ class StyleSection extends StatelessWidget {
                                 Container(
                                   width: double.infinity,
                                   child: TabBarItem(
+                                    active: true,
                                     text: "Kəsik",
                                     value: 2,
                                   ),
@@ -301,6 +291,7 @@ class StyleSection extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 children: [
                   const TabBarItem(
+                    checkbox: true,
                     width: 471,
                     value: 0,
                     active: true,
@@ -308,12 +299,8 @@ class StyleSection extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Text(
-                        '1',
-                        style: TextStyle(
-                          fontSize: 30.sp,
-                          color: Colors.black,
-                        ),
+                      CustText(
+                        text: '1',
                       ),
                       SizedBox(
                         height: 24.0,
@@ -329,6 +316,7 @@ class StyleSection extends StatelessWidget {
                                   Container(
                                     width: double.infinity,
                                     child: TabBarItem(
+                                      active: true,
                                       text: "Cib",
                                       value: 1,
                                     ),
@@ -340,12 +328,8 @@ class StyleSection extends StatelessWidget {
                       SizedBox(
                         width: 20.w,
                       ),
-                      Text(
-                        '2',
-                        style: TextStyle(
-                          fontSize: 30.sp,
-                          color: Colors.black,
-                        ),
+                      CustText(
+                        text: '2',
                       ),
                       SizedBox(
                         height: 24.0,
@@ -361,6 +345,7 @@ class StyleSection extends StatelessWidget {
                                   Container(
                                     width: double.infinity,
                                     child: TabBarItem(
+                                      active: true,
                                       text: "Cib",
                                       value: 2,
                                     ),
@@ -382,6 +367,7 @@ class StyleSection extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 children: [
                   TabBarItem(
+                    checkbox: true,
                     width: 471,
                     value: 0,
                     active: true,
@@ -389,12 +375,8 @@ class StyleSection extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Text(
-                        '1',
-                        style: TextStyle(
-                          fontSize: 30.sp,
-                          color: Colors.black,
-                        ),
+                      CustText(
+                        text: '1',
                       ),
                       SizedBox(
                         height: 24.0,
@@ -410,6 +392,7 @@ class StyleSection extends StatelessWidget {
                                   Container(
                                     width: double.infinity,
                                     child: TabBarItem(
+                                      active: true,
                                       text: "Düymə",
                                       value: 1,
                                     ),
@@ -421,12 +404,8 @@ class StyleSection extends StatelessWidget {
                       SizedBox(
                         width: 20.w,
                       ),
-                      Text(
-                        '2',
-                        style: TextStyle(
-                          fontSize: 30.sp,
-                          color: Colors.black,
-                        ),
+                      CustText(
+                        text: '2',
                       ),
                       SizedBox(
                         height: 24.0,
@@ -442,6 +421,7 @@ class StyleSection extends StatelessWidget {
                                   Container(
                                     width: double.infinity,
                                     child: TabBarItem(
+                                      active: true,
                                       text: "Düymə",
                                       value: 2,
                                     ),
@@ -453,12 +433,8 @@ class StyleSection extends StatelessWidget {
                       SizedBox(
                         width: 20.w,
                       ),
-                      Text(
-                        '3',
-                        style: TextStyle(
-                          fontSize: 30.sp,
-                          color: Colors.black,
-                        ),
+                      CustText(
+                        text: '3',
                       ),
                       SizedBox(
                         height: 24.0,
@@ -474,6 +450,7 @@ class StyleSection extends StatelessWidget {
                                   Container(
                                     width: double.infinity,
                                     child: TabBarItem(
+                                      active: true,
                                       text: "Düymə",
                                       value: 3,
                                     ),
@@ -499,14 +476,12 @@ class StyleSection extends StatelessWidget {
         Row(
           children: [
             Expanded(
-              child: CustContainer(text: 'Düymə'),
+              child: Container(
+                  child: CustContainer(
+                text: 'Astar',
+                align: Alignment.center,
+              )),
             ),
-            // SizedBox(
-            //   width: 22.w,
-            // ),
-            // Expanded(
-            //   child: CustContainer(text: 'Astar'),
-            // ),
           ],
         ),
       ],
@@ -525,20 +500,23 @@ class CustChecbox extends StatelessWidget {
   final Function(bool?) onChanged;
   @override
   Widget build(BuildContext context) {
-    return Checkbox(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(2.0),
+    return Transform.scale(
+      scale: 1.3,
+      child: Checkbox(
+        // shape: RoundedRectangleBorder(
+        //   borderRadius: BorderRadius.circular(2.0),
+        // ),
+        side: MaterialStateBorderSide.resolveWith(
+          (states) => BorderSide(
+              width: 1.0, color: value ? Color(0XFF6CE990) : Color(0XFF707070)),
+        ),
+        activeColor: Color(0XFF6CE990),
+        checkColor: Colors.black,
+        isError: true,
+        tristate: true,
+        value: value,
+        onChanged: onChanged,
       ),
-      side: MaterialStateBorderSide.resolveWith(
-        (states) => BorderSide(
-            width: 2.0, color: value ? Color(0XFF6CE990) : Color(0XFF707070)),
-      ),
-      activeColor: Color(0XFF6CE990),
-      checkColor: Colors.black,
-      isError: true,
-      tristate: true,
-      value: value,
-      onChanged: onChanged,
     );
   }
 }
@@ -546,15 +524,17 @@ class CustChecbox extends StatelessWidget {
 class CustContainer extends StatelessWidget {
   CustContainer({
     required this.text,
+    this.align,
     super.key,
   });
 
   final String text;
+  final AlignmentGeometry? align;
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 456.w,
-      alignment: Alignment.centerLeft,
+      alignment: align == null ? Alignment.centerLeft : align,
       height: 125.h,
       decoration: BoxDecoration(
           border: Border.all(color: const Color(0xffDDDDDD), width: 0.5),
@@ -565,6 +545,25 @@ class CustContainer extends StatelessWidget {
           text,
           style: TextStyle(fontSize: 33.sp, color: AppColors.grey),
         ),
+      ),
+    );
+  }
+}
+
+class CustText extends StatelessWidget {
+  const CustText({super.key, required this.text});
+
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 35.w,
+      child: Text(
+        text,
+        style: TextStyle(
+            fontSize: 33.sp,
+            color: Color(0xff707070),
+            fontWeight: FontWeight.w400),
       ),
     );
   }

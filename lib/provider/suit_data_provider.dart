@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class SuitDataProvider extends ChangeNotifier {
   List<Container> result = [];
   bool activedAllTabbar = true;
+  bool bottomsheetIsOpened = false;
 
   Map<String, dynamic> map1 = {
     'Qabaq uzunluq': 0,
@@ -50,11 +51,6 @@ class SuitDataProvider extends ChangeNotifier {
     'boyun': false,
   };
 
-  // bool item1 = true;
-  // bool item2 = true;
-  // bool item3 = true;
-  // bool item4 = true;
-
   bool item1 = false;
   bool item2 = false;
   bool item3 = false;
@@ -66,6 +62,11 @@ class SuitDataProvider extends ChangeNotifier {
 
   void selectedModelContainerActive() {
     SelectedModelContainer = !SelectedModelContainer;
+    notifyListeners();
+  }
+
+  void bottomsheetOpen() {
+    bottomsheetIsOpened = !bottomsheetIsOpened;
     notifyListeners();
   }
 

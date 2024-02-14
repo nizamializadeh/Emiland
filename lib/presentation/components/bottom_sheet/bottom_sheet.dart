@@ -28,7 +28,7 @@ Future<void> bottomSheet(
               maxWidth: 513,
             ),
             child: Container(
-              height: 1000.h,
+              height: 1010.h,
               padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -55,7 +55,7 @@ Future<void> bottomSheet(
                       ],
                     ),
                     SizedBox(
-                      height: 40.h,
+                      height: 5.h,
                     ),
                     Padding(
                       padding:
@@ -74,7 +74,7 @@ Future<void> bottomSheet(
                               ),
                               child: TextField(
                                 style: TextStyle(
-                                    fontSize: 30.sp, color: Colors.black),
+                                    fontSize: 33.sp, color: Colors.black),
                                 onChanged: (value) {
                                   value = '-$value';
                                   suitInstance.DataCouter(
@@ -110,7 +110,7 @@ Future<void> bottomSheet(
                               ),
                               child: TextField(
                                 style: TextStyle(
-                                    fontSize: 30.sp, color: Colors.black),
+                                    fontSize: 33.sp, color: Colors.black),
                                 onChanged: (value) {
                                   suitInstance.DataCouter(
                                       int.parse(value), name);
@@ -119,11 +119,11 @@ Future<void> bottomSheet(
                                 decoration: InputDecoration(
                                   enabledBorder: const OutlineInputBorder(
                                     borderSide: const BorderSide(
-                                        color: Colors.yellow, width: 0.0),
+                                        color: Colors.transparent, width: 0.0),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                        width: 1, color: Colors.black26),
+                                        width: 1, color: Colors.transparent),
                                   ),
                                   border: OutlineInputBorder(),
                                 ),
@@ -249,6 +249,7 @@ Future<void> bottomSheet(
                                         Container(
                                           width: double.infinity,
                                           child: TabBarItem(
+                                            active: true,
                                             text: name,
                                             value: -1.5,
                                           ),
@@ -283,6 +284,7 @@ Future<void> bottomSheet(
                                         Container(
                                           width: double.infinity,
                                           child: TabBarItem(
+                                            active: true,
                                             text: name,
                                             value: 2.5,
                                           ),
@@ -302,7 +304,7 @@ Future<void> bottomSheet(
                       ),
                     ),
                     SizedBox(
-                      height: 15.h,
+                      height: 40.h,
                     ),
                     Padding(
                       padding:
@@ -325,7 +327,7 @@ Future<void> bottomSheet(
                             BottomSheetButton(
                               name: 'Apply',
                               textColor: Colors.white,
-                              backgorundcolor: Colors.black,
+                              backgorundcolor: Color(0xff2D2D2C),
                               func: () {
                                 Navigator.pop(context);
                               },
@@ -342,5 +344,7 @@ Future<void> bottomSheet(
         );
       });
     },
-  );
+  ).whenComplete(() {
+    suitInstance.bottomsheetOpen();
+  });
 }
