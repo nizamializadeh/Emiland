@@ -22,7 +22,7 @@ class JacketLeftSideBar extends StatelessWidget {
         suitInstance.activateTabbarItem();
       },
       child: Container(
-        margin: EdgeInsets.only(top: 114.h),
+        margin: EdgeInsets.only(top: 55.h),
         decoration: const BoxDecoration(
           color: Color(0xffF4F4F4),
         ),
