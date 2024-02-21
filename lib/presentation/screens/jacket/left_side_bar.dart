@@ -22,7 +22,6 @@ class JacketLeftSideBar extends StatelessWidget {
         suitInstance.activateTabbarItem();
       },
       child: Container(
-        margin: EdgeInsets.only(top: 55.h),
         decoration: const BoxDecoration(
           color: Color(0xffF4F4F4),
         ),
@@ -60,19 +59,6 @@ class JacketLeftSideBar extends StatelessWidget {
                               img: suitInstance.item1
                                   ? 'assets/lekal/selected_lekal1.png'
                                   : 'assets/lekal/lekal1.png'),
-                          suitInstanceTrue.map2['boyun']!
-                              ? SingleSuit(
-                                  width: 200,
-                                  height: 200,
-                                  active: suitInstance.item1,
-                                  onclick: () {
-                                    suitInstance.deactivateAllSuit();
-                                    suitInstance.activateSuit(
-                                        suitInstance.item1 = true);
-                                  },
-                                  img: 'assets/prototip/test.png',
-                                )
-                              : const SizedBox.shrink(),
                         ],
                       ),
                       SingleSuit(
@@ -101,19 +87,139 @@ class JacketLeftSideBar extends StatelessWidget {
                           img: suitInstance.item3
                               ? 'assets/lekal/selected_lekal3.png'
                               : 'assets/lekal/lekal3.png'),
-                      SingleSuit(
-                          width: 120,
-                          height: 350,
-                          active: suitInstance.item4,
-                          onclick: () {
-                            suitInstance.deactivateAllSuit();
-                            suitInstance
-                                .activateSuit(suitInstance.item4 = true);
-                            tabbarProvider.deleteItem(context);
-                          },
-                          img: suitInstance.item4
-                              ? 'assets/lekal/selected_lekal4.png'
-                              : 'assets/lekal/lekal4.png'),
+                      Stack(
+                        children: [
+                          SingleSuit(
+                              width: 120,
+                              height: 350,
+                              active: suitInstance.item4,
+                              onclick: () {
+                                suitInstance.deactivateAllSuit();
+                                suitInstance
+                                    .activateSuit(suitInstance.item4 = true);
+                                tabbarProvider.deleteItem(context);
+                              },
+                              img: suitInstance.item4
+                                  ? 'assets/prototip/eag.png'
+                                  : 'assets/prototip/ex1.png'),
+                          suitInstanceTrue.map2['Qol dibi qaldır/aşağı sal'] > 0
+                              ? SingleSuit(
+                                  width: 120,
+                                  height: 350,
+                                  active: suitInstance.item4,
+                                  onclick: () {
+                                    suitInstance.deactivateAllSuit();
+                                    suitInstance.activateSuit(
+                                        suitInstance.item4 = true);
+                                    tabbarProvider.deleteItem(context);
+                                  },
+                                  img: 'assets/prototip/a1.png',
+                                )
+                              : const SizedBox.shrink(),
+                          suitInstanceTrue.map2['Qol dibi qaldır/aşağı sal'] < 0
+                              ? SingleSuit(
+                                  width: 120,
+                                  height: 350,
+                                  active: suitInstance.item4,
+                                  onclick: () {
+                                    suitInstance.deactivateAllSuit();
+                                    suitInstance.activateSuit(
+                                        suitInstance.item4 = true);
+                                    tabbarProvider.deleteItem(context);
+                                  },
+                                  img: 'assets/prototip/a2.png',
+                                )
+                              : const SizedBox.shrink(),
+                          suitInstanceTrue
+                                      .map2['Qolun aşağı hissəsi artır/azalt'] <
+                                  0
+                              ? SingleSuit(
+                                  width: 120,
+                                  height: 350,
+                                  active: suitInstance.item4,
+                                  onclick: () {
+                                    suitInstance.deactivateAllSuit();
+                                    suitInstance.activateSuit(
+                                        suitInstance.item4 = true);
+                                    tabbarProvider.deleteItem(context);
+                                  },
+                                  img: 'assets/prototip/a4.png',
+                                )
+                              : const SizedBox.shrink(),
+                          suitInstanceTrue
+                                      .map2['Qolun aşağı hissəsi artır/azalt'] >
+                                  0
+                              ? SingleSuit(
+                                  width: 120,
+                                  height: 350,
+                                  active: suitInstance.item4,
+                                  onclick: () {
+                                    suitInstance.deactivateAllSuit();
+                                    suitInstance.activateSuit(
+                                        suitInstance.item4 = true);
+                                    tabbarProvider.deleteItem(context);
+                                  },
+                                  img: 'assets/prototip/a9.png',
+                                )
+                              : const SizedBox.shrink(),
+                          suitInstanceTrue.map2['Qolovka artır/azalt'] > 0
+                              ? SingleSuit(
+                                  width: 120,
+                                  height: 350,
+                                  active: suitInstance.item4,
+                                  onclick: () {
+                                    suitInstance.deactivateAllSuit();
+                                    suitInstance.activateSuit(
+                                        suitInstance.item4 = true);
+                                    tabbarProvider.deleteItem(context);
+                                  },
+                                  img: 'assets/prototip/a6.png',
+                                )
+                              : const SizedBox.shrink(),
+                          suitInstanceTrue.map2['Qolovka artır/azalt'] < 0
+                              ? SingleSuit(
+                                  width: 120,
+                                  height: 350,
+                                  active: suitInstance.item4,
+                                  onclick: () {
+                                    suitInstance.deactivateAllSuit();
+                                    suitInstance.activateSuit(
+                                        suitInstance.item4 = true);
+                                    tabbarProvider.deleteItem(context);
+                                  },
+                                  img: 'assets/prototip/a8.png',
+                                )
+                              : const SizedBox.shrink(),
+                          suitInstanceTrue.map2['Dirsək artır/azalt'] > 0
+                              ? SingleSuit(
+                                  width: 120,
+                                  height: 350,
+                                  active: suitInstance.item4,
+                                  onclick: () {
+                                    suitInstance.deactivateAllSuit();
+                                    suitInstance.activateSuit(
+                                        suitInstance.item4 = true);
+                                    tabbarProvider.deleteItem(context);
+                                  },
+                                  img: 'assets/prototip/a3.png',
+                                )
+                              : const SizedBox.shrink(),
+                          suitInstanceTrue.map2['Dirsək artır/azalt'] < 0
+                              ? SingleSuit(
+                                  width: 120,
+                                  height: 350,
+                                  active: suitInstance.item4,
+                                  onclick: () {
+                                    suitInstance.deactivateAllSuit();
+                                    suitInstance.activateSuit(
+                                        suitInstance.item4 = true);
+                                    tabbarProvider.deleteItem(context);
+                                  },
+                                  img: 'assets/prototip/a4.png',
+                                )
+                              : const SizedBox.shrink(),
+                        ],
+                      ),
                     ],
                   ),
                 ],

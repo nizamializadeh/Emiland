@@ -1,6 +1,7 @@
 import 'package:emiland/presentation/screens/jacket/left_side_bar.dart';
 import 'package:emiland/presentation/screens/jacket/right_side_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../shirt/left_side_bar.dart';
 
@@ -17,14 +18,16 @@ class _JacketState extends State<Jacket> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // leadingWidth: 8, // <-- Use this
         appBar: AppBar(
-          leadingWidth: 1,
-          titleSpacing: 0,
           title: Container(
-            width: 220,
-            child: Image.asset(
-              'assets/png/logo.png',
+            margin: EdgeInsets.only(bottom: 40.h),
+            width: 280.w,
+            child: Column(
+              children: [
+                Image.asset(
+                  'assets/png/logo.png',
+                ),
+              ],
             ),
           ),
           backgroundColor: Colors.transparent,

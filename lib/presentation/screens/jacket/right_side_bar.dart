@@ -69,6 +69,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
         width: double.infinity,
         value: suitInstanceTrue.map1['Qabaq uzunluq']!,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'Qabaq uzunluq');
         },
         active: suitInstanceTrue.item1,
@@ -77,6 +78,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'Arxa uzunluq');
         },
         value: suitInstanceTrue.map1['Arxa uzunluq'],
@@ -87,6 +89,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
         width: double.infinity,
         value: suitInstanceTrue.map1['Qol']!,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'Qol');
         },
         active: suitInstanceTrue.item1,
@@ -95,6 +98,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'Çiyin');
         },
         value: suitInstanceTrue.map1['Çiyin'],
@@ -104,6 +108,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'Boyun');
         },
         value: suitInstanceTrue.map1['Boyun'],
@@ -113,25 +118,29 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
       TabBarItem(
         width: double.infinity,
         onTap: () {
-          bottomSheet(context, suitInstance, 'en');
+          suitInstanceTrue.bottomsheetOpen();
+
+          bottomSheet(context, suitInstance, 'En');
         },
-        value: suitInstanceTrue.map1['en'],
+        value: suitInstanceTrue.map1['En'],
         active: suitInstanceTrue.item4,
         text: 'En',
       ),
       TabBarItem(
         width: double.infinity,
-        value: suitInstanceTrue.map1['vatka']!,
+        value: suitInstanceTrue.map1['Vatka']!,
         onTap: () {
-          bottomSheet(context, suitInstance, 'vatka');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Vatka');
         },
         active: suitInstanceTrue.item1,
-        text: 'vatka',
+        text: 'Vatka',
       ),
       TabBarItem(
         width: double.infinity,
         value: suitInstanceTrue.map1['Qol qat']!,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'Qol qat');
         },
         active: suitInstanceTrue.item1,
@@ -141,6 +150,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
         width: double.infinity,
         value: suitInstanceTrue.map1['Qabaq hissə']!,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'Qabaq hissə');
         },
         active: suitInstanceTrue.item1,
@@ -148,230 +158,255 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
       ),
       TabBarItem(
         width: double.infinity,
-        value: suitInstanceTrue.map1['boyun doldurmaq/açmaq']!,
+        value: suitInstanceTrue.map1['Boyun doldurmaq/açmaq']!,
         onTap: () {
-          bottomSheet(context, suitInstance, 'boyun doldurmaq/açmaq');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Boyun doldurmaq/açmaq');
         },
         active: suitInstanceTrue.item1,
-        text: 'boyun doldurmaq/açmaq',
+        text: 'Boyun doldurmaq/açmaq',
       ),
       TabBarItem(
         width: double.infinity,
-        value: suitInstanceTrue.map1['çiyin qaldır/düş']!,
+        value: suitInstanceTrue.map1['Çiyin qaldır/düş']!,
         onTap: () {
-          bottomSheet(context, suitInstance, 'çiyin qaldır/düş');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Çiyin qaldır/düş');
         },
         active: suitInstanceTrue.item1,
-        text: 'çiyin qaldır/düş',
+        text: 'Çiyin qaldır/düş',
       ),
       TabBarItem(
         width: double.infinity,
-        value: suitInstanceTrue.map1['cib artırmaq/azaltmaq']!,
+        value: suitInstanceTrue.map1['Cib artırmaq/azaltmaq']!,
         onTap: () {
-          bottomSheet(context, suitInstance, 'cib artırmaq/azaltmaq');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Cib artırmaq/azaltmaq');
         },
         active: suitInstanceTrue.item1,
-        text: 'cib artırmaq/azaltmaq',
+        text: 'Cib artırmaq/azaltmaq',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
-          bottomSheet(context, suitInstance, 'cib sinə artır/azalt');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Cib sinə artır/azalt');
         },
-        value: suitInstanceTrue.map1['cib sinə artır/azalt'],
+        value: suitInstanceTrue.map1['Cib sinə artır/azalt'],
         active: suitInstanceTrue.item4,
-        text: 'cib sinə artır/azalt',
+        text: 'Cib sinə artır/azalt',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
-          bottomSheet(context, suitInstance, 'sinə artır/azalt');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Sinə artır/azalt');
         },
-        value: suitInstanceTrue.map1['sinə artır/azalt'],
+        value: suitInstanceTrue.map1['Sinə artır/azalt'],
         active: suitInstanceTrue.item4,
-        text: 'sinə artır/azalt',
+        text: 'Sinə artır/azalt',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
-          bottomSheet(context, suitInstance, 'uzunluq artır/azalt');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Uzunluq artır/azalt');
         },
-        value: suitInstanceTrue.map1['uzunluq artır/azalt'],
+        value: suitInstanceTrue.map1['Uzunluq artır/azalt'],
         active: suitInstanceTrue.item4,
-        text: 'uzunluq artır/azalt',
+        text: 'Uzunluq artır/azalt',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
-          bottomSheet(context, suitInstance, 'boyun artırmaq/çıxmaq');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Boyun artırmaq/çıxmaq');
         },
-        value: suitInstanceTrue.map1['boyun artırmaq/çıxmaq'],
+        value: suitInstanceTrue.map1['Boyun artırmaq/çıxmaq'],
         active: suitInstanceTrue.item4,
-        text: 'boyun artırmaq/çıxmaq',
+        text: 'Boyun artırmaq/çıxmaq',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
-          bottomSheet(context, suitInstance, 'qabaq aç / bağla');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Qabaq aç / bağla');
         },
-        value: suitInstanceTrue.map1['qabaq aç / bağla'],
+        value: suitInstanceTrue.map1['Qabaq aç / bağla'],
         active: suitInstanceTrue.item4,
-        text: 'qabaq aç / bağla',
+        text: 'Qabaq aç / bağla',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
-          bottomSheet(context, suitInstance, 'qabaq artırmaq/azaltmaq');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Qabaq artırmaq/azaltmaq');
         },
-        value: suitInstanceTrue.map1['qabaq artırmaq/azaltmaq'],
+        value: suitInstanceTrue.map1['Qabaq artırmaq/azaltmaq'],
         active: suitInstanceTrue.item4,
-        text: 'qabaq artırmaq/azaltmaq',
+        text: 'Qabaq artırmaq/azaltmaq',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(
-              context, suitInstance, 'boyun dərinləşdirmək / qaldırmaq');
+              context, suitInstance, 'Boyun dərinləşdirmək / qaldırmaq');
         },
-        value: suitInstanceTrue.map1['boyun dərinləşdirmək / qaldırmaq'],
+        value: suitInstanceTrue.map1['Boyun dərinləşdirmək / qaldırmaq'],
         active: suitInstanceTrue.item4,
-        text: 'boyun dərinləşdirmək / qaldırmaq',
+        text: 'Boyun dərinləşdirmək / qaldırmaq',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
-          bottomSheet(context, suitInstance, 'boyundan aşağıya qədər çıx');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Boyundan aşağıya qədər çıx');
         },
-        value: suitInstanceTrue.map1['boyundan aşağıya qədər çıx'],
+        value: suitInstanceTrue.map1['Boyundan aşağıya qədər çıx'],
         active: suitInstanceTrue.item4,
-        text: 'boyundan aşağıya qədər çıx',
+        text: 'Boyundan aşağıya qədər çıx',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
-          bottomSheet(context, suitInstance, 'çiyin artırmaq/çıxartmaq');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Çiyin artırmaq/çıxartmaq');
         },
-        value: suitInstanceTrue.map1['çiyin artırmaq/çıxartmaq'],
+        value: suitInstanceTrue.map1['Çiyin artırmaq/çıxartmaq'],
         active: suitInstanceTrue.item4,
-        text: 'çiyin artırmaq/çıxartmaq',
+        text: 'Çiyin artırmaq/çıxartmaq',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
-          bottomSheet(context, suitInstance, 'en çıx/artır');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'En çıx/artır');
         },
-        value: suitInstanceTrue.map1['en çıx/artır'],
+        value: suitInstanceTrue.map1['En çıx/artır'],
         active: suitInstanceTrue.item4,
-        text: 'en çıx/artır',
+        text: 'En çıx/artır',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
-          bottomSheet(context, suitInstance, 'qol dibi sal/qaldır');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Qol dibi sal/qaldır');
         },
-        value: suitInstanceTrue.map1['qol dibi sal/qaldır'],
+        value: suitInstanceTrue.map1['Qol dibi sal/qaldır'],
         active: suitInstanceTrue.item4,
-        text: 'qol dibi sal/qaldır',
+        text: 'Qol dibi sal/qaldır',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
-          bottomSheet(context, suitInstance, 'kürək açmaq');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Kürək açmaq');
         },
-        value: suitInstanceTrue.map1['kürək açmaq'],
+        value: suitInstanceTrue.map1['Kürək açmaq'],
         active: suitInstanceTrue.item4,
-        text: 'kürək açmaq',
+        text: 'Kürək açmaq',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
-          bottomSheet(context, suitInstance, 'kürək aşağısından çıx');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Kürək aşağısından çıx');
         },
-        value: suitInstanceTrue.map1['kürək aşağısından çıx'],
+        value: suitInstanceTrue.map1['Kürək aşağısından çıx'],
         active: suitInstanceTrue.item4,
-        text: 'kürək aşağısından çıx',
+        text: 'Kürək aşağısından çıx',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
-          bottomSheet(context, suitInstance, 'razrez artır/azalt');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Razrez artır/azalt');
         },
-        value: suitInstanceTrue.map1['razrez artır/azalt'],
+        value: suitInstanceTrue.map1['Razrez artır/azalt'],
         active: suitInstanceTrue.item4,
-        text: 'razrez artır/azalt',
+        text: 'Razrez artır/azalt',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
-          bottomSheet(context, suitInstance, 'talya çıx');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Talya çıx');
         },
-        value: suitInstanceTrue.map1['talya çıx'],
+        value: suitInstanceTrue.map1['Talya çıx'],
         active: suitInstanceTrue.item4,
-        text: 'talya çıx',
+        text: 'Talya çıx',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
-          bottomSheet(context, suitInstance, 'böyür hissə ağzını aç');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Böyür hissə ağzını aç');
         },
-        value: suitInstanceTrue.map1['böyür hissə ağzını aç'],
+        value: suitInstanceTrue.map1['Böyür hissə ağzını aç'],
         active: suitInstanceTrue.item4,
-        text: 'böyür hissə ağzını aç',
+        text: 'Böyür hissə ağzını aç',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
           bottomSheet(
-              context, suitInstance, 'böyür hissə yan tərəf artırmaq/azaltmaq');
+              context, suitInstance, 'Böyür hissə yan tərəf artırmaq/azaltmaq');
         },
-        value: suitInstanceTrue.map1['böyür hissə yan tərəf artırmaq/azaltmaq'],
+        value: suitInstanceTrue.map1['Böyür hissə yan tərəf artırmaq/azaltmaq'],
         active: suitInstanceTrue.item4,
-        text: 'böyür hissə yan tərəf artırmaq/azaltmaq',
+        text: 'Böyür hissə yan tərəf artırmaq/azaltmaq',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
-          bottomSheet(context, suitInstance, 'qol dibi qaldır/aşağı sal');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Qol dibi qaldır/aşağı sal');
         },
-        value: suitInstanceTrue.map1['qol dibi qaldır/aşağı sal'],
+        value: suitInstanceTrue.map1['Qol dibi qaldır/aşağı sal'],
         active: suitInstanceTrue.item4,
-        text: 'qol dibi qaldır/aşağı sal',
+        text: 'Qol dibi qaldır/aşağı sal',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
-          bottomSheet(context, suitInstance, 'dirsək artır/azalt');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Dirsək artır/azalt');
         },
-        value: suitInstanceTrue.map1['dirsək artır/azalt'],
+        value: suitInstanceTrue.map1['Dirsək artır/azalt'],
         active: suitInstanceTrue.item4,
-        text: 'dirsək artır/azalt',
+        text: 'Dirsək artır/azalt',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
-          bottomSheet(context, suitInstance, 'qolovka artır/azalt');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Qolovka artır/azalt');
         },
-        value: suitInstanceTrue.map1['qolovka artır/azalt'],
+        value: suitInstanceTrue.map1['Qolovka artır/azalt'],
         active: suitInstanceTrue.item4,
-        text: 'qolovka artır/azalt',
+        text: 'Qolovka artır/azalt',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
-          bottomSheet(context, suitInstance, 'qolun aşağı hissəsi artır/azalt');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Qolun aşağı hissəsi artır/azalt');
         },
-        value: suitInstanceTrue.map1['qolun aşağı hissəsi artır/azalt'],
+        value: suitInstanceTrue.map1['Qolun aşağı hissəsi artır/azalt'],
         active: suitInstanceTrue.item4,
-        text: 'qolun aşağı hissəsi artır/azalt',
+        text: 'Qolun aşağı hissəsi artır/azalt',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
-          bottomSheet(context, suitInstance, 'qol eni artır/azalt');
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Qol eni artır/azalt');
         },
-        value: suitInstanceTrue.map1['qol eni artır/azalt'],
+        value: suitInstanceTrue.map1['Qol eni artır/azalt'],
         active: suitInstanceTrue.item4,
-        text: 'qol eni artır/azalt',
+        text: 'Qol eni artır/azalt',
       ),
     ];
 
@@ -405,7 +440,6 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
         child: Column(
           children: [
             Expanded(
-              flex: 9,
               child: DefaultTabController(
                 length: 3,
                 child: Scaffold(
@@ -413,78 +447,99 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                       ? Color.fromRGBO(219, 219, 219, 0.51)
                       : Colors.transparent,
                   appBar: AppBar(
+                    toolbarHeight: 30,
                     backgroundColor: Colors.transparent,
                     elevation: 0,
-                    bottom: TabBar(
-                      labelStyle: TextStyle(
-                          fontSize: 30.sp, fontWeight: FontWeight.w700),
-                      labelColor: Color.fromRGBO(45, 45, 44, 0.90),
-                      unselectedLabelColor: Color.fromRGBO(16, 16, 16, 0.50),
-                      indicator: UnderlineTabIndicator(
-                        borderSide: BorderSide(width: 1.0),
-                        insets: EdgeInsets.only(left: 335.w, right: 333.w),
-                      ),
-                      controller: _tabController,
-                      tabs: [
-                        // if (suitInstance.item1)
-                        const Tab(
-                          child: Text(
-                            '1.Info/Uslub',
-                          ),
-                        ),
-                        const Tab(
-                          child: Text(
-                            '2.Ölçü',
-                          ),
-                        ),
+                    bottom: PreferredSize(
+                        preferredSize:
+                            Size.fromHeight(100.0.h), // here the desired height
+                        child: Stack(
+                          fit: StackFit.passthrough,
+                          alignment: Alignment.bottomCenter,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  bottom: BorderSide(
+                                      color: Color(0xffD4D4D4), width: 0.8),
+                                ),
+                              ),
+                            ),
+                            TabBar(
+                              labelStyle: TextStyle(
+                                  fontSize: 30.sp, fontWeight: FontWeight.w700),
+                              automaticIndicatorColorAdjustment: false,
+                              labelColor: Color.fromRGBO(45, 45, 44, 0.90),
+                              unselectedLabelColor:
+                                  Color.fromRGBO(16, 16, 16, 0.50),
+                              indicator: UnderlineTabIndicator(
+                                borderSide: BorderSide(width: 1.0),
+                                insets:
+                                    EdgeInsets.only(left: 335.w, right: 340.w),
+                              ),
+                              controller: _tabController,
+                              tabs: [
+                                // if (suitInstance.item1)
+                                const Tab(
+                                  child: Text(
+                                    '1.Info/Uslub',
+                                  ),
+                                ),
+                                const Tab(
+                                  child: Text(
+                                    '2.Ölçü',
+                                  ),
+                                ),
 
-                        if (tabbarProvider.tabLength.contains('z'))
-                          Tab(
-                            child: Text(
-                              'z',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 28.sp),
+                                if (tabbarProvider.tabLength.contains('z'))
+                                  Tab(
+                                    child: Text(
+                                      'z',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 28.sp),
+                                    ),
+                                  ),
+                                if (tabbarProvider.tabLength.contains('y'))
+                                  Tab(
+                                    child: Text(
+                                      'y',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 28.sp),
+                                    ),
+                                  ),
+                                if (tabbarProvider.tabLength.contains('b'))
+                                  Tab(
+                                    child: Text(
+                                      'b',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 28.sp),
+                                    ),
+                                  ),
+                                if (tabbarProvider.tabLength.contains('x'))
+                                  Tab(
+                                    child: Text(
+                                      'x',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 28.sp),
+                                    ),
+                                  ),
+                                Tab(
+                                  child: Text(
+                                    '3.Xülasə',
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                        if (tabbarProvider.tabLength.contains('y'))
-                          Tab(
-                            child: Text(
-                              'y',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 28.sp),
-                            ),
-                          ),
-                        if (tabbarProvider.tabLength.contains('b'))
-                          Tab(
-                            child: Text(
-                              'b',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 28.sp),
-                            ),
-                          ),
-                        if (tabbarProvider.tabLength.contains('x'))
-                          Tab(
-                            child: Text(
-                              'x',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 28.sp),
-                            ),
-                          ),
-                        Tab(
-                          child: Text(
-                            '3.Xülasə',
-                          ),
-                        ),
-                      ],
-                    ),
+                          ],
+                        )),
                   ),
                   body: Container(
                     // margin: EdgeInsets.symmetric(horizontal: 30.w),

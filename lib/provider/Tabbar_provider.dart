@@ -17,17 +17,352 @@ class TabbarProvider extends ChangeNotifier {
         Provider.of<SuitDataProvider>(context, listen: false);
     SuitDataProvider suitInstanceTrue =
         Provider.of<SuitDataProvider>(context, listen: false);
+    // final List<TabBarItem> items = [
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     value: suitInstanceTrue.map1['Qabaq uzunluq']!,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Qabaq uzunluq');
+    //     },
+    //     active: suitInstanceTrue.item1,
+    //     text: 'Qabaq uzunluq',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Arxa uzunluq');
+    //     },
+    //     value: suitInstanceTrue.map1['Arxa uzunluq'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Arxa uzunluq',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     value: suitInstanceTrue.map1['Qol']!,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Qol');
+    //     },
+    //     active: suitInstanceTrue.item1,
+    //     text: 'Qol',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Çiyin');
+    //     },
+    //     value: suitInstanceTrue.map1['Çiyin'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Çiyin',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Boyun');
+    //     },
+    //     value: suitInstanceTrue.map1['Boyun'],
+    //     active: suitInstanceTrue.item1,
+    //     text: 'Boyun',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //
+    //       bottomSheet(context, suitInstance, 'En');
+    //     },
+    //     value: suitInstanceTrue.map1['En'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'En',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     value: suitInstanceTrue.map1['Vatka']!,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Vatka');
+    //     },
+    //     active: suitInstanceTrue.item1,
+    //     text: 'Vatka',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     value: suitInstanceTrue.map1['Qol qat']!,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Qol qat');
+    //     },
+    //     active: suitInstanceTrue.item1,
+    //     text: 'Qol qat',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     value: suitInstanceTrue.map1['Qabaq hissə']!,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Qabaq hissə');
+    //     },
+    //     active: suitInstanceTrue.item1,
+    //     text: 'Qabaq hissə',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     value: suitInstanceTrue.map1['Boyun doldurmaq/açmaq']!,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Boyun doldurmaq/açmaq');
+    //     },
+    //     active: suitInstanceTrue.item1,
+    //     text: 'Boyun doldurmaq/açmaq',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     value: suitInstanceTrue.map1['Çiyin qaldır/düş']!,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Çiyin qaldır/düş');
+    //     },
+    //     active: suitInstanceTrue.item1,
+    //     text: 'Çiyin qaldır/düş',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     value: suitInstanceTrue.map1['Cib artırmaq/azaltmaq']!,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Cib artırmaq/azaltmaq');
+    //     },
+    //     active: suitInstanceTrue.item1,
+    //     text: 'Cib artırmaq/azaltmaq',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Cib sinə artır/azalt');
+    //     },
+    //     value: suitInstanceTrue.map1['Cib sinə artır/azalt'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Cib sinə artır/azalt',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Sinə artır/azalt');
+    //     },
+    //     value: suitInstanceTrue.map1['Sinə artır/azalt'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Sinə artır/azalt',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Uzunluq artır/azalt');
+    //     },
+    //     value: suitInstanceTrue.map1['Uzunluq artır/azalt'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Uzunluq artır/azalt',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Boyun artırmaq/çıxmaq');
+    //     },
+    //     value: suitInstanceTrue.map1['Boyun artırmaq/çıxmaq'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Boyun artırmaq/çıxmaq',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Qabaq aç / bağla');
+    //     },
+    //     value: suitInstanceTrue.map1['Qabaq aç / bağla'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Qabaq aç / bağla',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Qabaq artırmaq/azaltmaq');
+    //     },
+    //     value: suitInstanceTrue.map1['Qabaq artırmaq/azaltmaq'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Qabaq artırmaq/azaltmaq',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(
+    //           context, suitInstance, 'Boyun dərinləşdirmək / qaldırmaq');
+    //     },
+    //     value: suitInstanceTrue.map1['Boyun dərinləşdirmək / qaldırmaq'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Boyun dərinləşdirmək / qaldırmaq',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Boyundan aşağıya qədər çıx');
+    //     },
+    //     value: suitInstanceTrue.map1['Boyundan aşağıya qədər çıx'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Boyundan aşağıya qədər çıx',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Çiyin artırmaq/çıxartmaq');
+    //     },
+    //     value: suitInstanceTrue.map1['Çiyin artırmaq/çıxartmaq'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Çiyin artırmaq/çıxartmaq',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'En çıx/artır');
+    //     },
+    //     value: suitInstanceTrue.map1['En çıx/artır'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'En çıx/artır',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Qol dibi sal/qaldır');
+    //     },
+    //     value: suitInstanceTrue.map1['Qol dibi sal/qaldır'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Qol dibi sal/qaldır',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Kürək açmaq');
+    //     },
+    //     value: suitInstanceTrue.map1['Kürək açmaq'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Kürək açmaq',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Kürək aşağısından çıx');
+    //     },
+    //     value: suitInstanceTrue.map1['Kürək aşağısından çıx'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Kürək aşağısından çıx',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Razrez artır/azalt');
+    //     },
+    //     value: suitInstanceTrue.map1['Razrez artır/azalt'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Razrez artır/azalt',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Talya çıx');
+    //     },
+    //     value: suitInstanceTrue.map1['Talya çıx'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Talya çıx',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Böyür hissə ağzını aç');
+    //     },
+    //     value: suitInstanceTrue.map1['Böyür hissə ağzını aç'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Böyür hissə ağzını aç',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(
+    //           context, suitInstance, 'Böyür hissə yan tərəf artırmaq/azaltmaq');
+    //     },
+    //     value: suitInstanceTrue.map1['Böyür hissə yan tərəf artırmaq/azaltmaq'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Böyür hissə yan tərəf artırmaq/azaltmaq',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Qol dibi qaldır/aşağı sal');
+    //     },
+    //     value: suitInstanceTrue.map1['Qol dibi qaldır/aşağı sal'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Qol dibi qaldır/aşağı sal',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Dirsək artır/azalt');
+    //     },
+    //     value: suitInstanceTrue.map1['Dirsək artır/azalt'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Dirsək artır/azalt',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Qolovka artır/azalt');
+    //     },
+    //     value: suitInstanceTrue.map1['Qolovka artır/azalt'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Qolovka artır/azalt',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Qolun aşağı hissəsi artır/azalt');
+    //     },
+    //     value: suitInstanceTrue.map1['Qolun aşağı hissəsi artır/azalt'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Qolun aşağı hissəsi artır/azalt',
+    //   ),
+    //   TabBarItem(
+    //     width: double.infinity,
+    //     onTap: () {
+    //       suitInstanceTrue.bottomsheetOpen();
+    //       bottomSheet(context, suitInstance, 'Qol eni artır/azalt');
+    //     },
+    //     value: suitInstanceTrue.map1['Qol eni artır/azalt'],
+    //     active: suitInstanceTrue.item4,
+    //     text: 'Qol eni artır/azalt',
+    //   ),
+    // ];
     final List<TabBarItem> items = [
-      TabBarItem(
-        width: double.infinity,
-        value: suitInstanceTrue.map1['Qabaq uzunluq']!,
-        onTap: () {
-          suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'Qabaq uzunluq');
-        },
-        active: suitInstanceTrue.item1,
-        text: 'Qabaq uzunluq',
-      ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
@@ -35,28 +370,30 @@ class TabbarProvider extends ChangeNotifier {
           bottomSheet(context, suitInstance, 'Arxa uzunluq');
         },
         value: suitInstanceTrue.map1['Arxa uzunluq'],
-        active: suitInstanceTrue.item4,
+        active: suitInstanceTrue.item2,
         text: 'Arxa uzunluq',
       ),
       TabBarItem(
         width: double.infinity,
-        value: suitInstanceTrue.map1['Qol']!,
+        value: suitInstanceTrue.map1['Böyür hissə ağzını aç']!,
         onTap: () {
           suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'Qol');
+          bottomSheet(context, suitInstance, 'Böyür hissə ağzını aç');
         },
         active: suitInstanceTrue.item1,
-        text: 'Qol',
+        text: 'Böyür hissə ağzını aç',
       ),
       TabBarItem(
         width: double.infinity,
+        value:
+            suitInstanceTrue.map1['Böyür hissə yan tərəf artırmaq/azaltmaq']!,
         onTap: () {
           suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'Çiyin');
+          bottomSheet(
+              context, suitInstance, 'Böyür hissə yan tərəf artırmaq/azaltmaq');
         },
-        value: suitInstanceTrue.map1['Çiyin'],
-        active: suitInstanceTrue.item4,
-        text: 'Çiyin',
+        active: suitInstanceTrue.item2,
+        text: 'Böyür hissə yan tərəf artırmaq/azaltmaq',
       ),
       TabBarItem(
         width: double.infinity,
@@ -72,294 +409,262 @@ class TabbarProvider extends ChangeNotifier {
         width: double.infinity,
         onTap: () {
           suitInstanceTrue.bottomsheetOpen();
-
-          bottomSheet(context, suitInstance, 'en');
+          bottomSheet(context, suitInstance, 'Boyun artırmaq/çıxmaq');
         },
-        value: suitInstanceTrue.map1['en'],
+        value: suitInstanceTrue.map1['Boyun artırmaq/çıxmaq'],
+        active: suitInstanceTrue.item2,
+        text: 'Boyun artırmaq/çıxmaq',
+      ),
+      TabBarItem(
+        width: double.infinity,
+        onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(
+              context, suitInstance, 'Boyun dərinləşdirmək / qaldırmaq');
+        },
+        value: suitInstanceTrue.map1['Boyun dərinləşdirmək / qaldırmaq'],
+        active: suitInstanceTrue.item1,
+        text: 'Boyun dərinləşdirmək / qaldırmaq',
+      ),
+      TabBarItem(
+        width: double.infinity,
+        value: suitInstanceTrue.map1['Cib artırmaq/azaltmaq']!,
+        onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Cib artırmaq/azaltmaq');
+        },
+        active: suitInstanceTrue.item1,
+        text: 'Cib artırmaq/azaltmaq',
+      ),
+      TabBarItem(
+        width: double.infinity,
+        onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Cib sinə artır/azalt');
+        },
+        value: suitInstanceTrue.map1['Cib sinə artır/azalt'],
+        active: suitInstanceTrue.item2,
+        text: 'Cib sinə artır/azalt',
+      ),
+      TabBarItem(
+        width: double.infinity,
+        onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Çiyin');
+        },
+        value: suitInstanceTrue.map1['Çiyin'],
+        active: suitInstanceTrue.item1,
+        text: 'Çiyin',
+      ),
+      TabBarItem(
+        width: double.infinity,
+        onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Çiyin artırmaq/çıxartmaq');
+        },
+        value: suitInstanceTrue.map1['Çiyin artırmaq/çıxartmaq'],
+        active: suitInstanceTrue.item3,
+        text: 'Çiyin artırmaq/çıxartmaq',
+      ),
+      TabBarItem(
+        width: double.infinity,
+        value: suitInstanceTrue.map1['Çiyin qaldır/düş']!,
+        onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Çiyin qaldır/düş');
+        },
+        active: suitInstanceTrue.item1,
+        text: 'Çiyin qaldır/düş',
+      ),
+      TabBarItem(
+        width: double.infinity,
+        onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Dirsək artır/azalt');
+        },
+        value: suitInstanceTrue.map1['Dirsək artır/azalt'],
         active: suitInstanceTrue.item4,
+        text: 'Dirsək artır/azalt',
+      ),
+      TabBarItem(
+        width: double.infinity,
+        onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'En');
+        },
+        value: suitInstanceTrue.map1['En'],
+        active: suitInstanceTrue.item1,
         text: 'En',
       ),
       TabBarItem(
         width: double.infinity,
-        value: suitInstanceTrue.map1['vatka']!,
         onTap: () {
           suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'vatka');
+          bottomSheet(context, suitInstance, 'En çıx/artır');
         },
-        active: suitInstanceTrue.item1,
-        text: 'vatka',
+        value: suitInstanceTrue.map1['En çıx/artır'],
+        active: suitInstanceTrue.item3,
+        text: 'En çıx/artır',
       ),
       TabBarItem(
         width: double.infinity,
-        value: suitInstanceTrue.map1['Qol qat']!,
+        onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Kürək aşağısından çıx');
+        },
+        value: suitInstanceTrue.map1['Kürək aşağısından çıx'],
+        active: suitInstanceTrue.item2,
+        text: 'Kürək aşağısından çıx',
+      ),
+      TabBarItem(
+        width: double.infinity,
+        onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Kürək açmaq');
+        },
+        value: suitInstanceTrue.map1['Kürək açmaq'],
+        active: suitInstanceTrue.item2,
+        text: 'Kürək açmaq',
+      ),
+      TabBarItem(
+        width: double.infinity,
+        onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Qabaq artırmaq/azaltmaq');
+        },
+        value: suitInstanceTrue.map1['Qabaq artırmaq/azaltmaq'],
+        active: suitInstanceTrue.item2,
+        text: 'Qabaq artırmaq/azaltmaq',
+      ),
+      TabBarItem(
+        width: double.infinity,
+        onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Qabaq aç / bağla');
+        },
+        value: suitInstanceTrue.map1['Qabaq aç / bağla'],
+        active: suitInstanceTrue.item3,
+        text: 'Qabaq aç / bağla',
+      ),
+      TabBarItem(
+        width: double.infinity,
+        onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Qabaq uzunluq');
+        },
+        value: suitInstanceTrue.map1['Qabaq uzunluq']!,
+        active: suitInstanceTrue.item1,
+        text: 'Qabaq uzunluq',
+      ),
+      TabBarItem(
+        width: double.infinity,
+        onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Qol');
+        },
+        value: suitInstanceTrue.map1['Qol']!,
+        active: suitInstanceTrue.item4,
+        text: 'Qol',
+      ),
+      TabBarItem(
+        width: double.infinity,
+        onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Qol dibi qaldır/aşağı sal');
+        },
+        value: suitInstanceTrue.map1['Qol dibi qaldır/aşağı sal'],
+        active: suitInstanceTrue.item4,
+        text: 'Qol dibi qaldır/aşağı sal',
+      ),
+      TabBarItem(
+        width: double.infinity,
+        onTap: () {
+          suitInstanceTrue.bottomsheetOpen();
+          bottomSheet(context, suitInstance, 'Qol eni artır/azalt');
+        },
+        value: suitInstanceTrue.map1['Qol eni artır/azalt'],
+        active: suitInstanceTrue.item4,
+        text: 'Qol eni artır/azalt',
+      ),
+      TabBarItem(
+        width: double.infinity,
         onTap: () {
           suitInstanceTrue.bottomsheetOpen();
           bottomSheet(context, suitInstance, 'Qol qat');
         },
+        value: suitInstanceTrue.map1['Qol qat']!,
         active: suitInstanceTrue.item1,
         text: 'Qol qat',
       ),
       TabBarItem(
         width: double.infinity,
-        value: suitInstanceTrue.map1['Qabaq hissə']!,
         onTap: () {
           suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'Qabaq hissə');
+          bottomSheet(context, suitInstance, 'Qolovka artır/azalt');
         },
-        active: suitInstanceTrue.item1,
-        text: 'Qabaq hissə',
-      ),
-      TabBarItem(
-        width: double.infinity,
-        value: suitInstanceTrue.map1['boyun doldurmaq/açmaq']!,
-        onTap: () {
-          suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'boyun doldurmaq/açmaq');
-        },
-        active: suitInstanceTrue.item1,
-        text: 'boyun doldurmaq/açmaq',
-      ),
-      TabBarItem(
-        width: double.infinity,
-        value: suitInstanceTrue.map1['çiyin qaldır/düş']!,
-        onTap: () {
-          suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'çiyin qaldır/düş');
-        },
-        active: suitInstanceTrue.item1,
-        text: 'çiyin qaldır/düş',
-      ),
-      TabBarItem(
-        width: double.infinity,
-        value: suitInstanceTrue.map1['cib artırmaq/azaltmaq']!,
-        onTap: () {
-          suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'cib artırmaq/azaltmaq');
-        },
-        active: suitInstanceTrue.item1,
-        text: 'cib artırmaq/azaltmaq',
-      ),
-      TabBarItem(
-        width: double.infinity,
-        onTap: () {
-          suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'cib sinə artır/azalt');
-        },
-        value: suitInstanceTrue.map1['cib sinə artır/azalt'],
+        value: suitInstanceTrue.map1['Qolovka artır/azalt'],
         active: suitInstanceTrue.item4,
-        text: 'cib sinə artır/azalt',
+        text: 'Qolovka artır/azalt',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
           suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'sinə artır/azalt');
+          bottomSheet(context, suitInstance, 'Qolun aşağı hissəsi artır/azalt');
         },
-        value: suitInstanceTrue.map1['sinə artır/azalt'],
+        value: suitInstanceTrue.map1['Qolun aşağı hissəsi artır/azalt'],
         active: suitInstanceTrue.item4,
-        text: 'sinə artır/azalt',
+        text: 'Qolun aşağı hissəsi artır/azalt',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
           suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'uzunluq artır/azalt');
+          bottomSheet(context, suitInstance, 'Razrez artır/azalt');
         },
-        value: suitInstanceTrue.map1['uzunluq artır/azalt'],
-        active: suitInstanceTrue.item4,
-        text: 'uzunluq artır/azalt',
+        value: suitInstanceTrue.map1['Razrez artır/azalt'],
+        active: suitInstanceTrue.item3,
+        text: 'Razrez artır/azalt',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
           suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'boyun artırmaq/çıxmaq');
+          bottomSheet(context, suitInstance, 'Sinə artır/azalt');
         },
-        value: suitInstanceTrue.map1['boyun artırmaq/çıxmaq'],
-        active: suitInstanceTrue.item4,
-        text: 'boyun artırmaq/çıxmaq',
+        value: suitInstanceTrue.map1['Sinə artır/azalt'],
+        active: suitInstanceTrue.item2,
+        text: 'Sinə artır/azalt',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
           suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'qabaq aç / bağla');
+          bottomSheet(context, suitInstance, 'Talya çıx');
         },
-        value: suitInstanceTrue.map1['qabaq aç / bağla'],
-        active: suitInstanceTrue.item4,
-        text: 'qabaq aç / bağla',
+        value: suitInstanceTrue.map1['Talya çıx'],
+        active: suitInstanceTrue.item3,
+        text: 'Talya çıx',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
           suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'qabaq artırmaq/azaltmaq');
+          bottomSheet(context, suitInstance, 'Uzunluq artır/azalt');
         },
-        value: suitInstanceTrue.map1['qabaq artırmaq/azaltmaq'],
-        active: suitInstanceTrue.item4,
-        text: 'qabaq artırmaq/azaltmaq',
+        value: suitInstanceTrue.map1['Uzunluq artır/azalt'],
+        active: suitInstanceTrue.item2,
+        text: 'Uzunluq artır/azalt',
       ),
       TabBarItem(
         width: double.infinity,
         onTap: () {
           suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(
-              context, suitInstance, 'boyun dərinləşdirmək / qaldırmaq');
+          bottomSheet(context, suitInstance, 'Vatka');
         },
-        value: suitInstanceTrue.map1['boyun dərinləşdirmək / qaldırmaq'],
-        active: suitInstanceTrue.item4,
-        text: 'boyun dərinləşdirmək / qaldırmaq',
-      ),
-      TabBarItem(
-        width: double.infinity,
-        onTap: () {
-          suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'boyundan aşağıya qədər çıx');
-        },
-        value: suitInstanceTrue.map1['boyundan aşağıya qədər çıx'],
-        active: suitInstanceTrue.item4,
-        text: 'boyundan aşağıya qədər çıx',
-      ),
-      TabBarItem(
-        width: double.infinity,
-        onTap: () {
-          suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'çiyin artırmaq/çıxartmaq');
-        },
-        value: suitInstanceTrue.map1['çiyin artırmaq/çıxartmaq'],
-        active: suitInstanceTrue.item4,
-        text: 'çiyin artırmaq/çıxartmaq',
-      ),
-      TabBarItem(
-        width: double.infinity,
-        onTap: () {
-          suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'en çıx/artır');
-        },
-        value: suitInstanceTrue.map1['en çıx/artır'],
-        active: suitInstanceTrue.item4,
-        text: 'en çıx/artır',
-      ),
-      TabBarItem(
-        width: double.infinity,
-        onTap: () {
-          suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'qol dibi sal/qaldır');
-        },
-        value: suitInstanceTrue.map1['qol dibi sal/qaldır'],
-        active: suitInstanceTrue.item4,
-        text: 'qol dibi sal/qaldır',
-      ),
-      TabBarItem(
-        width: double.infinity,
-        onTap: () {
-          suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'kürək açmaq');
-        },
-        value: suitInstanceTrue.map1['kürək açmaq'],
-        active: suitInstanceTrue.item4,
-        text: 'kürək açmaq',
-      ),
-      TabBarItem(
-        width: double.infinity,
-        onTap: () {
-          suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'kürək aşağısından çıx');
-        },
-        value: suitInstanceTrue.map1['kürək aşağısından çıx'],
-        active: suitInstanceTrue.item4,
-        text: 'kürək aşağısından çıx',
-      ),
-      TabBarItem(
-        width: double.infinity,
-        onTap: () {
-          suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'razrez artır/azalt');
-        },
-        value: suitInstanceTrue.map1['razrez artır/azalt'],
-        active: suitInstanceTrue.item4,
-        text: 'razrez artır/azalt',
-      ),
-      TabBarItem(
-        width: double.infinity,
-        onTap: () {
-          suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'talya çıx');
-        },
-        value: suitInstanceTrue.map1['talya çıx'],
-        active: suitInstanceTrue.item4,
-        text: 'talya çıx',
-      ),
-      TabBarItem(
-        width: double.infinity,
-        onTap: () {
-          suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'böyür hissə ağzını aç');
-        },
-        value: suitInstanceTrue.map1['böyür hissə ağzını aç'],
-        active: suitInstanceTrue.item4,
-        text: 'böyür hissə ağzını aç',
-      ),
-      TabBarItem(
-        width: double.infinity,
-        onTap: () {
-          suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(
-              context, suitInstance, 'böyür hissə yan tərəf artırmaq/azaltmaq');
-        },
-        value: suitInstanceTrue.map1['böyür hissə yan tərəf artırmaq/azaltmaq'],
-        active: suitInstanceTrue.item4,
-        text: 'böyür hissə yan tərəf artırmaq/azaltmaq',
-      ),
-      TabBarItem(
-        width: double.infinity,
-        onTap: () {
-          suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'qol dibi qaldır/aşağı sal');
-        },
-        value: suitInstanceTrue.map1['qol dibi qaldır/aşağı sal'],
-        active: suitInstanceTrue.item4,
-        text: 'qol dibi qaldır/aşağı sal',
-      ),
-      TabBarItem(
-        width: double.infinity,
-        onTap: () {
-          suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'dirsək artır/azalt');
-        },
-        value: suitInstanceTrue.map1['dirsək artır/azalt'],
-        active: suitInstanceTrue.item4,
-        text: 'dirsək artır/azalt',
-      ),
-      TabBarItem(
-        width: double.infinity,
-        onTap: () {
-          suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'qolovka artır/azalt');
-        },
-        value: suitInstanceTrue.map1['qolovka artır/azalt'],
-        active: suitInstanceTrue.item4,
-        text: 'qolovka artır/azalt',
-      ),
-      TabBarItem(
-        width: double.infinity,
-        onTap: () {
-          suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'qolun aşağı hissəsi artır/azalt');
-        },
-        value: suitInstanceTrue.map1['qolun aşağı hissəsi artır/azalt'],
-        active: suitInstanceTrue.item4,
-        text: 'qolun aşağı hissəsi artır/azalt',
-      ),
-      TabBarItem(
-        width: double.infinity,
-        onTap: () {
-          suitInstanceTrue.bottomsheetOpen();
-          bottomSheet(context, suitInstance, 'qol eni artır/azalt');
-        },
-        value: suitInstanceTrue.map1['qol eni artır/azalt'],
-        active: suitInstanceTrue.item4,
-        text: 'qol eni artır/azalt',
+        value: suitInstanceTrue.map1['Vatka']!,
+        active: suitInstanceTrue.item2,
+        text: 'Vatka',
       ),
     ];
 

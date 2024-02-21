@@ -28,7 +28,7 @@ class BottomSheetButton extends StatelessWidget {
       onPressed: func,
       child: Text(
         name,
-        style: TextStyle(color: textColor),
+        style: TextStyle(color: textColor, fontWeight: FontWeight.w400),
       ),
     );
   }

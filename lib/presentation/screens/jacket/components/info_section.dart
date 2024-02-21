@@ -15,7 +15,7 @@ class InfoSection extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: 85.h,
+          height: 70.h,
         ),
 // info divider
         Header(
@@ -111,9 +111,13 @@ class InfoSection extends StatelessWidget {
             ),
             Expanded(
               child: DropdownMenu<String>(
+                // expandedInsets: EdgeInsets.zero,
                 menuStyle: MenuStyle(
+                  padding: MaterialStateProperty.resolveWith((states) {
+                    return EdgeInsets.symmetric(horizontal: 0, vertical: 10);
+                  }),
                   elevation: MaterialStateProperty.resolveWith((states) {
-                    return 0; //your desired selected background color
+                    return 0;
                   }),
                 ),
                 inputDecorationTheme: const InputDecorationTheme(
@@ -121,7 +125,7 @@ class InfoSection extends StatelessWidget {
                       borderSide:
                           BorderSide(width: 0.3, color: Color(0xffDDDDDD))),
                   focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(width: 0.3, color: Colors.black)),
+                      borderSide: BorderSide(width: 0.3, color: Colors.red)),
                 ),
                 textStyle:
                     TextStyle(color: const Color(0xff707070), fontSize: 33.sp),
@@ -138,28 +142,40 @@ class InfoSection extends StatelessWidget {
                     value: value,
                     label: value,
                     labelWidget: Container(
-                      width: 240.0,
+                      margin: EdgeInsets.only(left: 10, right: 0),
+                      width: double.infinity,
                       height: 110.h,
-                      decoration: BoxDecoration(
-                        border:
-                            Border.all(width: 0.1, color: Color(0xFF595959)),
-                      ),
                       child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            vertical: 38.h, horizontal: 24.w),
+                        padding: EdgeInsets.fromLTRB(
+                          5.w,
+                          30.h,
+                          0.w,
+                          0.h,
+                        ),
                         child: Text(
                           value,
                           style: TextStyle(
-                            color: Colors.black,
+                            fontFamily: 'DM Sans',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 33.sp,
+                            color: Color(0xFF707070),
                           ),
                         ),
                       ),
                     ),
                     style: ButtonStyle(
+                      shape: MaterialStateProperty.resolveWith((states) {
+                        return RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(0.0),
+                            side: BorderSide(
+                                color: Color(0xFFDDDDDD), width: 0.3));
+                      }),
+                      padding: MaterialStateProperty.resolveWith((states) {
+                        return EdgeInsets.only(left: 0, right: 0);
+                      }),
                       foregroundColor:
                           MaterialStateProperty.resolveWith((states) {
-                        return Colors
-                            .white; //your desired selected background color
+                        return Colors.white;
                       }),
                       textStyle: MaterialStateTextStyle.resolveWith(
                         (states) => TextStyle(
@@ -226,9 +242,13 @@ class InfoSection extends StatelessWidget {
           children: [
             Expanded(
               child: DropdownMenu<String>(
+                // expandedInsets: EdgeInsets.zero,
                 menuStyle: MenuStyle(
+                  padding: MaterialStateProperty.resolveWith((states) {
+                    return EdgeInsets.symmetric(horizontal: 0, vertical: 10);
+                  }),
                   elevation: MaterialStateProperty.resolveWith((states) {
-                    return 0; //your desired selected background color
+                    return 0;
                   }),
                 ),
                 inputDecorationTheme: const InputDecorationTheme(
@@ -236,7 +256,7 @@ class InfoSection extends StatelessWidget {
                       borderSide:
                           BorderSide(width: 0.3, color: Color(0xffDDDDDD))),
                   focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(width: 0.3, color: Colors.black)),
+                      borderSide: BorderSide(width: 0.3, color: Colors.red)),
                 ),
                 textStyle:
                     TextStyle(color: const Color(0xff707070), fontSize: 33.sp),
@@ -253,28 +273,40 @@ class InfoSection extends StatelessWidget {
                     value: value,
                     label: value,
                     labelWidget: Container(
+                      margin: EdgeInsets.only(left: 10, right: 0),
                       width: double.infinity,
                       height: 110.h,
-                      decoration: BoxDecoration(
-                        border:
-                            Border.all(width: 0.1, color: Color(0xFF595959)),
-                      ),
                       child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            vertical: 38.h, horizontal: 24.w),
+                        padding: EdgeInsets.fromLTRB(
+                          5.w,
+                          30.h,
+                          0.w,
+                          0.h,
+                        ),
                         child: Text(
                           value,
                           style: TextStyle(
-                            color: Colors.black,
+                            fontFamily: 'DM Sans',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 33.sp,
+                            color: Color(0xFF707070),
                           ),
                         ),
                       ),
                     ),
                     style: ButtonStyle(
+                      shape: MaterialStateProperty.resolveWith((states) {
+                        return RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(0.0),
+                            side: BorderSide(
+                                color: Color(0xFFDDDDDD), width: 0.3));
+                      }),
+                      padding: MaterialStateProperty.resolveWith((states) {
+                        return EdgeInsets.only(left: 0, right: 0);
+                      }),
                       foregroundColor:
                           MaterialStateProperty.resolveWith((states) {
-                        return Colors
-                            .white; //your desired selected background color
+                        return Colors.white;
                       }),
                       textStyle: MaterialStateTextStyle.resolveWith(
                         (states) => TextStyle(
@@ -293,9 +325,13 @@ class InfoSection extends StatelessWidget {
             ),
             Expanded(
               child: DropdownMenu<String>(
+                // expandedInsets: EdgeInsets.zero,
                 menuStyle: MenuStyle(
+                  padding: MaterialStateProperty.resolveWith((states) {
+                    return EdgeInsets.symmetric(horizontal: 0, vertical: 10);
+                  }),
                   elevation: MaterialStateProperty.resolveWith((states) {
-                    return 0; //your desired selected background color
+                    return 0;
                   }),
                 ),
                 inputDecorationTheme: const InputDecorationTheme(
@@ -303,7 +339,7 @@ class InfoSection extends StatelessWidget {
                       borderSide:
                           BorderSide(width: 0.3, color: Color(0xffDDDDDD))),
                   focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(width: 0.3, color: Colors.black)),
+                      borderSide: BorderSide(width: 0.3, color: Colors.red)),
                 ),
                 textStyle:
                     TextStyle(color: const Color(0xff707070), fontSize: 33.sp),
@@ -320,28 +356,40 @@ class InfoSection extends StatelessWidget {
                     value: value,
                     label: value,
                     labelWidget: Container(
+                      margin: EdgeInsets.only(left: 10, right: 0),
                       width: double.infinity,
                       height: 110.h,
-                      decoration: BoxDecoration(
-                        border:
-                            Border.all(width: 0.1, color: Color(0xFF595959)),
-                      ),
                       child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            vertical: 38.h, horizontal: 24.w),
+                        padding: EdgeInsets.fromLTRB(
+                          5.w,
+                          30.h,
+                          0.w,
+                          0.h,
+                        ),
                         child: Text(
                           value,
                           style: TextStyle(
-                            color: Colors.black,
+                            fontFamily: 'DM Sans',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 33.sp,
+                            color: Color(0xFF707070),
                           ),
                         ),
                       ),
                     ),
                     style: ButtonStyle(
+                      shape: MaterialStateProperty.resolveWith((states) {
+                        return RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(0.0),
+                            side: BorderSide(
+                                color: Color(0xFFDDDDDD), width: 0.3));
+                      }),
+                      padding: MaterialStateProperty.resolveWith((states) {
+                        return EdgeInsets.only(left: 0, right: 0);
+                      }),
                       foregroundColor:
                           MaterialStateProperty.resolveWith((states) {
-                        return Colors
-                            .white; //your desired selected background color
+                        return Colors.white;
                       }),
                       textStyle: MaterialStateTextStyle.resolveWith(
                         (states) => TextStyle(

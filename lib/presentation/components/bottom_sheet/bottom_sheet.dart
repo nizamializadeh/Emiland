@@ -73,6 +73,7 @@ Future<void> bottomSheet(
                                 color: Color(0xffEF5C59),
                               ),
                               child: TextField(
+                                textAlign: TextAlign.center,
                                 style: TextStyle(
                                     fontSize: 33.sp, color: Colors.black),
                                 onChanged: (value) {
@@ -109,6 +110,7 @@ Future<void> bottomSheet(
                                 color: Color(0xFF62EF8A),
                               ),
                               child: TextField(
+                                textAlign: TextAlign.center,
                                 style: TextStyle(
                                     fontSize: 33.sp, color: Colors.black),
                                 onChanged: (value) {
@@ -267,7 +269,25 @@ Future<void> bottomSheet(
                                 value: '2',
                                 color: Color(0xFF62EF8A),
                                 func: () {
+                                  Provider.of<SuitDataProvider>(context,
+                                          listen: false)
+                                      .result
+                                      .add(
+                                        Container(
+                                          width: double.infinity,
+                                          child: TabBarItem(
+                                            active: true,
+                                            text: name,
+                                            value: 2,
+                                          ),
+                                        ),
+                                      );
                                   suitInstance.DataCouter(2, name);
+
+                                  // name = name.toLowerCase();
+                                  // Provider.of<SuitDataProvider>(context,
+                                  //         listen: false)
+                                  //     .map2[name] = true;
                                 },
                               ),
                               SizedBox(

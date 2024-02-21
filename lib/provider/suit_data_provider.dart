@@ -15,40 +15,49 @@ class SuitDataProvider extends ChangeNotifier {
     'Forması art.': 0,
     'Qol': 0,
     'Boyun': 0,
-    'en': 0,
-    'boyun': 0,
-    'vatka': 0,
+    'En': 0,
+    'Vatka': 0,
     'Qol qat': 0,
-    'boyun doldurmaq/açmaq': 0,
-    'çiyin qaldır/düş': 0,
-    'cib artırmaq/azaltmaq': 0,
-    'cib sinə artır/azalt': 0,
-    'sinə artır/azalt': 0,
-    'uzunluq artır/azalt': 0,
-    'boyun artırmaq/çıxmaq': 0,
-    'qabaq aç / bağla': 0,
-    'qabaq artırmaq/azaltmaq': 0,
-    'boyun dərinləşdirmək / qaldırmaq': 0,
-    'boyundan aşağıya qədər çıx': 0,
-    'çiyin artırmaq/çıxartmaq': 0,
-    'en çıx/artır': 0,
-    'qol dibi sal/qaldır': 0,
-    'kürək açmaq': 0,
-    'kürək aşağısından çıx': 0,
-    'razrez artır/azalt': 0,
-    'talya çıx': 0,
-    'böyür hissə ağzını aç': 0,
-    'böyür hissə yan tərəf artırmaq/azaltmaq': 0,
-    'qol dibi qaldır/aşağı sal': 0,
-    'dirsək artır/azalt': 0,
-    'qolovka artır/azalt': 0,
-    'qolun aşağı hissəsi artır/azalt': 0,
-    'qol eni artır/azalt': 0,
+    'Boyun doldurmaq/açmaq': 0,
+    'Çiyin qaldır/düş': 0,
+    'Cib artırmaq/azaltmaq': 0,
+    'Cib sinə artır/azalt': 0,
+    'Sinə artır/azalt': 0,
+    'Uzunluq artır/azalt': 0,
+    'Boyun artırmaq/çıxmaq': 0,
+    'Qabaq aç / bağla': 0,
+    'Qabaq artırmaq/azaltmaq': 0,
+    'Boyun dərinləşdirmək / qaldırmaq': 0,
+    'Boyundan aşağıya qədər çıx': 0,
+    'Çiyin artırmaq/çıxartmaq': 0,
+    'En çıx/artır': 0,
+    'Qol dibi sal/qaldır': 0,
+    'Kürək açmaq': 0,
+    'Kürək aşağısından çıx': 0,
+    'Razrez artır/azalt': 0,
+    'Talya çıx': 0,
+    'Böyür hissə ağzını aç': 0,
+    'Böyür hissə yan tərəf artırmaq/azaltmaq': 0,
+    'Qol dibi qaldır/aşağı sal': 0,
+    'Dirsək artır/azalt': 0,
+    'Qolovka artır/azalt': 0,
+    'Qolun aşağı hissəsi artır/azalt': 0,
+    'Qol eni artır/azalt': 0,
   };
 
-  Map<String, bool> map2 = {
-    'en': false,
-    'boyun': false,
+  // Map<String, bool> map2 = {
+  //   'En': false,
+  //   'Boyun': false,
+  //   'Qol dibi qaldır/aşağı sal': false,
+  // };
+
+  Map<String, dynamic> map2 = {
+    'En': 0,
+    'Boyun': 0,
+    'Qol dibi qaldır/aşağı sal': 0,
+    'Qolun aşağı hissəsi artır/azalt': 0,
+    'Qolovka artır/azalt': 0,
+    'Dirsək artır/azalt': 0,
   };
 
   bool item1 = false;
@@ -78,10 +87,19 @@ class SuitDataProvider extends ChangeNotifier {
   void DataCouter(data, name) {
     map1.forEach((key, value) {
       if (key == name) {
+        print(data);
         map1[key] = data;
-        map1[key] != 0 ? map2[key] = true : map2[key] = false;
+        map1[key] != 0 ? map2[key] = data : map2[key] = 0;
       }
     });
+
+    // void DataCouter(data, name) {
+    //   map1.forEach((key, value) {
+    //     if (key == name) {
+    //       map1[key] = data;
+    //       map1[key] != 0 ? map2[key] = true : map2[key] = false;
+    //     }
+    //   });
 
     notifyListeners();
   }
