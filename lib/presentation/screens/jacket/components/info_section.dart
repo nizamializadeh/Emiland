@@ -6,6 +6,12 @@ import '../../../../provider/suit_data_provider.dart';
 import '../../../components/custom_textfield.dart';
 import '../../../components/dropdown/dropdown.dart';
 import 'header.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+
+var maskFormatter = new MaskTextInputFormatter(
+    mask: '## ### ## ##',
+    filter: {"#": RegExp(r'[0-9]')},
+    type: MaskAutoCompletionType.lazy);
 
 class InfoSection extends StatelessWidget {
   const InfoSection({super.key});
@@ -206,7 +212,7 @@ class InfoSection extends StatelessWidget {
             ),
             Expanded(
                 child: CustomTextField(
-              hintText: 'Tehvil',
+              hintText: 'Təhvil',
             )),
           ],
         ),
@@ -214,6 +220,7 @@ class InfoSection extends StatelessWidget {
           height: 22.w,
         ),
         CustomTextField(
+          firstCapitalwords: TextCapitalization.words,
           center: true,
           hintText: 'Ad / Soyad',
         ),
@@ -229,15 +236,35 @@ class InfoSection extends StatelessWidget {
             SizedBox(
               width: 22.w,
             ),
+            // Expanded(
+            //   flex: 68,
+            //   child: CustomTextField(hintText: 'Əlaqə Nömrəsi'),
+            // ),
             Expanded(
               flex: 68,
-              child: CustomTextField(hintText: 'Elaqe Nomresi'),
+              child: TextField(
+                inputFormatters: [maskFormatter],
+                textAlign: TextAlign.left,
+                style:
+                    TextStyle(color: const Color(0xFF2D2D2C), fontSize: 33.sp),
+                decoration: InputDecoration(
+                  enabledBorder: const OutlineInputBorder(
+                      borderSide:
+                          BorderSide(width: 0.2, color: Color(0xffDDDDDD))),
+                  focusedBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(width: 0.2, color: Colors.black)),
+                  border: const OutlineInputBorder(
+                      borderSide: BorderSide(width: 0.2, color: Colors.black)),
+                  hintText: 'Əlaqə Nömrəsi',
+                ),
+              ),
             ),
           ],
         ),
         SizedBox(
           height: 22.w,
         ),
+
         Row(
           children: [
             Expanded(

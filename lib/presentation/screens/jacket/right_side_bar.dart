@@ -31,6 +31,14 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
       length: 3,
       vsync: this,
     );
+    _tabController?.addListener(_handleTabChange);
+  }
+
+  void _handleTabChange() {
+    if (_tabController != null && _tabController!.indexIsChanging) {
+      Provider.of<SuitDataProvider>(context, listen: false)
+          .OnlyInfoActive(_tabController!.index);
+    }
   }
 
   late final AnimationController _controller = AnimationController(
@@ -441,147 +449,210 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
           children: [
             Expanded(
               child: DefaultTabController(
-                length: 3,
-                child: Scaffold(
-                  backgroundColor: suitInstanceTrue.bottomsheetIsOpened
-                      ? Color.fromRGBO(219, 219, 219, 0.51)
-                      : Colors.transparent,
-                  appBar: AppBar(
-                    toolbarHeight: 30,
-                    backgroundColor: Colors.transparent,
-                    elevation: 0,
-                    bottom: PreferredSize(
-                        preferredSize:
-                            Size.fromHeight(100.0.h), // here the desired height
-                        child: Stack(
-                          fit: StackFit.passthrough,
-                          alignment: Alignment.bottomCenter,
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  bottom: BorderSide(
-                                      color: Color(0xffD4D4D4), width: 0.8),
-                                ),
-                              ),
-                            ),
-                            TabBar(
-                              labelStyle: TextStyle(
-                                  fontSize: 30.sp, fontWeight: FontWeight.w700),
-                              automaticIndicatorColorAdjustment: false,
-                              labelColor: Color.fromRGBO(45, 45, 44, 0.90),
-                              unselectedLabelColor:
-                                  Color.fromRGBO(16, 16, 16, 0.50),
-                              indicator: UnderlineTabIndicator(
-                                borderSide: BorderSide(width: 1.0),
-                                insets:
-                                    EdgeInsets.only(left: 335.w, right: 340.w),
-                              ),
-                              controller: _tabController,
-                              tabs: [
-                                // if (suitInstance.item1)
-                                const Tab(
-                                  child: Text(
-                                    '1.Info/Uslub',
+                  length: 3,
+                  child: Scaffold(
+                    backgroundColor: suitInstanceTrue.bottomsheetIsOpened
+                        ? Color.fromRGBO(219, 219, 219, 0.51)
+                        : Colors.transparent,
+                    appBar: AppBar(
+                      toolbarHeight: 30,
+                      backgroundColor: Colors.transparent,
+                      elevation: 0,
+                      bottom: PreferredSize(
+                          preferredSize: Size.fromHeight(
+                              100.0.h), // here the desired height
+                          child: Stack(
+                            fit: StackFit.passthrough,
+                            alignment: Alignment.bottomCenter,
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  border: Border(
+                                    bottom: BorderSide(
+                                        color: Color(0xffD4D4D4), width: 0.8),
                                   ),
                                 ),
-                                const Tab(
-                                  child: Text(
-                                    '2.Ölçü',
-                                  ),
+                              ),
+                              TabBar(
+                                labelStyle: TextStyle(
+                                    fontSize: 30.sp,
+                                    fontWeight: FontWeight.w700),
+                                automaticIndicatorColorAdjustment: false,
+                                labelColor: Color.fromRGBO(45, 45, 44, 0.90),
+                                unselectedLabelColor:
+                                    Color.fromRGBO(16, 16, 16, 0.50),
+                                indicator: UnderlineTabIndicator(
+                                  borderSide: BorderSide(width: 1.0),
+                                  insets: EdgeInsets.only(
+                                      left: 335.w, right: 340.w),
                                 ),
+                                controller: _tabController,
+                                tabs: [
+                                  // if (suitInstance.item1)
+                                  const Tab(
+                                    child: Text(
+                                      '1.Info/Uslub',
+                                    ),
+                                  ),
+                                  const Tab(
+                                    child: Text(
+                                      '2.Ölçü',
+                                    ),
+                                  ),
 
-                                if (tabbarProvider.tabLength.contains('z'))
+                                  if (tabbarProvider.tabLength.contains('z'))
+                                    Tab(
+                                      child: Text(
+                                        'z',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 28.sp),
+                                      ),
+                                    ),
+                                  if (tabbarProvider.tabLength.contains('y'))
+                                    Tab(
+                                      child: Text(
+                                        'y',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 28.sp),
+                                      ),
+                                    ),
+                                  if (tabbarProvider.tabLength.contains('b'))
+                                    Tab(
+                                      child: Text(
+                                        'b',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 28.sp),
+                                      ),
+                                    ),
+                                  if (tabbarProvider.tabLength.contains('x'))
+                                    Tab(
+                                      child: Text(
+                                        'x',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 28.sp),
+                                      ),
+                                    ),
                                   Tab(
                                     child: Text(
-                                      'z',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 28.sp),
+                                      '3.Xülasə',
                                     ),
                                   ),
-                                if (tabbarProvider.tabLength.contains('y'))
-                                  Tab(
-                                    child: Text(
-                                      'y',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 28.sp),
+                                ],
+                              ),
+                            ],
+                          )),
+                    ),
+                    body: Container(
+                      // margin: EdgeInsets.symmetric(horizontal: 30.w),
+                      child: TabBarView(
+                        physics: const NeverScrollableScrollPhysics(),
+                        controller: _tabController,
+                        children: [
+                          // Tabbar section 1
+                          Column(
+                            children: [
+                              Container(
+                                child: Expanded(
+                                  child: SingleChildScrollView(
+                                    child: Container(
+                                      margin: EdgeInsets.symmetric(
+                                          horizontal: 30.w),
+                                      child: Column(
+                                        children: [
+                                          Provider.of<SuitDataProvider>(context,
+                                                      listen: true)
+                                                  .modelSelected
+                                              ? Provider.of<SuitDataProvider>(
+                                                          context,
+                                                          listen: true)
+                                                      .SelectedModelContainer
+                                                  ? const JacketColorContainer()
+                                                  : SlideTransition(
+                                                      position:
+                                                          _offsetAnimation,
+                                                      child: Model())
+                                              : Column(
+                                                  children: [
+                                                    InfoSection(),
+                                                    StyleSection(),
+                                                  ],
+                                                )
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                if (tabbarProvider.tabLength.contains('b'))
-                                  Tab(
-                                    child: Text(
-                                      'b',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 28.sp),
-                                    ),
-                                  ),
-                                if (tabbarProvider.tabLength.contains('x'))
-                                  Tab(
-                                    child: Text(
-                                      'x',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 28.sp),
-                                    ),
-                                  ),
-                                Tab(
-                                  child: Text(
-                                    '3.Xülasə',
                                   ),
                                 ),
-                              ],
-                            ),
-                          ],
-                        )),
-                  ),
-                  body: Container(
-                    // margin: EdgeInsets.symmetric(horizontal: 30.w),
-                    child: TabBarView(
-                      physics: const NeverScrollableScrollPhysics(),
-                      controller: _tabController,
-                      children: [
-                        // Tabbar section 1
-                        Column(
-                          children: [
-                            Container(
-                              child: Expanded(
+                              ),
+                              CustomNextBtn(
+                                  cost: '\$129',
+                                  nextOrSave: () {
+                                    _tabController!.index == 2
+                                        ? Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const Trousers()))
+                                        : _tabController!.index++;
+                                    print(_tabController!.index);
+                                    Provider.of<SuitDataProvider>(context,
+                                            listen: false)
+                                        .OnlyInfoActive(_tabController!.index);
+                                  },
+                                  prev: () {
+                                    Provider.of<SuitDataProvider>(context,
+                                                listen: false)
+                                            .SelectedModelContainer
+                                        ? Provider.of<SuitDataProvider>(context,
+                                                listen: false)
+                                            .selectedModelContainerActive()
+                                        : Provider.of<SuitDataProvider>(context,
+                                                listen: false)
+                                            .modelSelectedActive();
+                                  },
+                                  prevText: Provider.of<SuitDataProvider>(
+                                              context,
+                                              listen: true)
+                                          .modelSelected
+                                      ? "Prev"
+                                      : "")
+                            ],
+                          ),
+                          // Tabbar section 2
+                          Column(
+                            children: [
+                              Expanded(
                                 child: SingleChildScrollView(
                                   child: Container(
                                     margin:
                                         EdgeInsets.symmetric(horizontal: 30.w),
                                     child: Column(
                                       children: [
-                                        Provider.of<SuitDataProvider>(context,
-                                                    listen: true)
-                                                .modelSelected
-                                            ? Provider.of<SuitDataProvider>(
-                                                        context,
-                                                        listen: true)
-                                                    .SelectedModelContainer
-                                                ? const JacketColorContainer()
-                                                : SlideTransition(
-                                                    position: _offsetAnimation,
-                                                    child: Model())
-                                            : Column(
-                                                children: [
-                                                  InfoSection(),
-                                                  StyleSection(),
-                                                ],
-                                              )
+                                        if (tabbarProvider.itemList.length != 0)
+                                          for (int index = 0;
+                                              index <
+                                                  tabbarProvider
+                                                      .itemList.length;
+                                              index += 1)
+                                            tabbarProvider.itemList[index]
+                                        else
+                                          for (int index = 0;
+                                              index < _items.length;
+                                              index += 1)
+                                            _items[index],
                                       ],
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                            CustomNextBtn(
+                              CustomNextBtn(
                                 cost: '\$129',
                                 nextOrSave: () {
                                   _tabController!.index == 2
@@ -591,266 +662,246 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                                               builder: (context) =>
                                                   const Trousers()))
                                       : _tabController!.index++;
+                                  Provider.of<SuitDataProvider>(context,
+                                          listen: false)
+                                      .OnlyInfoActive(_tabController!.index);
                                 },
                                 prev: () {
+                                  _tabController!.index != 0
+                                      ? _tabController!.index--
+                                      : _tabController!.index;
                                   Provider.of<SuitDataProvider>(context,
-                                              listen: false)
-                                          .SelectedModelContainer
-                                      ? Provider.of<SuitDataProvider>(context,
-                                              listen: false)
-                                          .selectedModelContainerActive()
-                                      : Provider.of<SuitDataProvider>(context,
-                                              listen: false)
-                                          .modelSelectedActive();
+                                          listen: false)
+                                      .OnlyInfoActive(_tabController!.index);
                                 },
-                                prevText: Provider.of<SuitDataProvider>(context,
-                                            listen: true)
-                                        .modelSelected
-                                    ? "Prev"
-                                    : "")
-                          ],
-                        ),
-                        // Tabbar section 2
-                        Column(
-                          children: [
-                            Expanded(
-                              child: SingleChildScrollView(
-                                child: Container(
-                                  margin:
+                                prevText: "Prev",
+                              )
+                            ],
+                          ),
+
+                          // Tabbar section 4
+                          if (tabbarProvider.tabLength.contains('z'))
+                            Column(
+                              children: [
+                                Container(
+                                  width: 20,
+                                  height: 20,
+                                  color: Colors.yellow,
+                                ),
+                                Padding(
+                                  padding:
                                       EdgeInsets.symmetric(horizontal: 30.w),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        '\$129',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 30.sp,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                      CustomBtn(
+                                          text: 'Prev',
+                                          onPressed: () {
+                                            _tabController!.index = 0;
+                                          }),
+                                      CustomBtn(onPressed: () {
+                                        _tabController!.animateTo(
+                                            tabbarProvider.tabLength.length +
+                                                1);
+                                        Provider.of<SuitDataProvider>(context,
+                                                listen: false)
+                                            .OnlyInfoActive(
+                                                _tabController!.index);
+                                      }),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          // Tabbar section 5
+                          if (tabbarProvider.tabLength.contains('y'))
+                            Column(
+                              children: [
+                                Container(
+                                  width: 20,
+                                  height: 20,
+                                  color: Colors.red,
+                                ),
+                                Padding(
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 30.w),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        '\$129',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 30.sp,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                      CustomBtn(
+                                          text: 'Prev',
+                                          onPressed: () {
+                                            _tabController!.index = 0;
+                                          }),
+                                      CustomBtn(onPressed: () {
+                                        _tabController!.animateTo(
+                                            tabbarProvider.tabLength.length +
+                                                1);
+                                        Provider.of<SuitDataProvider>(context,
+                                                listen: false)
+                                            .OnlyInfoActive(
+                                                _tabController!.index);
+                                      }),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          // Tabbar section 6
+                          if (tabbarProvider.tabLength.contains('b'))
+                            Column(
+                              children: [
+                                Container(
+                                  width: 20,
+                                  height: 20,
+                                  color: Colors.black,
+                                ),
+                                Padding(
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 30.w),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        '\$129',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 30.sp,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                      CustomBtn(
+                                          text: 'Prev',
+                                          onPressed: () {
+                                            _tabController!.index = 0;
+                                          }),
+                                      CustomBtn(onPressed: () {
+                                        _tabController!.animateTo(
+                                            tabbarProvider.tabLength.length +
+                                                1);
+                                        Provider.of<SuitDataProvider>(context,
+                                                listen: false)
+                                            .OnlyInfoActive(
+                                                _tabController!.index);
+                                      }),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          // Tabbar section 7
+                          if (tabbarProvider.tabLength.contains('x'))
+                            Column(
+                              children: [
+                                Container(
+                                  width: 20,
+                                  height: 20,
+                                  color: Colors.blue,
+                                ),
+                                Padding(
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 30.w),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        '\$129',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 30.sp,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                      CustomBtn(
+                                          text: 'Prev',
+                                          onPressed: () {
+                                            _tabController!.index = 0;
+                                          }),
+                                      CustomBtn(onPressed: () {
+                                        _tabController!.animateTo(
+                                            tabbarProvider.tabLength.length +
+                                                2);
+                                        Provider.of<SuitDataProvider>(context,
+                                                listen: false)
+                                            .OnlyInfoActive(
+                                                _tabController!.index);
+                                      }),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          // Tabbar section 3
+                          Column(
+                            children: [
+                              Expanded(
+                                child: SingleChildScrollView(
                                   child: Column(
                                     children: [
-                                      if (tabbarProvider.itemList.length != 0)
-                                        for (int index = 0;
-                                            index <
-                                                tabbarProvider.itemList.length;
-                                            index += 1)
-                                          tabbarProvider.itemList[index]
-                                      else
-                                        for (int index = 0;
-                                            index < _items.length;
-                                            index += 1)
-                                          _items[index],
+                                      Container(
+                                          margin: EdgeInsets.symmetric(
+                                              vertical: 10),
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 10),
+                                          width: double.infinity,
+                                          child: Column(
+                                            children:
+                                                Provider.of<SuitDataProvider>(
+                                                        context,
+                                                        listen: true)
+                                                    .result,
+                                          )),
                                     ],
                                   ),
                                 ),
                               ),
-                            ),
-                            CustomNextBtn(
-                              cost: '\$129',
-                              nextOrSave: () {
-                                _tabController!.index == 2
-                                    ? Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const Trousers()))
-                                    : _tabController!.index++;
-                              },
-                              prev: () {
-                                _tabController!.index != 0
-                                    ? _tabController!.index--
-                                    : _tabController!.index;
-                              },
-                              prevText: "Prev",
-                            )
-                          ],
-                        ),
-
-                        // Tabbar section 4
-                        if (tabbarProvider.tabLength.contains('z'))
-                          Column(
-                            children: [
-                              Container(
-                                width: 20,
-                                height: 20,
-                                color: Colors.yellow,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 30.w),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      '\$129',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 30.sp,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                    CustomBtn(
-                                        text: 'Prev',
-                                        onPressed: () {
-                                          _tabController!.index = 0;
-                                        }),
-                                    CustomBtn(onPressed: () {
-                                      _tabController!.animateTo(
-                                          tabbarProvider.tabLength.length + 1);
-                                    }),
-                                  ],
-                                ),
-                              ),
+                              CustomNextBtn(
+                                cost: '\$129',
+                                nextOrSave: () {
+                                  _tabController!.index == 2
+                                      ? Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const Trousers()))
+                                      : _tabController!.index++;
+                                  Provider.of<SuitDataProvider>(context,
+                                          listen: false)
+                                      .OnlyInfoActive(_tabController!.index);
+                                },
+                                prev: () {
+                                  _tabController!.index != 0
+                                      ? _tabController!.index--
+                                      : _tabController!.index;
+                                  Provider.of<SuitDataProvider>(context,
+                                          listen: false)
+                                      .OnlyInfoActive(_tabController!.index);
+                                },
+                                prevText: "Prev",
+                                nextOrSaveText: "Save",
+                              )
                             ],
                           ),
-                        // Tabbar section 5
-                        if (tabbarProvider.tabLength.contains('y'))
-                          Column(
-                            children: [
-                              Container(
-                                width: 20,
-                                height: 20,
-                                color: Colors.red,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 30.w),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      '\$129',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 30.sp,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                    CustomBtn(
-                                        text: 'Prev',
-                                        onPressed: () {
-                                          _tabController!.index = 0;
-                                        }),
-                                    CustomBtn(onPressed: () {
-                                      _tabController!.animateTo(
-                                          tabbarProvider.tabLength.length + 1);
-                                    }),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        // Tabbar section 6
-                        if (tabbarProvider.tabLength.contains('b'))
-                          Column(
-                            children: [
-                              Container(
-                                width: 20,
-                                height: 20,
-                                color: Colors.black,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 30.w),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      '\$129',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 30.sp,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                    CustomBtn(
-                                        text: 'Prev',
-                                        onPressed: () {
-                                          _tabController!.index = 0;
-                                        }),
-                                    CustomBtn(onPressed: () {
-                                      _tabController!.animateTo(
-                                          tabbarProvider.tabLength.length + 1);
-                                    }),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        // Tabbar section 7
-                        if (tabbarProvider.tabLength.contains('x'))
-                          Column(
-                            children: [
-                              Container(
-                                width: 20,
-                                height: 20,
-                                color: Colors.blue,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 30.w),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      '\$129',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 30.sp,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                    CustomBtn(
-                                        text: 'Prev',
-                                        onPressed: () {
-                                          _tabController!.index = 0;
-                                        }),
-                                    CustomBtn(onPressed: () {
-                                      _tabController!.animateTo(
-                                          tabbarProvider.tabLength.length + 2);
-                                    }),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        // Tabbar section 3
-                        Column(
-                          children: [
-                            Expanded(
-                              child: SingleChildScrollView(
-                                child: Column(
-                                  children: [
-                                    Container(
-                                        margin:
-                                            EdgeInsets.symmetric(vertical: 10),
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: 10),
-                                        width: double.infinity,
-                                        child: Column(
-                                          children:
-                                              Provider.of<SuitDataProvider>(
-                                                      context,
-                                                      listen: true)
-                                                  .result,
-                                        )),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            CustomNextBtn(
-                              cost: '\$129',
-                              nextOrSave: () {
-                                _tabController!.index == 2
-                                    ? Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const Trousers()))
-                                    : _tabController!.index++;
-                              },
-                              prev: () {
-                                _tabController!.index != 0
-                                    ? _tabController!.index--
-                                    : _tabController!.index;
-                              },
-                              prevText: "Prev",
-                              nextOrSaveText: "Save",
-                            )
-                          ],
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                ),
-              ),
+                  )),
             ),
           ],
         ));
@@ -871,25 +922,22 @@ class CustomBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100.h,
-      width: 300.w,
-      margin: const EdgeInsets.all(10),
+      height: 86.h,
+      width: 260.w,
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            elevation: 0,
+            side: BorderSide(width: 1, color: Color.fromRGBO(0, 0, 0, 0.18)),
+            elevation: 1,
             backgroundColor: white! ? Colors.white : Color(0xff2d2d2c),
             foregroundColor: white! ? Color(0xff2d2d2c) : Colors.white,
-            shape: RoundedRectangleBorder(
-              side: BorderSide(color: Colors.black, width: 0.1),
-              borderRadius: BorderRadius.circular(5.0),
-            ),
           ),
           child: Text(
             text,
             style: TextStyle(
-                fontSize: 43.sp,
-                fontFamily: 'DMSans',
-                fontWeight: FontWeight.w400),
+                fontSize: 30.sp,
+                // fontFamily: 'DMSans',
+                fontWeight: FontWeight.w500),
           ),
           onPressed: onPressed),
     );
@@ -911,10 +959,10 @@ class CustomNextBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 10, left: 1),
+      margin: EdgeInsets.only(left: 1),
       decoration: BoxDecoration(border: Border.all(color: Color(0xFFF4F4F4))),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 40.h),
+        padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 40.h),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

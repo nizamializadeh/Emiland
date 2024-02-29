@@ -17,7 +17,7 @@ class BottomSheetButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(horizontal: 80.w, vertical: 25.h),
+          padding: EdgeInsets.symmetric(horizontal: 50.w, vertical: 25.h),
           side: const BorderSide(
             width: 0.5,
             color: Colors.black,

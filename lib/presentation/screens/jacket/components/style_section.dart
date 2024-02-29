@@ -45,7 +45,7 @@ class StyleSection extends StatelessWidget {
               width: 22.w,
             ),
             Expanded(
-              child: CustContainer(text: 'Parca'),
+              child: CustContainer(text: 'Parça'),
             ),
           ],
         ),
@@ -171,19 +171,8 @@ class StyleSection extends StatelessWidget {
                         value: provider.isBortSelected1,
                         onChanged: (value) {
                           provider.setIsBortSelected1(value ?? false);
-
                           Provider.of<SuitDataProvider>(context, listen: false)
-                              .result
-                              .add(
-                                Container(
-                                  width: double.infinity,
-                                  child: TabBarItem(
-                                    active: true,
-                                    text: "Bort",
-                                    value: 1,
-                                  ),
-                                ),
-                              );
+                              .uniqeResult('Bort', 1);
                         },
                       ),
                     ),
@@ -201,17 +190,7 @@ class StyleSection extends StatelessWidget {
                         onChanged: (value) {
                           provider.setIsBortSelected2(value ?? false);
                           Provider.of<SuitDataProvider>(context, listen: false)
-                              .result
-                              .add(
-                                Container(
-                                  width: double.infinity,
-                                  child: TabBarItem(
-                                    active: true,
-                                    text: "Bort",
-                                    value: 2,
-                                  ),
-                                ),
-                              );
+                              .uniqeResult('Bort', 2);
                         },
                       ),
                     ),
@@ -245,17 +224,7 @@ class StyleSection extends StatelessWidget {
                         onChanged: (value) {
                           provider.setIsSelected1(value ?? false);
                           Provider.of<SuitDataProvider>(context, listen: false)
-                              .result
-                              .add(
-                                Container(
-                                  width: double.infinity,
-                                  child: TabBarItem(
-                                    active: true,
-                                    text: "Kəsik",
-                                    value: 1,
-                                  ),
-                                ),
-                              );
+                              .uniqeResult('Kəsik', 1);
                         },
                       ),
                     ),
@@ -273,17 +242,7 @@ class StyleSection extends StatelessWidget {
                         onChanged: (value) {
                           provider.setIsSelected2(value ?? false);
                           Provider.of<SuitDataProvider>(context, listen: false)
-                              .result
-                              .add(
-                                Container(
-                                  width: double.infinity,
-                                  child: TabBarItem(
-                                    active: true,
-                                    text: "Kəsik",
-                                    value: 2,
-                                  ),
-                                ),
-                              );
+                              .uniqeResult('Kəsik', 2);
                         },
                       ),
                     ),
@@ -327,17 +286,7 @@ class StyleSection extends StatelessWidget {
                             provider.setIsPocketSelected1(value ?? false);
                             Provider.of<SuitDataProvider>(context,
                                     listen: false)
-                                .result
-                                .add(
-                                  Container(
-                                    width: double.infinity,
-                                    child: TabBarItem(
-                                      active: true,
-                                      text: "Cib",
-                                      value: 1,
-                                    ),
-                                  ),
-                                );
+                                .uniqeResult('Cib', 1);
                           },
                         ),
                       ),
@@ -356,17 +305,7 @@ class StyleSection extends StatelessWidget {
                             provider.setIsPocketSelected2(value ?? false);
                             Provider.of<SuitDataProvider>(context,
                                     listen: false)
-                                .result
-                                .add(
-                                  Container(
-                                    width: double.infinity,
-                                    child: TabBarItem(
-                                      active: true,
-                                      text: "Cib",
-                                      value: 2,
-                                    ),
-                                  ),
-                                );
+                                .uniqeResult('Cib', 2);
                           },
                         ),
                       ),
@@ -403,17 +342,7 @@ class StyleSection extends StatelessWidget {
                             provider.setIsButtonSelected1(value ?? false);
                             Provider.of<SuitDataProvider>(context,
                                     listen: false)
-                                .result
-                                .add(
-                                  Container(
-                                    width: double.infinity,
-                                    child: TabBarItem(
-                                      active: true,
-                                      text: "Düymə",
-                                      value: 1,
-                                    ),
-                                  ),
-                                );
+                                .uniqeResult('Düymə', 1);
                           },
                         ),
                       ),
@@ -432,17 +361,7 @@ class StyleSection extends StatelessWidget {
                             provider.setIsButtonSelected2(value ?? false);
                             Provider.of<SuitDataProvider>(context,
                                     listen: false)
-                                .result
-                                .add(
-                                  Container(
-                                    width: double.infinity,
-                                    child: TabBarItem(
-                                      active: true,
-                                      text: "Düymə",
-                                      value: 2,
-                                    ),
-                                  ),
-                                );
+                                .uniqeResult('Düymə', 2);
                           },
                         ),
                       ),
@@ -461,17 +380,7 @@ class StyleSection extends StatelessWidget {
                             provider.setIsButtonSelected3(value ?? false);
                             Provider.of<SuitDataProvider>(context,
                                     listen: false)
-                                .result
-                                .add(
-                                  Container(
-                                    width: double.infinity,
-                                    child: TabBarItem(
-                                      active: true,
-                                      text: "Düymə",
-                                      value: 3,
-                                    ),
-                                  ),
-                                );
+                                .uniqeResult('Düymə', 3);
                           },
                         ),
                       ),

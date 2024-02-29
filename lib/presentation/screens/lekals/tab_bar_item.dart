@@ -24,7 +24,11 @@ class TabBarItem extends StatelessWidget {
     SuitDataProvider suitInstanceTrue =
         Provider.of<SuitDataProvider>(context, listen: false);
     return GestureDetector(
-      onTap: onTap,
+      onTap: suitInstanceTrue.activedAllTabbar
+          ? onTap
+          : active
+              ? onTap
+              : null,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 5),
         child: Container(

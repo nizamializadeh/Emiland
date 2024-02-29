@@ -11,9 +11,7 @@ import 'bottomsheet_button.dart';
 Future<void> bottomSheet(
     BuildContext context, SuitDataProvider suitInstance, String name) {
   return showModalBottomSheet<void>(
-    constraints: BoxConstraints(
-      maxWidth: double.infinity,
-    ),
+    constraints: BoxConstraints(maxWidth: double.infinity, maxHeight: 1010.h),
     backgroundColor: Colors.transparent,
     barrierColor: Colors.transparent,
     elevation: 0,
@@ -28,7 +26,7 @@ Future<void> bottomSheet(
               maxWidth: 513,
             ),
             child: Container(
-              height: 1010.h,
+              height: 940.h,
               padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -59,7 +57,7 @@ Future<void> bottomSheet(
                     ),
                     Padding(
                       padding:
-                          EdgeInsets.symmetric(vertical: 20.h, horizontal: 10),
+                          EdgeInsets.symmetric(vertical: 10.h, horizontal: 10),
                       child: Row(
                         children: [
                           Expanded(
@@ -137,41 +135,57 @@ Future<void> bottomSheet(
                     ),
                     Padding(
                       padding:
-                          EdgeInsets.symmetric(vertical: 20.h, horizontal: 10),
+                          EdgeInsets.symmetric(vertical: 10.h, horizontal: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
                             children: [
                               AddValue(
-                                value: '2',
+                                value: '0.25',
                                 color: Color(0xffEF5C59),
-                                func: () {},
+                                func: () {
+                                  Provider.of<SuitDataProvider>(context,
+                                          listen: false)
+                                      .uniqeResult(name, -0.25);
+                                },
                               ),
                               SizedBox(
                                 width: 10,
                               ),
                               AddValue(
-                                value: '1.5',
+                                value: '0.50',
                                 color: Color(0xffEF5C59),
-                                func: () {},
+                                func: () {
+                                  Provider.of<SuitDataProvider>(context,
+                                          listen: false)
+                                      .uniqeResult(name, -0.5);
+                                },
                               ),
                             ],
                           ),
                           Row(
                             children: [
                               AddValue(
-                                value: '1.5',
+                                value: '0.25',
                                 color: Color(0xFF62EF8A),
-                                func: () {},
+                                func: () {
+                                  Provider.of<SuitDataProvider>(context,
+                                          listen: false)
+                                      .uniqeResult(name, 0.25);
+                                },
                               ),
                               SizedBox(
                                 width: 10,
                               ),
                               AddValue(
-                                value: '0.5',
+                                value: '0.50',
                                 color: Color(0xFF62EF8A),
-                                func: () {},
+                                func: () {
+                                  Provider.of<SuitDataProvider>(context,
+                                          listen: false)
+                                      .uniqeResult(name, 0.5);
+                                },
                               ),
                             ],
                           ),
@@ -180,41 +194,57 @@ Future<void> bottomSheet(
                     ),
                     Padding(
                       padding:
-                          EdgeInsets.symmetric(vertical: 20.h, horizontal: 10),
+                          EdgeInsets.symmetric(vertical: 10.h, horizontal: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
                             children: [
                               AddValue(
-                                value: '0.5',
+                                value: '0.75',
                                 color: Color(0xffEF5C59),
-                                func: () {},
+                                func: () {
+                                  Provider.of<SuitDataProvider>(context,
+                                          listen: false)
+                                      .uniqeResult(name, -0.75);
+                                },
                               ),
                               SizedBox(
                                 width: 10,
                               ),
                               AddValue(
-                                value: '2.5',
+                                value: '1',
                                 color: Color(0xffEF5C59),
-                                func: () {},
+                                func: () {
+                                  Provider.of<SuitDataProvider>(context,
+                                          listen: false)
+                                      .uniqeResult(name, -1);
+                                },
                               ),
                             ],
                           ),
                           Row(
                             children: [
                               AddValue(
-                                value: '1.5',
+                                value: '0.75',
                                 color: Color(0xFF62EF8A),
-                                func: () {},
+                                func: () {
+                                  Provider.of<SuitDataProvider>(context,
+                                          listen: false)
+                                      .uniqeResult(name, 0.75);
+                                },
                               ),
                               SizedBox(
                                 width: 10,
                               ),
                               AddValue(
-                                value: '1.5',
+                                value: '1',
                                 color: Color(0xFF62EF8A),
-                                func: () {},
+                                func: () {
+                                  Provider.of<SuitDataProvider>(context,
+                                          listen: false)
+                                      .uniqeResult(name, 1);
+                                },
                               ),
                             ],
                           ),
@@ -223,42 +253,31 @@ Future<void> bottomSheet(
                     ),
                     Padding(
                       padding:
-                          EdgeInsets.symmetric(vertical: 20.h, horizontal: 10),
+                          EdgeInsets.symmetric(vertical: 10.h, horizontal: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
                             children: [
                               AddValue(
-                                value: '2',
+                                value: '1.50',
                                 color: Color(0xffEF5C59),
                                 func: () {
-                                  suitInstance.DataCouter(-2, name);
+                                  Provider.of<SuitDataProvider>(context,
+                                          listen: false)
+                                      .uniqeResult(name, -1.50);
                                 },
                               ),
                               SizedBox(
                                 width: 10,
                               ),
                               AddValue(
-                                value: '1.5',
+                                value: '2',
                                 color: Color(0xffEF5C59),
                                 func: () {
-                                  // xlist.add(name,-1.5)
                                   Provider.of<SuitDataProvider>(context,
                                           listen: false)
-                                      .result
-                                      .add(
-                                        Container(
-                                          width: double.infinity,
-                                          child: TabBarItem(
-                                            active: true,
-                                            text: name,
-                                            value: -1.5,
-                                          ),
-                                        ),
-                                      );
-
-                                  suitInstance.DataCouter(-1.5, name);
+                                      .uniqeResult(name, -2);
                                 },
                               ),
                             ],
@@ -266,56 +285,24 @@ Future<void> bottomSheet(
                           Row(
                             children: [
                               AddValue(
-                                value: '2',
+                                value: '1.5',
                                 color: Color(0xFF62EF8A),
                                 func: () {
                                   Provider.of<SuitDataProvider>(context,
                                           listen: false)
-                                      .result
-                                      .add(
-                                        Container(
-                                          width: double.infinity,
-                                          child: TabBarItem(
-                                            active: true,
-                                            text: name,
-                                            value: 2,
-                                          ),
-                                        ),
-                                      );
-                                  suitInstance.DataCouter(2, name);
-
-                                  // name = name.toLowerCase();
-                                  // Provider.of<SuitDataProvider>(context,
-                                  //         listen: false)
-                                  //     .map2[name] = true;
+                                      .uniqeResult(name, 1.5);
                                 },
                               ),
                               SizedBox(
                                 width: 10,
                               ),
                               AddValue(
-                                value: '2.5',
+                                value: '2',
                                 color: Color(0xFF62EF8A),
                                 func: () {
                                   Provider.of<SuitDataProvider>(context,
                                           listen: false)
-                                      .result
-                                      .add(
-                                        Container(
-                                          width: double.infinity,
-                                          child: TabBarItem(
-                                            active: true,
-                                            text: name,
-                                            value: 2.5,
-                                          ),
-                                        ),
-                                      );
-                                  suitInstance.DataCouter(2.5, name);
-
-                                  // name = name.toLowerCase();
-                                  // Provider.of<SuitDataProvider>(context,
-                                  //         listen: false)
-                                  //     .map2[name] = true;
+                                      .uniqeResult(name, 2);
                                 },
                               ),
                             ],
@@ -328,7 +315,7 @@ Future<void> bottomSheet(
                     ),
                     Padding(
                       padding:
-                          EdgeInsets.symmetric(vertical: 20.h, horizontal: 10),
+                          EdgeInsets.symmetric(vertical: 30.h, horizontal: 10),
                       child: Container(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,

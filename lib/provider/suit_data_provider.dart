@@ -4,6 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SuitDataProvider extends ChangeNotifier {
   List<Container> result = [];
+  int tabbarIndex = 0;
+  int resultIndex = 0;
+  bool resultUniqe = false;
   bool activedAllTabbar = true;
   bool bottomsheetIsOpened = false;
 
@@ -45,12 +48,6 @@ class SuitDataProvider extends ChangeNotifier {
     'Qol eni artır/azalt': 0,
   };
 
-  // Map<String, bool> map2 = {
-  //   'En': false,
-  //   'Boyun': false,
-  //   'Qol dibi qaldır/aşağı sal': false,
-  // };
-
   Map<String, dynamic> map2 = {
     'En': 0,
     'Boyun': 0,
@@ -84,23 +81,44 @@ class SuitDataProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  void uniqeResult(String name, double value) {
+    result.any((widget) {
+      if (widget is Container) {
+        Container containerWidget = widget;
+        if (containerWidget.child is TabBarItem) {
+          TabBarItem tabBarItemWidget = containerWidget.child as TabBarItem;
+          if (tabBarItemWidget.text == name) {
+            resultIndex = result.indexOf(containerWidget);
+            resultUniqe = true;
+          }
+        }
+      }
+      return false;
+    });
+    if (resultUniqe) {
+      result.removeAt(resultIndex);
+      resultUniqe = false;
+    }
+    result.add(
+      Container(
+        width: double.infinity,
+        child: TabBarItem(
+          active: true,
+          text: name,
+          value: value,
+        ),
+      ),
+    );
+    DataCouter(value, name);
+  }
+
   void DataCouter(data, name) {
     map1.forEach((key, value) {
       if (key == name) {
-        print(data);
         map1[key] = data;
         map1[key] != 0 ? map2[key] = data : map2[key] = 0;
       }
     });
-
-    // void DataCouter(data, name) {
-    //   map1.forEach((key, value) {
-    //     if (key == name) {
-    //       map1[key] = data;
-    //       map1[key] != 0 ? map2[key] = true : map2[key] = false;
-    //     }
-    //   });
-
     notifyListeners();
   }
 
@@ -111,6 +129,13 @@ class SuitDataProvider extends ChangeNotifier {
     item4 = false;
     activedAllTabbar = false;
     notifyListeners();
+  }
+
+  void OnlyInfoActive(int TabbarItem) {
+    tabbarIndex = TabbarItem;
+    if (TabbarItem != 1) {
+      deactivateAllSuit();
+    }
   }
 
   void activateTabbarItem() {

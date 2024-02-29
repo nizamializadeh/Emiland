@@ -13,6 +13,7 @@ class JacketLeftSideBar extends StatelessWidget {
   Widget build(BuildContext context) {
     SuitDataProvider suitInstance =
         Provider.of<SuitDataProvider>(context, listen: false);
+
     SuitDataProvider suitInstanceTrue =
         Provider.of<SuitDataProvider>(context, listen: true);
     TabbarProvider tabbarProvider =
@@ -50,10 +51,16 @@ class JacketLeftSideBar extends StatelessWidget {
                               height: 450,
                               active: suitInstance.item1,
                               onclick: () {
-                                suitInstance.deactivateAllSuit();
-                                suitInstance
-                                    .activateSuit(suitInstance.item1 = true);
-                                tabbarProvider.deleteItem(context);
+                                var tabIndex = Provider.of<SuitDataProvider>(
+                                        context,
+                                        listen: false)
+                                    .tabbarIndex;
+                                if (tabIndex == 1) {
+                                  suitInstance.deactivateAllSuit();
+                                  suitInstance
+                                      .activateSuit(suitInstance.item1 = true);
+                                  tabbarProvider.deleteItem(context);
+                                }
                               },
                               // img: 'assets/prototip/proto1.png',
                               img: suitInstance.item1
@@ -66,10 +73,16 @@ class JacketLeftSideBar extends StatelessWidget {
                           height: 350,
                           active: suitInstance.item2,
                           onclick: () {
-                            suitInstance.deactivateAllSuit();
-                            suitInstance
-                                .activateSuit(suitInstance.item2 = true);
-                            tabbarProvider.deleteItem(context);
+                            var tabIndex = Provider.of<SuitDataProvider>(
+                                    context,
+                                    listen: false)
+                                .tabbarIndex;
+                            if (tabIndex == 1) {
+                              suitInstance.deactivateAllSuit();
+                              suitInstance
+                                  .activateSuit(suitInstance.item2 = true);
+                              tabbarProvider.deleteItem(context);
+                            }
                           },
                           img: suitInstance.item2
                               ? 'assets/lekal/selected_lekal2.png'
@@ -79,10 +92,16 @@ class JacketLeftSideBar extends StatelessWidget {
                           height: 450,
                           active: suitInstance.item3,
                           onclick: () {
-                            suitInstance.deactivateAllSuit();
-                            suitInstance
-                                .activateSuit(suitInstance.item3 = true);
-                            tabbarProvider.deleteItem(context);
+                            var tabIndex = Provider.of<SuitDataProvider>(
+                                    context,
+                                    listen: false)
+                                .tabbarIndex;
+                            if (tabIndex == 1) {
+                              suitInstance.deactivateAllSuit();
+                              suitInstance
+                                  .activateSuit(suitInstance.item3 = true);
+                              tabbarProvider.deleteItem(context);
+                            }
                           },
                           img: suitInstance.item3
                               ? 'assets/lekal/selected_lekal3.png'
@@ -94,10 +113,16 @@ class JacketLeftSideBar extends StatelessWidget {
                               height: 350,
                               active: suitInstance.item4,
                               onclick: () {
-                                suitInstance.deactivateAllSuit();
-                                suitInstance
-                                    .activateSuit(suitInstance.item4 = true);
-                                tabbarProvider.deleteItem(context);
+                                var tabIndex = Provider.of<SuitDataProvider>(
+                                        context,
+                                        listen: false)
+                                    .tabbarIndex;
+                                if (tabIndex == 1) {
+                                  suitInstance.deactivateAllSuit();
+                                  suitInstance
+                                      .activateSuit(suitInstance.item4 = true);
+                                  tabbarProvider.deleteItem(context);
+                                }
                               },
                               img: suitInstance.item4
                                   ? 'assets/prototip/eag.png'
