@@ -45,7 +45,12 @@ class StyleSection extends StatelessWidget {
               width: 22.w,
             ),
             Expanded(
-              child: CustContainer(text: 'Parça'),
+              child: SizedBox(
+                width: 470.w,
+                child: CustomTextField(
+                  hintText: 'Ölçü',
+                ),
+              ),
             ),
           ],
         ),

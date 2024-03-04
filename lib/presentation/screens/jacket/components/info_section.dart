@@ -9,7 +9,11 @@ import 'header.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 var maskFormatter = new MaskTextInputFormatter(
-    mask: '## ### ## ##',
+    mask: '### ### ## ##',
+    filter: {"#": RegExp(r'[0-9]')},
+    type: MaskAutoCompletionType.lazy);
+var maskFormatterDate = new MaskTextInputFormatter(
+    mask: '##.##.####',
     filter: {"#": RegExp(r'[0-9]')},
     type: MaskAutoCompletionType.lazy);
 
@@ -204,15 +208,39 @@ class InfoSection extends StatelessWidget {
         Row(
           children: [
             Expanded(
-                child: CustomTextField(
-              hintText: 'Sifaris',
+                child: TextField(
+              inputFormatters: [maskFormatterDate],
+              textAlign: TextAlign.left,
+              style: TextStyle(color: const Color(0xFF2D2D2C), fontSize: 33.sp),
+              decoration: InputDecoration(
+                enabledBorder: const OutlineInputBorder(
+                    borderSide:
+                        BorderSide(width: 0.2, color: Color(0xffDDDDDD))),
+                focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(width: 0.2, color: Colors.black)),
+                border: const OutlineInputBorder(
+                    borderSide: BorderSide(width: 0.2, color: Colors.black)),
+                hintText: 'Sifaris',
+              ),
             )),
             SizedBox(
               width: 30.w,
             ),
             Expanded(
-                child: CustomTextField(
-              hintText: 'Təhvil',
+                child: TextField(
+              inputFormatters: [maskFormatterDate],
+              textAlign: TextAlign.left,
+              style: TextStyle(color: const Color(0xFF2D2D2C), fontSize: 33.sp),
+              decoration: InputDecoration(
+                enabledBorder: const OutlineInputBorder(
+                    borderSide:
+                        BorderSide(width: 0.2, color: Color(0xffDDDDDD))),
+                focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(width: 0.2, color: Colors.black)),
+                border: const OutlineInputBorder(
+                    borderSide: BorderSide(width: 0.2, color: Colors.black)),
+                hintText: 'Təhvil',
+              ),
             )),
           ],
         ),

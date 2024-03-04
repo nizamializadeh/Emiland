@@ -81,7 +81,7 @@ class SuitDataProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void uniqeResult(String name, double value) {
+  void uniqeResult(String name, var value) {
     result.any((widget) {
       if (widget is Container) {
         Container containerWidget = widget;
@@ -99,16 +99,18 @@ class SuitDataProvider extends ChangeNotifier {
       result.removeAt(resultIndex);
       resultUniqe = false;
     }
-    result.add(
-      Container(
-        width: double.infinity,
-        child: TabBarItem(
-          active: true,
-          text: name,
-          value: value,
+    if (value != 0) {
+      result.add(
+        Container(
+          width: double.infinity,
+          child: TabBarItem(
+            active: true,
+            text: name,
+            value: value,
+          ),
         ),
-      ),
-    );
+      );
+    }
     DataCouter(value, name);
   }
 

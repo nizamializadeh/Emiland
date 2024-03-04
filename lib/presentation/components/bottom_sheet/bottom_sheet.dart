@@ -8,6 +8,8 @@ import '../../../provider/suit_data_provider.dart';
 import 'add_value.dart';
 import 'bottomsheet_button.dart';
 
+final fieldText = TextEditingController();
+
 Future<void> bottomSheet(
     BuildContext context, SuitDataProvider suitInstance, String name) {
   return showModalBottomSheet<void>(
@@ -31,9 +33,6 @@ Future<void> bottomSheet(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
-                border: Border(
-                  top: BorderSide(width: 1.0, color: Color(0xFFDADADA)),
-                ),
               ),
               child: Center(
                 child: Column(
@@ -71,11 +70,18 @@ Future<void> bottomSheet(
                                 color: Color(0xffEF5C59),
                               ),
                               child: TextField(
+                                controller: fieldText,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                     fontSize: 33.sp, color: Colors.black),
                                 onChanged: (value) {
                                   value = '-$value';
+                                  Provider.of<SuitDataProvider>(context,
+                                          listen: false)
+                                      .uniqeResult(
+                                    name,
+                                    int.parse(value),
+                                  );
                                   suitInstance.DataCouter(
                                       int.parse(value), name);
                                 },
@@ -112,6 +118,12 @@ Future<void> bottomSheet(
                                 style: TextStyle(
                                     fontSize: 33.sp, color: Colors.black),
                                 onChanged: (value) {
+                                  Provider.of<SuitDataProvider>(context,
+                                          listen: false)
+                                      .uniqeResult(
+                                    name,
+                                    int.parse(value),
+                                  );
                                   suitInstance.DataCouter(
                                       int.parse(value), name);
                                 },
@@ -148,6 +160,7 @@ Future<void> bottomSheet(
                                   Provider.of<SuitDataProvider>(context,
                                           listen: false)
                                       .uniqeResult(name, -0.25);
+                                  Navigator.pop(context);
                                 },
                               ),
                               SizedBox(
@@ -160,6 +173,7 @@ Future<void> bottomSheet(
                                   Provider.of<SuitDataProvider>(context,
                                           listen: false)
                                       .uniqeResult(name, -0.5);
+                                  Navigator.pop(context);
                                 },
                               ),
                             ],
@@ -173,6 +187,7 @@ Future<void> bottomSheet(
                                   Provider.of<SuitDataProvider>(context,
                                           listen: false)
                                       .uniqeResult(name, 0.25);
+                                  Navigator.pop(context);
                                 },
                               ),
                               SizedBox(
@@ -185,6 +200,7 @@ Future<void> bottomSheet(
                                   Provider.of<SuitDataProvider>(context,
                                           listen: false)
                                       .uniqeResult(name, 0.5);
+                                  Navigator.pop(context);
                                 },
                               ),
                             ],
@@ -207,6 +223,7 @@ Future<void> bottomSheet(
                                   Provider.of<SuitDataProvider>(context,
                                           listen: false)
                                       .uniqeResult(name, -0.75);
+                                  Navigator.pop(context);
                                 },
                               ),
                               SizedBox(
@@ -219,6 +236,7 @@ Future<void> bottomSheet(
                                   Provider.of<SuitDataProvider>(context,
                                           listen: false)
                                       .uniqeResult(name, -1);
+                                  Navigator.pop(context);
                                 },
                               ),
                             ],
@@ -232,6 +250,7 @@ Future<void> bottomSheet(
                                   Provider.of<SuitDataProvider>(context,
                                           listen: false)
                                       .uniqeResult(name, 0.75);
+                                  Navigator.pop(context);
                                 },
                               ),
                               SizedBox(
@@ -244,6 +263,7 @@ Future<void> bottomSheet(
                                   Provider.of<SuitDataProvider>(context,
                                           listen: false)
                                       .uniqeResult(name, 1);
+                                  Navigator.pop(context);
                                 },
                               ),
                             ],
@@ -266,6 +286,7 @@ Future<void> bottomSheet(
                                   Provider.of<SuitDataProvider>(context,
                                           listen: false)
                                       .uniqeResult(name, -1.50);
+                                  Navigator.pop(context);
                                 },
                               ),
                               SizedBox(
@@ -278,6 +299,7 @@ Future<void> bottomSheet(
                                   Provider.of<SuitDataProvider>(context,
                                           listen: false)
                                       .uniqeResult(name, -2);
+                                  Navigator.pop(context);
                                 },
                               ),
                             ],
@@ -291,6 +313,7 @@ Future<void> bottomSheet(
                                   Provider.of<SuitDataProvider>(context,
                                           listen: false)
                                       .uniqeResult(name, 1.5);
+                                  Navigator.pop(context);
                                 },
                               ),
                               SizedBox(
@@ -302,7 +325,11 @@ Future<void> bottomSheet(
                                 func: () {
                                   Provider.of<SuitDataProvider>(context,
                                           listen: false)
-                                      .uniqeResult(name, 2);
+                                      .uniqeResult(
+                                    name,
+                                    2,
+                                  );
+                                  Navigator.pop(context);
                                 },
                               ),
                             ],
@@ -325,6 +352,13 @@ Future<void> bottomSheet(
                               textColor: Colors.black,
                               backgorundcolor: Colors.white,
                               func: () {
+                                Provider.of<SuitDataProvider>(context,
+                                        listen: false)
+                                    .uniqeResult(
+                                  name,
+                                  0,
+                                );
+                                suitInstance.DataCouter(0, name);
                                 Navigator.pop(context);
                               },
                             ),
