@@ -12,7 +12,8 @@ class DropDownProvider extends ChangeNotifier {
   List<String> locationList = [
     'Flial Unvani 1',
     'Flial Unvani 2',
-    'Flial Unvani 3'
+    'Flial Unvani 3',
+    'Flial Unvani 4'
   ];
 
   List<String> cityList = ['Bakı', 'Moskova'];
