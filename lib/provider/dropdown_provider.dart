@@ -7,35 +7,31 @@ class DropDownProvider extends ChangeNotifier {
 
   String selectedCity = 'Şəhər';
 
-  String selectedTime = 'Təcili';
+  String selectedTime = 'Tip';
 
   List<String> locationList = [
-    'Flial Unvani',
     'Flial Unvani 1',
     'Flial Unvani 2',
     'Flial Unvani 3'
   ];
 
-  List<String> cityList = ['Şəhər', 'Unvan 1', 'Unvan 2', 'Unvan 3'];
+  List<String> cityList = ['Bakı', 'Moskova'];
 
   List<String> selectedTimeList = [
-    'Təcili',
-    ' 1 gun',
-    '2 gun',
-    '3 gun',
-    '4 gun',
-    '5 gun',
-    '6 gun',
-    'Təcili deyil'
+    'kostyum',
+    'pencək',
+    'şalvar',
+    'köynək',
+    'jilet',
+    'palto',
   ];
 
   List<String> measureSelectorList = [
-    'Ölçü götürən',
     'Option 2',
     'Option 3',
-    'Option 4'
+    'Option 4',
   ];
-  List<String> lecaleList = ['Lekal', 'Option 2', 'Option 3', 'Option 4'];
+  List<String> lecaleList = ['Option 2', 'Option 3', 'Option 4'];
 
   setSelectedLocation(String newValue) {
     selectedLocation = newValue;

@@ -65,6 +65,20 @@ class SuitDataProvider extends ChangeNotifier {
   // tabbar on/of
   bool modelSelected = false;
   bool SelectedModelContainer = false;
+  bool urgent = false;
+
+  void urgentColor(text) {
+    final now = DateTime.now().day;
+    final selectedDayS = text.substring(0, 2);
+    int selectedDay = int.parse(selectedDayS);
+    int urgentDay = selectedDay - now;
+    if (urgentDay < 6) {
+      urgent = true;
+    } else {
+      urgent = false;
+    }
+    notifyListeners();
+  }
 
   void selectedModelContainerActive() {
     SelectedModelContainer = !SelectedModelContainer;
@@ -136,7 +150,7 @@ class SuitDataProvider extends ChangeNotifier {
   void OnlyInfoActive(int TabbarItem) {
     tabbarIndex = TabbarItem;
     if (TabbarItem != 1) {
-      deactivateAllSuit();
+      activateTabbarItem();
     }
   }
 

@@ -1,3 +1,5 @@
+import 'package:emiland/presentation/constants/app_colors.dart';
+import 'package:emiland/presentation/screens/jacket/components/style_section.dart';
 import 'package:emiland/provider/dropdown_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,6 +24,10 @@ class InfoSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var dropDownProvider = Provider.of<DropDownProvider>(context);
+    var suitDataProvider = Provider.of<SuitDataProvider>(context);
+    // var suitDataProvider = Provider.of<SuitDataProvider>(context, listen: true);
+
+    int letterCount = 0;
     return Column(
       children: [
         SizedBox(
@@ -228,6 +234,12 @@ class InfoSection extends StatelessWidget {
             ),
             Expanded(
                 child: TextField(
+              onChanged: (value) {
+                letterCount = value.characters.length;
+                if (letterCount == 10) {
+                  suitDataProvider.urgentColor(value);
+                }
+              },
               inputFormatters: [maskFormatterDate],
               textAlign: TextAlign.left,
               style: TextStyle(color: const Color(0xFF2D2D2C), fontSize: 33.sp),
@@ -295,7 +307,104 @@ class InfoSection extends StatelessWidget {
 
         Row(
           children: [
+            // Expanded(
+            //   child: DropdownMenu<String>(
+            //     // expandedInsets: EdgeInsets.zero,
+            //     menuStyle: MenuStyle(
+            //       padding: MaterialStateProperty.resolveWith((states) {
+            //         return EdgeInsets.symmetric(horizontal: 0, vertical: 10);
+            //       }),
+            //       elevation: MaterialStateProperty.resolveWith((states) {
+            //         return 0;
+            //       }),
+            //     ),
+            //     inputDecorationTheme: const InputDecorationTheme(
+            //       enabledBorder: OutlineInputBorder(
+            //           borderSide:
+            //               BorderSide(width: 0.3, color: Color(0xffDDDDDD))),
+            //       focusedBorder: OutlineInputBorder(
+            //           borderSide: BorderSide(width: 0.3, color: Colors.red)),
+            //     ),
+            //     textStyle:
+            //         TextStyle(color: const Color(0xff707070), fontSize: 33.sp),
+            //     width: 470.w,
+            //     hintText: dropDownProvider.selectedTime,
+            //     onSelected: (String? value) {
+            //       if (value != null) {
+            //         dropDownProvider.setSelectedTime(value);
+            //       }
+            //     },
+            //     dropdownMenuEntries: dropDownProvider.selectedTimeList
+            //         .map<DropdownMenuEntry<String>>((String value) {
+            //       return DropdownMenuEntry<String>(
+            //         value: value,
+            //         label: value,
+            //         labelWidget: Container(
+            //           margin: EdgeInsets.only(left: 10, right: 0),
+            //           width: double.infinity,
+            //           height: 110.h,
+            //           child: Padding(
+            //             padding: EdgeInsets.fromLTRB(
+            //               5.w,
+            //               30.h,
+            //               0.w,
+            //               0.h,
+            //             ),
+            //             child: Text(
+            //               value,
+            //               style: TextStyle(
+            //                 fontFamily: 'DM Sans',
+            //                 fontWeight: FontWeight.w400,
+            //                 fontSize: 33.sp,
+            //                 color: Color(0xFF707070),
+            //               ),
+            //             ),
+            //           ),
+            //         ),
+            //         style: ButtonStyle(
+            //           shape: MaterialStateProperty.resolveWith((states) {
+            //             return RoundedRectangleBorder(
+            //                 borderRadius: BorderRadius.circular(0.0),
+            //                 side: BorderSide(
+            //                     color: Color(0xFFDDDDDD), width: 0.3));
+            //           }),
+            //           padding: MaterialStateProperty.resolveWith((states) {
+            //             return EdgeInsets.only(left: 0, right: 0);
+            //           }),
+            //           foregroundColor:
+            //               MaterialStateProperty.resolveWith((states) {
+            //             return Colors.white;
+            //           }),
+            //           textStyle: MaterialStateTextStyle.resolveWith(
+            //             (states) => TextStyle(
+            //               fontSize: 28.sp,
+            //               color: Color(0xFF2D2D2C),
+            //               fontWeight: FontWeight.w500,
+            //             ),
+            //           ),
+            //         ),
+            //       );
+            //     }).toList(),
+            //   ),
+            // ),
             Expanded(
+              flex: 25,
+              child: GestureDetector(
+                onTap: () {},
+                child: CustContainer(
+                  text: 'Təcili',
+                  boxColor:
+                      suitDataProvider.urgent ? Colors.red : Colors.transparent,
+                  textColor:
+                      suitDataProvider.urgent ? Colors.white : AppColors.grey,
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 16.w,
+            ),
+            Expanded(
+              flex: 25,
               child: DropdownMenu<String>(
                 // expandedInsets: EdgeInsets.zero,
                 menuStyle: MenuStyle(
@@ -315,7 +424,7 @@ class InfoSection extends StatelessWidget {
                 ),
                 textStyle:
                     TextStyle(color: const Color(0xff707070), fontSize: 33.sp),
-                width: 470.w,
+                width: 230.w,
                 hintText: dropDownProvider.selectedTime,
                 onSelected: (String? value) {
                   if (value != null) {
@@ -376,9 +485,10 @@ class InfoSection extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: 22.w,
+              width: 16.w,
             ),
             Expanded(
+              flex: 50,
               child: DropdownMenu<String>(
                 // expandedInsets: EdgeInsets.zero,
                 menuStyle: MenuStyle(

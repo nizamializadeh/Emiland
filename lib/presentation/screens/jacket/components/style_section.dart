@@ -38,7 +38,10 @@ class StyleSection extends StatelessWidget {
                   Provider.of<SuitDataProvider>(context, listen: false)
                       .modelSelectedActive();
                 },
-                child: CustContainer(text: 'Model'),
+                child: CustContainer(
+                  text: 'Model',
+                  textColor: AppColors.grey,
+                ),
               ),
             ),
             SizedBox(
@@ -456,10 +459,14 @@ class CustContainer extends StatelessWidget {
   CustContainer({
     required this.text,
     this.align,
+    this.textColor,
+    this.boxColor,
     super.key,
   });
 
   final String text;
+  final Color? boxColor;
+  final Color? textColor;
   final AlignmentGeometry? align;
   @override
   Widget build(BuildContext context) {
@@ -468,13 +475,17 @@ class CustContainer extends StatelessWidget {
       alignment: align == null ? Alignment.centerLeft : align,
       height: 125.h,
       decoration: BoxDecoration(
+          color: boxColor,
           border: Border.all(color: const Color(0xffDDDDDD), width: 0.5),
           borderRadius: BorderRadius.all(Radius.circular(8.r))),
       child: Padding(
         padding: EdgeInsets.only(left: 15.w),
         child: Text(
           text,
-          style: TextStyle(fontSize: 33.sp, color: AppColors.grey),
+          style: TextStyle(
+            fontSize: 33.sp,
+            color: textColor,
+          ),
         ),
       ),
     );

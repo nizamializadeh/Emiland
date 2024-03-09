@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
 import '../../../provider/Tabbar_provider.dart';
 import '../../../provider/suit_data_provider.dart';
+import '../../components/bottom_sheet/note_bottom_sheet.dart';
 
 class JacketLeftSideBar extends StatelessWidget {
   const JacketLeftSideBar({super.key});
@@ -247,6 +248,24 @@ class JacketLeftSideBar extends StatelessWidget {
                       ),
                     ],
                   ),
+                  Center(
+                    child: OutlinedButton(
+                      child: Text(
+                        "Qeyd",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 23.sp),
+                      ),
+                      style: OutlinedButton.styleFrom(
+                        primary: Colors.black,
+                        side: BorderSide(
+                          color: Colors.black,
+                        ),
+                      ),
+                      onPressed: () {
+                        noteBottomSheet(context);
+                      },
+                    ),
+                  )
                 ],
               ),
       ),
