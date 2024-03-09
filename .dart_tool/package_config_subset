@@ -40,8 +40,13 @@ file:///Users/musaeldar/.pub-cache/hosted/pub.dev/flutter_screenutil-5.9.0/
 file:///Users/musaeldar/.pub-cache/hosted/pub.dev/flutter_screenutil-5.9.0/lib/
 flutter_svg
 2.19
+<<<<<<< HEAD
 file:///Users/musaeldar/.pub-cache/hosted/pub.dev/flutter_svg-2.0.9/
 file:///Users/musaeldar/.pub-cache/hosted/pub.dev/flutter_svg-2.0.9/lib/
+=======
+file:///Users/nizamializade/.pub-cache/hosted/pub.dev/flutter_svg-2.0.9/
+file:///Users/nizamializade/.pub-cache/hosted/pub.dev/flutter_svg-2.0.9/lib/
+>>>>>>> parent of 2e81239 (date feature done)
 lints
 3.0
 file:///Users/musaeldar/.pub-cache/hosted/pub.dev/lints-2.1.1/

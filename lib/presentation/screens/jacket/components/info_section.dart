@@ -205,8 +205,25 @@ class InfoSection extends StatelessWidget {
               width: 30.w,
             ),
             Expanded(
+<<<<<<< HEAD
                 child: CustomTextField(
               hintText: 'Tehvil',
+=======
+                child: TextField(
+              inputFormatters: [maskFormatterDate],
+              textAlign: TextAlign.left,
+              style: TextStyle(color: const Color(0xFF2D2D2C), fontSize: 33.sp),
+              decoration: InputDecoration(
+                enabledBorder: const OutlineInputBorder(
+                    borderSide:
+                        BorderSide(width: 0.2, color: Color(0xffDDDDDD))),
+                focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(width: 0.2, color: Colors.black)),
+                border: const OutlineInputBorder(
+                    borderSide: BorderSide(width: 0.2, color: Colors.black)),
+                hintText: 'Təhvil',
+              ),
+>>>>>>> parent of 2e81239 (date feature done)
             )),
           ],
         ),

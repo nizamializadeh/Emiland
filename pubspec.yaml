@@ -38,6 +38,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   provider: ^6.1.1
   flutter_svg: ^2.0.9
+<<<<<<< HEAD
+=======
+  mask_text_input_formatter: ^2.9.0
+>>>>>>> parent of 2e81239 (date feature done)
 
 dev_dependencies:
   flutter_test:

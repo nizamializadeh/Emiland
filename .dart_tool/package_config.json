@@ -75,9 +75,15 @@
     },
     {
       "name": "flutter_test",
+<<<<<<< HEAD
       "rootUri": "file:///Users/musaeldar/development/flutter/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+=======
+      "rootUri": "file:///Users/nizamializade/development/flutter/packages/flutter_test",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+>>>>>>> parent of 2e81239 (date feature done)
     },
     {
       "name": "lints",
@@ -218,7 +224,11 @@
       "languageVersion": "3.1"
     }
   ],
+<<<<<<< HEAD
   "generated": "2024-02-22T12:39:33.405630Z",
+=======
+  "generated": "2024-02-27T10:43:45.145200Z",
+>>>>>>> parent of 2e81239 (date feature done)
   "generator": "pub",
   "generatorVersion": "3.1.5"
 }

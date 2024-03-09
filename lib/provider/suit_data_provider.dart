@@ -113,6 +113,16 @@ class SuitDataProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+<<<<<<< HEAD
+=======
+  void OnlyInfoActive(int TabbarItem) {
+    tabbarIndex = TabbarItem;
+    if (TabbarItem != 1) {
+      deactivateAllSuit();
+    }
+  }
+
+>>>>>>> parent of 2e81239 (date feature done)
   void activateTabbarItem() {
     deactivateAllSuit();
     activedAllTabbar = true;
