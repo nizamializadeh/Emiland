@@ -10,12 +10,15 @@ import '../../../components/dropdown/dropdown.dart';
 import 'header.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
-var maskFormatter = new MaskTextInputFormatter(
+final month = DateTime.now().month;
+final year = DateTime.now().year;
+
+var maskFormatter = MaskTextInputFormatter(
     mask: '### ### ## ##',
     filter: {"#": RegExp(r'[0-9]')},
     type: MaskAutoCompletionType.lazy);
-var maskFormatterDate = new MaskTextInputFormatter(
-    mask: '##.##.####',
+var maskFormatterDate = MaskTextInputFormatter(
+    mask: '$year.$month.##',
     filter: {"#": RegExp(r'[0-9]')},
     type: MaskAutoCompletionType.lazy);
 
@@ -236,8 +239,14 @@ class InfoSection extends StatelessWidget {
                 child: TextField(
               onChanged: (value) {
                 letterCount = value.characters.length;
-                if (letterCount == 10) {
-                  suitDataProvider.urgentColor(value);
+                if (month > 9) {
+                  if (letterCount == 10) {
+                    suitDataProvider.urgentColor(value);
+                  }
+                } else {
+                  if (letterCount == 9) {
+                    suitDataProvider.urgentColor(value);
+                  }
                 }
               },
               inputFormatters: [maskFormatterDate],

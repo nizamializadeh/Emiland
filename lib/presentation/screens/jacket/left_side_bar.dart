@@ -248,22 +248,27 @@ class JacketLeftSideBar extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Center(
-                    child: OutlinedButton(
-                      child: Text(
-                        "Qeyd",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500, fontSize: 23.sp),
-                      ),
-                      style: OutlinedButton.styleFrom(
-                        primary: Colors.black,
-                        side: BorderSide(
-                          color: Colors.black,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 140),
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: OutlinedButton(
+                        child: Text(
+                          "Qeyd",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500, fontSize: 33.sp),
                         ),
+                        style: OutlinedButton.styleFrom(
+                          backgroundColor: Colors.grey,
+                          primary: Colors.black,
+                          side: BorderSide(
+                            color: Colors.black,
+                          ),
+                        ),
+                        onPressed: () {
+                          noteBottomSheet(context);
+                        },
                       ),
-                      onPressed: () {
-                        noteBottomSheet(context);
-                      },
                     ),
                   )
                 ],

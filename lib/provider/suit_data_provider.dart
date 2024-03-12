@@ -68,8 +68,16 @@ class SuitDataProvider extends ChangeNotifier {
   bool urgent = false;
 
   void urgentColor(text) {
+    int count = text.length;
+    final selectedDayS;
+    if (count == 9) {
+      selectedDayS = text.substring(7, 9);
+    } else {
+      selectedDayS = text.substring(8, 10);
+    }
     final now = DateTime.now().day;
-    final selectedDayS = text.substring(0, 2);
+
+    print(selectedDayS);
     int selectedDay = int.parse(selectedDayS);
     int urgentDay = selectedDay - now;
     if (urgentDay < 6) {
