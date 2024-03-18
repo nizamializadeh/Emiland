@@ -1,12 +1,23 @@
 import 'package:emiland/presentation/screens/lekals/tab_bar_item.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../presentation/screens/jacket/components/note.dart';
 
 class SuitDataProvider extends ChangeNotifier {
   List<Container> result = [];
+  String qeyd = "";
+  int cost = 0;
+  bool qeydSave = false;
   int tabbarIndex = 0;
   int resultIndex = 0;
   bool resultUniqe = false;
+  bool adYazdi = false;
+  bool adYazdiSub = false;
+  bool isShirt = false;
+  bool isModel = false;
+  bool isModelSub = false;
   bool activedAllTabbar = true;
   bool bottomsheetIsOpened = false;
 
@@ -63,8 +74,6 @@ class SuitDataProvider extends ChangeNotifier {
   bool item4 = false;
 
   // tabbar on/of
-  bool modelSelected = false;
-  bool SelectedModelContainer = false;
   bool urgent = false;
 
   void urgentColor(text) {
@@ -88,18 +97,47 @@ class SuitDataProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void selectedModelContainerActive() {
-    SelectedModelContainer = !SelectedModelContainer;
+  void costUpdate(int value) {
+    cost = value;
+    notifyListeners();
+  }
+
+  void isModelOpen() {
+    isModel = !isModel;
+    notifyListeners();
+  }
+
+  void isModelSubOpen() {
+    isModelSub = !isModelSub;
+    notifyListeners();
+  }
+
+  void shirtOpen() {
+    isShirt = !isShirt;
+    notifyListeners();
+  }
+
+  void adyazdiSubOpen() {
+    adYazdiSub = !adYazdiSub;
+    notifyListeners();
+  }
+
+  void adyazdiOpen() {
+    adYazdi = !adYazdi;
+    notifyListeners();
+  }
+
+  void allSubClose() {
+    adYazdi = false;
+    adYazdiSub = false;
+    isShirt = false;
+    isModel = false;
+    isModelSub = false;
     notifyListeners();
   }
 
   void bottomsheetOpen() {
     bottomsheetIsOpened = !bottomsheetIsOpened;
-    notifyListeners();
-  }
-
-  void modelSelectedActive() {
-    modelSelected = !modelSelected;
     notifyListeners();
   }
 
@@ -134,6 +172,11 @@ class SuitDataProvider extends ChangeNotifier {
       );
     }
     DataCouter(value, name);
+  }
+
+  void noteSave() {
+    qeydSave = true;
+    notifyListeners();
   }
 
   void DataCouter(data, name) {

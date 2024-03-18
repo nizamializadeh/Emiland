@@ -6,10 +6,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import '../../../provider/suit_data_provider.dart';
 import '../trousers.dart';
+import 'components/ad_yazdi_container.dart';
+import 'components/adyazdi.dart';
+import 'components/adyazdi_jacket_sub.dart';
 import 'components/info_section.dart';
-import 'components/jacket_color_container.dart';
-import 'components/model.dart';
 import '../../components/bottom_sheet/bottom_sheet.dart';
+import 'components/note.dart';
+import 'model_page/model_page.dart';
+import 'model_page/sub_custom.dart';
 
 class JacketRightSideBar extends StatefulWidget {
   const JacketRightSideBar({super.key});
@@ -72,6 +76,7 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
     TabbarProvider tabbarProvider =
         Provider.of<TabbarProvider>(context, listen: true);
     _startAnimation();
+    int cost = suitInstanceTrue.cost;
     final List<TabBarItem> _items = [
       TabBarItem(
         width: double.infinity,
@@ -557,74 +562,118 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                         controller: _tabController,
                         children: [
                           // Tabbar section 1
-                          Column(
-                            children: [
-                              Container(
-                                child: Expanded(
-                                  child: SingleChildScrollView(
-                                    child: Container(
-                                      margin: EdgeInsets.symmetric(
-                                          horizontal: 30.w),
-                                      child: Column(
-                                        children: [
+                          suitInstance.adYazdi
+                              ? Column(
+                                  children: [
+                                    Expanded(child: AdYazdi()),
+                                    CustomNextBtn(
+                                        cost: '\$129',
+                                        nextOrSave: () {
+                                          _tabController!.index == 2
+                                              ? Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          const Trousers()))
+                                              : _tabController!.index++;
+
                                           Provider.of<SuitDataProvider>(context,
-                                                      listen: true)
-                                                  .modelSelected
-                                              ? Provider.of<SuitDataProvider>(
-                                                          context,
-                                                          listen: true)
-                                                      .SelectedModelContainer
-                                                  ? const JacketColorContainer()
-                                                  : SlideTransition(
-                                                      position:
-                                                          _offsetAnimation,
-                                                      child: Model())
-                                              : Column(
+                                                  listen: false)
+                                              .OnlyInfoActive(
+                                                  _tabController!.index);
+                                        },
+                                        prev: () {
+                                          if (suitInstanceTrue.adYazdi ||
+                                              suitInstanceTrue.adYazdi ||
+                                              suitInstanceTrue.isShirt) {
+                                            suitInstanceTrue.allSubClose();
+                                            print('object2');
+                                          } else if (suitInstanceTrue
+                                              .adYazdiSub) {
+                                            suitInstanceTrue.adyazdiSubOpen();
+                                            print('object');
+                                          }
+                                        },
+                                        prevText: "Prev")
+                                  ],
+                                )
+                              : suitInstance.isModel
+                                  ? Column(
+                                      children: [
+                                        Expanded(child: ModelPage()),
+                                        CustomNextBtn(
+                                            cost: '\$$cost',
+                                            nextOrSave: () {
+                                              _tabController!.index == 2
+                                                  ? Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const Trousers()))
+                                                  : _tabController!.index++;
+
+                                              Provider.of<SuitDataProvider>(
+                                                      context,
+                                                      listen: false)
+                                                  .OnlyInfoActive(
+                                                      _tabController!.index);
+                                            },
+                                            prev: () {
+                                              suitInstanceTrue.isModelOpen();
+                                              if (suitInstanceTrue.isModel ||
+                                                  suitInstanceTrue.isModelSub) {
+                                                suitInstanceTrue.allSubClose();
+                                              } else if (suitInstanceTrue
+                                                  .isModelSub) {
+                                                suitInstanceTrue.isModelOpen();
+                                              }
+                                            },
+                                            prevText: "Prev")
+                                      ],
+                                    )
+                                  : Column(
+                                      children: [
+                                        Container(
+                                          child: Expanded(
+                                            child: SingleChildScrollView(
+                                              child: Container(
+                                                margin: EdgeInsets.symmetric(
+                                                    horizontal: 30.w),
+                                                child: Column(
                                                   children: [
-                                                    InfoSection(),
-                                                    StyleSection(),
+                                                    Column(
+                                                      children: [
+                                                        InfoSection(),
+                                                        StyleSection(),
+                                                      ],
+                                                    )
                                                   ],
-                                                )
-                                        ],
-                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        CustomNextBtn(
+                                            cost: '\$129',
+                                            nextOrSave: () {
+                                              _tabController!.index == 2
+                                                  ? Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const Trousers()))
+                                                  : _tabController!.index++;
+                                              print(_tabController!.index);
+                                              Provider.of<SuitDataProvider>(
+                                                      context,
+                                                      listen: false)
+                                                  .OnlyInfoActive(
+                                                      _tabController!.index);
+                                            },
+                                            prev: () {},
+                                            prevText: "Prev")
+                                      ],
                                     ),
-                                  ),
-                                ),
-                              ),
-                              CustomNextBtn(
-                                  cost: '\$129',
-                                  nextOrSave: () {
-                                    _tabController!.index == 2
-                                        ? Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    const Trousers()))
-                                        : _tabController!.index++;
-                                    print(_tabController!.index);
-                                    Provider.of<SuitDataProvider>(context,
-                                            listen: false)
-                                        .OnlyInfoActive(_tabController!.index);
-                                  },
-                                  prev: () {
-                                    Provider.of<SuitDataProvider>(context,
-                                                listen: false)
-                                            .SelectedModelContainer
-                                        ? Provider.of<SuitDataProvider>(context,
-                                                listen: false)
-                                            .selectedModelContainerActive()
-                                        : Provider.of<SuitDataProvider>(context,
-                                                listen: false)
-                                            .modelSelectedActive();
-                                  },
-                                  prevText: Provider.of<SuitDataProvider>(
-                                              context,
-                                              listen: true)
-                                          .modelSelected
-                                      ? "Prev"
-                                      : "")
-                            ],
-                          ),
                           // Tabbar section 2
                           Column(
                             children: [
@@ -861,11 +910,31 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                                               horizontal: 10),
                                           width: double.infinity,
                                           child: Column(
-                                            children:
-                                                Provider.of<SuitDataProvider>(
+                                            children: [
+                                              Column(
+                                                children: Provider.of<
+                                                            SuitDataProvider>(
                                                         context,
                                                         listen: true)
                                                     .result,
+                                              ),
+                                              suitInstance.qeydSave
+                                                  ? TabBarItem(
+                                                      onTap: () {
+                                                        showDialog(
+                                                          context: context,
+                                                          builder: (BuildContext
+                                                              context) {
+                                                            return Note();
+                                                          },
+                                                        );
+                                                      },
+                                                      width: double.infinity,
+                                                      value: 0,
+                                                      text: 'Qeyd',
+                                                    )
+                                                  : SizedBox(),
+                                            ],
                                           )),
                                     ],
                                   ),

@@ -10,6 +10,20 @@ class CheckboxProvider extends ChangeNotifier {
   bool isButtonSelected1 = false;
   bool isButtonSelected2 = false;
   bool isButtonSelected3 = false;
+  bool isManuscript = false;
+  bool isStamp = false;
+  void setisManuscript(bool newValue) {
+    isManuscript = newValue;
+    isStamp = false;
+    notifyListeners();
+  }
+
+  void setisStamp(bool newValue) {
+    isStamp = newValue;
+    isManuscript = false;
+    notifyListeners();
+  }
+
   void setIsSelected1(bool newValue) {
     isSelected1 = newValue;
     isSelected2 = false;

@@ -20,6 +20,9 @@ class StyleSection extends StatelessWidget {
   Widget build(BuildContext context) {
     var provider = Provider.of<CheckboxProvider>(context);
     var dropDownProvider = Provider.of<DropDownProvider>(context);
+    SuitDataProvider suitInstance =
+        Provider.of<SuitDataProvider>(context, listen: true);
+
     return Column(
       children: [
         SizedBox(
@@ -27,42 +30,14 @@ class StyleSection extends StatelessWidget {
         ),
 // info divider
         Header(title: '2.Uslub'),
+
         SizedBox(
           height: 24.h,
         ),
         Row(
           children: [
             Expanded(
-              child: GestureDetector(
-                onTap: () {
-                  Provider.of<SuitDataProvider>(context, listen: false)
-                      .modelSelectedActive();
-                },
-                child: CustContainer(
-                  text: 'Model',
-                  textColor: AppColors.grey,
-                ),
-              ),
-            ),
-            SizedBox(
-              width: 22.w,
-            ),
-            Expanded(
-              child: SizedBox(
-                width: 470.w,
-                child: CustomTextField(
-                  hintText: 'Ölçü',
-                ),
-              ),
-            ),
-          ],
-        ),
-        SizedBox(
-          height: 24.h,
-        ),
-        Row(
-          children: [
-            Expanded(
+              flex: 25,
               child: DropdownMenu<String>(
                 // expandedInsets: EdgeInsets.zero,
                 menuStyle: MenuStyle(
@@ -82,7 +57,7 @@ class StyleSection extends StatelessWidget {
                 ),
                 textStyle:
                     TextStyle(color: const Color(0xff707070), fontSize: 33.sp),
-                width: 470.w,
+                width: 232.w,
                 hintText: dropDownProvider.selectedLecale,
                 onSelected: (String? value) {
                   if (value != null) {
@@ -143,17 +118,71 @@ class StyleSection extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: 22.w,
+              width: 44.w,
+            ),
+            Expanded(
+              flex: 26,
+              child: CustomTextField(
+                hintText: 'Ölçü',
+              ),
             ),
             SizedBox(
-              width: 470.w,
-              child: CustomTextField(
-                hintText: 'ÖIçü',
+              width: 21.w,
+            ),
+            Expanded(
+              flex: 56,
+              child: SizedBox(
+                width: 470.w,
+                child: CustomTextField(
+                  hintText: 'Parça',
+                ),
               ),
-            )
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 24.h,
+        ),
+        Row(
+          children: [
+            Expanded(
+              flex: 32,
+              child: SizedBox(
+                child: CustomTextField(
+                  hintText: 'Astar',
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 20.w,
+            ),
+            Expanded(
+              flex: 30,
+              child: SizedBox(
+                child: CustomTextField(
+                  hintText: 'Astar',
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 22.w,
+            ),
+            Expanded(
+              flex: 65,
+              child: GestureDetector(
+                onTap: () {
+                  suitInstance.isModelOpen();
+                },
+                child: CustContainer(
+                  text: 'Model',
+                  textColor: AppColors.grey,
+                ),
+              ),
+            ),
           ],
         ),
         SizedBox(height: 15.h),
+
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -411,9 +440,15 @@ class StyleSection extends StatelessWidget {
             Expanded(
                 child: SizedBox(
               width: 470.w,
-              child: CustomTextField(
-                center: true,
-                hintText: 'ÖIçü',
+              child: GestureDetector(
+                onTap: () {
+                  suitInstance.adyazdiOpen();
+                },
+                child: CustContainer(
+                  align: Alignment.center,
+                  text: 'Ad yazdı',
+                  textColor: AppColors.grey,
+                ),
               ),
             )),
           ],
@@ -437,9 +472,6 @@ class CustChecbox extends StatelessWidget {
     return Transform.scale(
       scale: 1.3,
       child: Checkbox(
-        // shape: RoundedRectangleBorder(
-        //   borderRadius: BorderRadius.circular(2.0),
-        // ),
         side: MaterialStateBorderSide.resolveWith(
           (states) => BorderSide(
               width: 1.0, color: value ? Color(0XFF6CE990) : Color(0XFF707070)),

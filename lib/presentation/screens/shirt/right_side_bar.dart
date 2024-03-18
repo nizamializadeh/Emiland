@@ -5,7 +5,6 @@ import 'package:provider/provider.dart';
 import '../../../provider/suit_data_provider.dart';
 import '../../components/bottom_sheet/bottom_sheet.dart';
 import '../jacket/components/info_section.dart';
-import '../jacket/components/model.dart';
 import '../lekals/tab_bar_item.dart';
 import '../trousers.dart';
 
@@ -79,11 +78,6 @@ class ShirtRightSideBar extends StatelessWidget {
                           children: [
                             InfoSection(),
                             const StyleSection(),
-                          ],
-                        ),
-                        const Column(
-                          children: [
-                            Model(),
                           ],
                         ),
                         Column(

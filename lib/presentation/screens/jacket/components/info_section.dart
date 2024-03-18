@@ -3,6 +3,7 @@ import 'package:emiland/presentation/screens/jacket/components/style_section.dar
 import 'package:emiland/provider/dropdown_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import '../../../../provider/suit_data_provider.dart';
 import '../../../components/custom_textfield.dart';
@@ -10,15 +11,18 @@ import '../../../components/dropdown/dropdown.dart';
 import 'header.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
+final date = DateTime.now();
+String formattedDate = DateFormat('yyyy.MM.dd').format(date);
 final month = DateTime.now().month;
 final year = DateTime.now().year;
+var x = "$month.$year";
 
 var maskFormatter = MaskTextInputFormatter(
     mask: '### ### ## ##',
     filter: {"#": RegExp(r'[0-9]')},
     type: MaskAutoCompletionType.lazy);
 var maskFormatterDate = MaskTextInputFormatter(
-    mask: '$year.$month.##',
+    mask: '$x.##',
     filter: {"#": RegExp(r'[0-9]')},
     type: MaskAutoCompletionType.lazy);
 
@@ -29,7 +33,6 @@ class InfoSection extends StatelessWidget {
     var dropDownProvider = Provider.of<DropDownProvider>(context);
     var suitDataProvider = Provider.of<SuitDataProvider>(context);
     // var suitDataProvider = Provider.of<SuitDataProvider>(context, listen: true);
-
     int letterCount = 0;
     return Column(
       children: [
@@ -217,20 +220,9 @@ class InfoSection extends StatelessWidget {
         Row(
           children: [
             Expanded(
-                child: TextField(
-              inputFormatters: [maskFormatterDate],
-              textAlign: TextAlign.left,
-              style: TextStyle(color: const Color(0xFF2D2D2C), fontSize: 33.sp),
-              decoration: InputDecoration(
-                enabledBorder: const OutlineInputBorder(
-                    borderSide:
-                        BorderSide(width: 0.2, color: Color(0xffDDDDDD))),
-                focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(width: 0.2, color: Colors.black)),
-                border: const OutlineInputBorder(
-                    borderSide: BorderSide(width: 0.2, color: Colors.black)),
-                hintText: 'Sifaris',
-              ),
+                child: CustContainer(
+              text: formattedDate,
+              textColor: AppColors.grey,
             )),
             SizedBox(
               width: 30.w,
@@ -397,7 +389,7 @@ class InfoSection extends StatelessWidget {
             //   ),
             // ),
             Expanded(
-              flex: 25,
+              flex: 20,
               child: GestureDetector(
                 onTap: () {},
                 child: CustContainer(
@@ -413,7 +405,7 @@ class InfoSection extends StatelessWidget {
               width: 16.w,
             ),
             Expanded(
-              flex: 25,
+              flex: 30,
               child: DropdownMenu<String>(
                 // expandedInsets: EdgeInsets.zero,
                 menuStyle: MenuStyle(
@@ -433,7 +425,7 @@ class InfoSection extends StatelessWidget {
                 ),
                 textStyle:
                     TextStyle(color: const Color(0xff707070), fontSize: 33.sp),
-                width: 230.w,
+                width: 280.w,
                 hintText: dropDownProvider.selectedTime,
                 onSelected: (String? value) {
                   if (value != null) {
