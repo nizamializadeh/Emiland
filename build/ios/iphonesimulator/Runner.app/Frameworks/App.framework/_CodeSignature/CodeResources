@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		9RddhyCxfnEi3qa7lk1xRu2IQMA=
+		omN4226hbeUETd6rXoZp7j05ssM=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		HyKCP58bJHCPSEyNfX2vJdtO0WA=
+		vxOCuEmbtugz9sJIJNm5oapKlbo=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -60,13 +60,13 @@
 		<data>
 		1AwhYSJKWLM80GrKm9fzNpDHPc8=
 		</data>
+		<key>flutter_assets/assets/png/.DS_Store</key>
+		<data>
+		3y++sUAKzaCQmjLBz2v0kvESHgc=
+		</data>
 		<key>flutter_assets/assets/png/logo.png</key>
 		<data>
 		GvN1M2Iy6TLwNWzC8YeKyRnjw8g=
-		</data>
-		<key>flutter_assets/assets/png/lolita.png</key>
-		<data>
-		M2yfjZMXbQiaOEtaJQAKEO9LO20=
 		</data>
 		<key>flutter_assets/assets/png/lolita2.png</key>
 		<data>
@@ -79,6 +79,10 @@
 		<key>flutter_assets/assets/png/suit.png</key>
 		<data>
 		9oL31bH0t/phAnaNNtTb7pWEkM4=
+		</data>
+		<key>flutter_assets/assets/prototip/.DS_Store</key>
+		<data>
+		3y++sUAKzaCQmjLBz2v0kvESHgc=
 		</data>
 		<key>flutter_assets/assets/prototip/a1.png</key>
 		<data>
@@ -212,10 +216,6 @@
 		<data>
 		MoODTMlvLsZOhq0RU5+Y1NCnc54=
 		</data>
-		<key>flutter_assets/assets/prototip/prototip1.png</key>
-		<data>
-		+bLmLFDoyrtDf5AER73wvMjOeCg=
-		</data>
 		<key>flutter_assets/assets/prototip/prototip2.png</key>
 		<data>
 		YNWSl/+ihR6cKQbpC4u1SD9Ausg=
@@ -306,7 +306,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		fp8FcxxjwPXfNoKYjltHveyL7yI=
+		gWcQhM5KfBMiF6/hTbc+TGW3+Q8=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -327,14 +327,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9icvwRQoUOdiz30esp4pk4CQZDNQAjpjNXcIEPT7r0w=
+			S3lAEuM27FHvnpimuaIHuAuhAi7IptLAfnuayxwHUaA=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XhHhXXkf2blWcCFcB4sCJEcsgPRhrSGigNePLMtK9Yw=
+			yrKnnaNfCct5NLPdFnmlXRC28P5j1atG95GmlHHSnUw=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -419,13 +419,6 @@
 			<key>hash2</key>
 			<data>
 			GKpoAjxlTpDuTzBNOBIuY6WZsApwZS6va2xgoQWGW3M=
-			</data>
-		</dict>
-		<key>flutter_assets/assets/png/lolita.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			gLGi3p9ghqGynsLWvaoVnbiCkjDxhUtNazYAoe6/Y2g=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/png/lolita2.png</key>
@@ -680,13 +673,6 @@
 			Oa+2uM8o7vrxAu4OIJcqMofd5LjvCPC4oLiSZC/NT4w=
 			</data>
 		</dict>
-		<key>flutter_assets/assets/prototip/prototip1.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			uYvY59ZlJPsagQd0rLpfyfzYD93T55niv8E43NYnfIc=
-			</data>
-		</dict>
 		<key>flutter_assets/assets/prototip/prototip2.png</key>
 		<dict>
 			<key>hash2</key>
@@ -845,7 +831,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Qn6HQpb91Dc5EJs2ox4AVrC+XS6WiD7tN9j503TvyrQ=
+			8EMancmnat967b7hPRKVTB77KP3oIrU8hZBkQzqXjEs=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

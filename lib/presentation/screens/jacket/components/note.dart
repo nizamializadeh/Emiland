@@ -40,6 +40,7 @@ class Note extends StatelessWidget {
                     SizedBox(
                       height: 280, //     <-- TextField expands to this height.
                       child: TextField(
+                        textCapitalization: TextCapitalization.words,
                         controller: controller,
                         style: TextStyle(color: Colors.black, fontSize: 40.sp),
                         keyboardType: TextInputType.multiline,

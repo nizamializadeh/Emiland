@@ -86,7 +86,6 @@ class TabBarItem extends StatelessWidget {
                 width: 110.w,
                 height: 110.h,
                 child: Text(
-                  // value != 0 ? value.toString() : ' ',
                   value > 0
                       ? "+" + value.toString()
                       : value < 0

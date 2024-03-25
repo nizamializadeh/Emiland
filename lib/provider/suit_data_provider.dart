@@ -8,6 +8,7 @@ import '../presentation/screens/jacket/components/note.dart';
 class SuitDataProvider extends ChangeNotifier {
   List<Container> result = [];
   String qeyd = "";
+  String datetest = " ";
   int cost = 0;
   bool qeydSave = false;
   int tabbarIndex = 0;
@@ -76,19 +77,18 @@ class SuitDataProvider extends ChangeNotifier {
   // tabbar on/of
   bool urgent = false;
 
-  void urgentColor(text) {
-    int count = text.length;
-    final selectedDayS;
-    if (count == 9) {
-      selectedDayS = text.substring(7, 9);
-    } else {
-      selectedDayS = text.substring(8, 10);
-    }
-    final now = DateTime.now().day;
+  void dateCorrector(text) {
+    // cost = value;
+    notifyListeners();
+  }
 
-    print(selectedDayS);
-    int selectedDay = int.parse(selectedDayS);
+  void urgentColor(text) {
+    print(text);
+
+    final now = DateTime.now().day;
+    int selectedDay = int.parse(text);
     int urgentDay = selectedDay - now;
+    print(urgentDay);
     if (urgentDay < 6) {
       urgent = true;
     } else {
@@ -142,6 +142,9 @@ class SuitDataProvider extends ChangeNotifier {
   }
 
   void uniqeResult(String name, var value) {
+    if (value.runtimeType == String) {
+      value = int.parse(value);
+    }
     result.any((widget) {
       if (widget is Container) {
         Container containerWidget = widget;

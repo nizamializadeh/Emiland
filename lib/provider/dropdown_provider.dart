@@ -4,6 +4,7 @@ class DropDownProvider extends ChangeNotifier {
   String selectedLocation = 'Flial Ünvani';
   String measureSelector = 'Ölçü götürən';
   String selectedLecale = 'Lekal';
+  String selectedSize = 'Ölçü';
 
   String selectedCity = 'Şəhər';
 
@@ -32,7 +33,8 @@ class DropDownProvider extends ChangeNotifier {
     'Option 3',
     'Option 4',
   ];
-  List<String> lecaleList = ['Option 2', 'Option 3', 'Option 4'];
+  List<String> lecaleList = ['Z-42', 'Z-44', 'Z-46'];
+  List<String> sizeList = ['54', '56', '58'];
 
   setSelectedLocation(String newValue) {
     selectedLocation = newValue;
@@ -56,6 +58,11 @@ class DropDownProvider extends ChangeNotifier {
 
   setSelectedLecale(String newValue) {
     selectedLecale = newValue;
+    notifyListeners();
+  }
+
+  setSelectedSize(String newValue) {
+    selectedSize = newValue;
     notifyListeners();
   }
 }

@@ -62,6 +62,8 @@ class StyleSection extends StatelessWidget {
                 onSelected: (String? value) {
                   if (value != null) {
                     dropDownProvider.setSelectedLecale(value);
+                    Provider.of<SuitDataProvider>(context, listen: false)
+                        .uniqeResult('Lekal', dropDownProvider.selectedLecale);
                   }
                 },
                 dropdownMenuEntries: dropDownProvider.lecaleList
@@ -122,8 +124,84 @@ class StyleSection extends StatelessWidget {
             ),
             Expanded(
               flex: 26,
-              child: CustomTextField(
-                hintText: 'Ölçü',
+              child: DropdownMenu<String>(
+                menuStyle: MenuStyle(
+                  padding: MaterialStateProperty.resolveWith((states) {
+                    return EdgeInsets.symmetric(horizontal: 0, vertical: 10);
+                  }),
+                  elevation: MaterialStateProperty.resolveWith((states) {
+                    return 0;
+                  }),
+                ),
+                inputDecorationTheme: const InputDecorationTheme(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(width: 0.3, color: Color(0xffDDDDDD))),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(width: 0.3, color: Colors.red)),
+                ),
+                textStyle:
+                    TextStyle(color: const Color(0xff707070), fontSize: 33.sp),
+                width: 232.w,
+                hintText: dropDownProvider.selectedSize,
+                onSelected: (String? value) {
+                  if (value != null) {
+                    dropDownProvider.setSelectedSize(value);
+                    Provider.of<SuitDataProvider>(context, listen: false)
+                        .uniqeResult('Ölçü', dropDownProvider.selectedSize);
+                  }
+                },
+                dropdownMenuEntries: dropDownProvider.sizeList
+                    .map<DropdownMenuEntry<String>>((String value) {
+                  return DropdownMenuEntry<String>(
+                    value: value,
+                    label: value,
+                    labelWidget: Container(
+                      margin: EdgeInsets.only(left: 10, right: 0),
+                      width: double.infinity,
+                      height: 110.h,
+                      child: Padding(
+                        padding: EdgeInsets.fromLTRB(
+                          5.w,
+                          30.h,
+                          0.w,
+                          0.h,
+                        ),
+                        child: Text(
+                          value,
+                          style: TextStyle(
+                            fontFamily: 'DM Sans',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 33.sp,
+                            color: Color(0xFF707070),
+                          ),
+                        ),
+                      ),
+                    ),
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.resolveWith((states) {
+                        return RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(0.0),
+                            side: BorderSide(
+                                color: Color(0xFFDDDDDD), width: 0.3));
+                      }),
+                      padding: MaterialStateProperty.resolveWith((states) {
+                        return EdgeInsets.only(left: 0, right: 0);
+                      }),
+                      foregroundColor:
+                          MaterialStateProperty.resolveWith((states) {
+                        return Colors.white;
+                      }),
+                      textStyle: MaterialStateTextStyle.resolveWith(
+                        (states) => TextStyle(
+                          fontSize: 28.sp,
+                          color: Color(0xFF2D2D2C),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  );
+                }).toList(),
               ),
             ),
             SizedBox(
@@ -160,7 +238,7 @@ class StyleSection extends StatelessWidget {
               flex: 30,
               child: SizedBox(
                 child: CustomTextField(
-                  hintText: 'Astar',
+                  hintText: 'Düymə',
                 ),
               ),
             ),
@@ -453,6 +531,7 @@ class StyleSection extends StatelessWidget {
             )),
           ],
         ),
+        SizedBox(height: 20.h),
       ],
     );
   }

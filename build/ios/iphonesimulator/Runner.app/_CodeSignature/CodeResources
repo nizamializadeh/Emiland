@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		gWJkdvEPs8Zu1hz+TVHI7AF1l0A=
+		OWCVirsYFlRfpKcIaGiK4Thch8U=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		56WhRp2Q2OizLZ77bNfarQH9ghI=
+		0twO5lGbp8WrYXnI8AXW9iH+LTA=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		9RddhyCxfnEi3qa7lk1xRu2IQMA=
+		omN4226hbeUETd6rXoZp7j05ssM=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		HyKCP58bJHCPSEyNfX2vJdtO0WA=
+		vxOCuEmbtugz9sJIJNm5oapKlbo=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -111,10 +111,6 @@
 		<key>Frameworks/App.framework/flutter_assets/assets/png/logo.png</key>
 		<data>
 		GvN1M2Iy6TLwNWzC8YeKyRnjw8g=
-		</data>
-		<key>Frameworks/App.framework/flutter_assets/assets/png/lolita.png</key>
-		<data>
-		M2yfjZMXbQiaOEtaJQAKEO9LO20=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/png/lolita2.png</key>
 		<data>
@@ -260,10 +256,6 @@
 		<data>
 		MoODTMlvLsZOhq0RU5+Y1NCnc54=
 		</data>
-		<key>Frameworks/App.framework/flutter_assets/assets/prototip/prototip1.png</key>
-		<data>
-		+bLmLFDoyrtDf5AER73wvMjOeCg=
-		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/prototip/prototip2.png</key>
 		<data>
 		YNWSl/+ihR6cKQbpC4u1SD9Ausg=
@@ -354,7 +346,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		fp8FcxxjwPXfNoKYjltHveyL7yI=
+		gWcQhM5KfBMiF6/hTbc+TGW3+Q8=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -454,7 +446,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		okMY4gKHbGhrXbhSnzMyC8FRszw=
+		B2zNtqesyvPFlxCYcFtchAt1pvQ=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -537,7 +529,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ga9qeGIS1l1oELnZcY7FATr3wttF04eZ1HHUfo++ryI=
+			AKyOUabnR8+kucuWHGCr9mIrgzY3Pz7dZl4KZ3PSFhI=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -551,21 +543,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KdEac5KTxSMlAr+vBn6B9+wDx8PT308r2j04lML7CZQ=
+			3PokRlOk5lsM3neeKXfbU6vFbmHBaiDkwT3zrbrYUkw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9icvwRQoUOdiz30esp4pk4CQZDNQAjpjNXcIEPT7r0w=
+			S3lAEuM27FHvnpimuaIHuAuhAi7IptLAfnuayxwHUaA=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XhHhXXkf2blWcCFcB4sCJEcsgPRhrSGigNePLMtK9Yw=
+			yrKnnaNfCct5NLPdFnmlXRC28P5j1atG95GmlHHSnUw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -650,13 +642,6 @@
 			<key>hash2</key>
 			<data>
 			GKpoAjxlTpDuTzBNOBIuY6WZsApwZS6va2xgoQWGW3M=
-			</data>
-		</dict>
-		<key>Frameworks/App.framework/flutter_assets/assets/png/lolita.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			gLGi3p9ghqGynsLWvaoVnbiCkjDxhUtNazYAoe6/Y2g=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/png/lolita2.png</key>
@@ -911,13 +896,6 @@
 			Oa+2uM8o7vrxAu4OIJcqMofd5LjvCPC4oLiSZC/NT4w=
 			</data>
 		</dict>
-		<key>Frameworks/App.framework/flutter_assets/assets/prototip/prototip1.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			uYvY59ZlJPsagQd0rLpfyfzYD93T55niv8E43NYnfIc=
-			</data>
-		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/prototip/prototip2.png</key>
 		<dict>
 			<key>hash2</key>
@@ -1076,7 +1054,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Qn6HQpb91Dc5EJs2ox4AVrC+XS6WiD7tN9j503TvyrQ=
+			8EMancmnat967b7hPRKVTB77KP3oIrU8hZBkQzqXjEs=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

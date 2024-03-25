@@ -14,10 +14,11 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      // textCapitalization: TextCapitalization.words,
-      textCapitalization: firstCapitalwords != null
-          ? TextCapitalization.words
-          : TextCapitalization.none,
+      textCapitalization: TextCapitalization.words,
+
+      // textCapitalization: firstCapitalwords != null
+      //     ? TextCapitalization.words
+      //     : TextCapitalization.none,
       textAlign: center ? TextAlign.center : TextAlign.left,
       style: TextStyle(color: const Color(0xFF2D2D2C), fontSize: 33.sp),
       decoration: InputDecoration(

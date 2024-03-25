@@ -2,6 +2,7 @@ import 'package:emiland/presentation/constants/app_colors.dart';
 import 'package:emiland/presentation/screens/jacket/components/style_section.dart';
 import 'package:emiland/provider/dropdown_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -12,17 +13,11 @@ import 'header.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 final date = DateTime.now();
-String formattedDate = DateFormat('yyyy.MM.dd').format(date);
-final month = DateTime.now().month;
-final year = DateTime.now().year;
-var x = "$month.$year";
+String formattedDate = DateFormat('dd.MM.yyyy').format(date);
+final TextEditingController controller = TextEditingController();
 
 var maskFormatter = MaskTextInputFormatter(
     mask: '### ### ## ##',
-    filter: {"#": RegExp(r'[0-9]')},
-    type: MaskAutoCompletionType.lazy);
-var maskFormatterDate = MaskTextInputFormatter(
-    mask: '$x.##',
     filter: {"#": RegExp(r'[0-9]')},
     type: MaskAutoCompletionType.lazy);
 
@@ -32,7 +27,7 @@ class InfoSection extends StatelessWidget {
   Widget build(BuildContext context) {
     var dropDownProvider = Provider.of<DropDownProvider>(context);
     var suitDataProvider = Provider.of<SuitDataProvider>(context);
-    // var suitDataProvider = Provider.of<SuitDataProvider>(context, listen: true);
+    String urgentdate;
     int letterCount = 0;
     return Column(
       children: [
@@ -231,17 +226,16 @@ class InfoSection extends StatelessWidget {
                 child: TextField(
               onChanged: (value) {
                 letterCount = value.characters.length;
-                if (month > 9) {
-                  if (letterCount == 10) {
-                    suitDataProvider.urgentColor(value);
-                  }
-                } else {
-                  if (letterCount == 9) {
-                    suitDataProvider.urgentColor(value);
-                  }
+                if (letterCount == 2) {
+                  urgentdate = DateFormat('$value.MM.yyyy').format(date);
+                  controller.text = urgentdate;
+                  suitDataProvider.urgentColor(value);
                 }
               },
-              inputFormatters: [maskFormatterDate],
+              inputFormatters: [
+                LengthLimitingTextInputFormatter(2),
+              ],
+              controller: controller ?? null,
               textAlign: TextAlign.left,
               style: TextStyle(color: const Color(0xFF2D2D2C), fontSize: 33.sp),
               decoration: InputDecoration(
@@ -260,11 +254,28 @@ class InfoSection extends StatelessWidget {
         SizedBox(
           height: 22.w,
         ),
-        CustomTextField(
-          firstCapitalwords: TextCapitalization.words,
-          center: true,
-          hintText: 'Ad / Soyad',
+        Row(
+          children: [
+            Expanded(
+                flex: 25,
+                child: CustomTextField(
+                  firstCapitalwords: TextCapitalization.words,
+                  center: true,
+                  hintText: 'Kod',
+                )),
+            SizedBox(
+              width: 22.w,
+            ),
+            Expanded(
+                flex: 75,
+                child: CustomTextField(
+                  firstCapitalwords: TextCapitalization.words,
+                  center: true,
+                  hintText: 'Ad / Soyad',
+                ))
+          ],
         ),
+
         SizedBox(
           height: 22.w,
         ),
