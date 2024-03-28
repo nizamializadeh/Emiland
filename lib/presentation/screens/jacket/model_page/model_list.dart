@@ -23,14 +23,14 @@ class ModelList extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             AdYazdiContainer(
+              ontap: () {},
+              name: "Hazır Modellər",
+            ),
+            AdYazdiContainer(
               ontap: () {
                 suitInstance.isModelSubOpen();
               },
               name: "Fərdi",
-            ),
-            AdYazdiContainer(
-              ontap: () {},
-              name: "Hazır Modellər",
             ),
           ],
         ),

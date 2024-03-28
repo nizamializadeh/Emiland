@@ -911,13 +911,6 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                                           width: double.infinity,
                                           child: Column(
                                             children: [
-                                              Column(
-                                                children: Provider.of<
-                                                            SuitDataProvider>(
-                                                        context,
-                                                        listen: true)
-                                                    .result,
-                                              ),
                                               suitInstance.qeydSave
                                                   ? TabBarItem(
                                                       onTap: () {
@@ -934,6 +927,13 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                                                       text: 'Qeyd',
                                                     )
                                                   : SizedBox(),
+                                              Column(
+                                                children: Provider.of<
+                                                            SuitDataProvider>(
+                                                        context,
+                                                        listen: true)
+                                                    .result,
+                                              ),
                                             ],
                                           )),
                                     ],
@@ -955,14 +955,14 @@ class _JacketRightSideBarState extends State<JacketRightSideBar>
                                       .OnlyInfoActive(_tabController!.index);
                                 },
                                 prev: () {
-                                  _tabController!.index != 0
-                                      ? _tabController!.index--
-                                      : _tabController!.index;
-                                  Provider.of<SuitDataProvider>(context,
-                                          listen: false)
-                                      .OnlyInfoActive(_tabController!.index);
+                                  // _tabController!.index != 0
+                                  //     ? _tabController!.index--
+                                  //     : _tabController!.index;
+                                  // Provider.of<SuitDataProvider>(context,
+                                  //         listen: false)
+                                  //     .OnlyInfoActive(_tabController!.index);
                                 },
-                                prevText: "Prev",
+                                prevText: "Preview",
                                 nextOrSaveText: "Save",
                               )
                             ],
