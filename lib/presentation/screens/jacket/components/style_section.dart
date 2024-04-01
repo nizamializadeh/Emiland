@@ -142,7 +142,7 @@ class StyleSection extends StatelessWidget {
                 ),
                 textStyle:
                     TextStyle(color: const Color(0xff707070), fontSize: 33.sp),
-                width: 232.w,
+                width: 220.w,
                 hintText: dropDownProvider.selectedSize,
                 onSelected: (String? value) {
                   if (value != null) {

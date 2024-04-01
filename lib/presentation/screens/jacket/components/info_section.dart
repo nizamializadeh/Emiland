@@ -15,7 +15,7 @@ import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 final date = DateTime.now();
 String formattedDate = DateFormat('dd.MM.yyyy').format(date);
 final TextEditingController controller = TextEditingController();
-
+final day = DateTime.now().day;
 var maskFormatter = MaskTextInputFormatter(
     mask: '### ### ## ##',
     filter: {"#": RegExp(r'[0-9]')},
@@ -225,11 +225,22 @@ class InfoSection extends StatelessWidget {
             Expanded(
                 child: TextField(
               onChanged: (value) {
+                print(value.characters.length);
+                print(value.characters.length);
+                print(value.characters.length);
+                print(value.characters.length);
+                print(value.characters.length);
                 letterCount = value.characters.length;
+                int selectedDay = int.parse(value);
                 if (letterCount == 2) {
-                  urgentdate = DateFormat('$value.MM.yyyy').format(date);
-                  controller.text = urgentdate;
-                  suitDataProvider.urgentColor(value);
+                  if (selectedDay < day || selectedDay > 31) {
+                    controller.clear();
+                    print('object');
+                  } else {
+                    urgentdate = DateFormat('$value.MM.yyyy').format(date);
+                    controller.text = urgentdate;
+                    suitDataProvider.urgentColor(value);
+                  }
                 }
               },
               inputFormatters: [
